@@ -12,7 +12,7 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
     <div class="col-lg-6">
 
         <div class="card mb-4">
-            <div class="card-header">
+            <div class="card-header text-primary">
                 Update Perkara
             </div>
             <div class="card-boddy mb-3">

@@ -3,7 +3,7 @@
     <div class="col-lg-6">
 
         <div class="card mb-4">
-            <div class="card-header">
+            <div class="card-header text-primary">
                 Tambah Perkara
             </div>
             <div class="card-boddy mb-3">
@@ -151,7 +151,7 @@
                         </div>
 
 
-                        <button type="submit">Kirim</button>
+                        <button class="btn btn-primary" type="submit">Kirim</button>
 
 
                     </form> <!-- end form addBerkas -->
