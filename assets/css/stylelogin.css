@@ -1,0 +1,44 @@
+/* all version -- mobile */
+* {
+	font-family: "Reem Kufi", sans-serif;
+}
+
+body {
+	height: 100vh;
+}
+
+.shadow {
+	text-shadow: 1px 1px 1px white;
+}
+
+.jumbotron {
+	height: 100vh;
+}
+
+.bg-dasar {
+	background-color: #206a5d;
+}
+
+.text-dasar {
+	color: #206a5d;
+}
+
+/* desktop version  */
+@media (min-width: 992px) {
+	.jumbotron {
+		height: 100vh;
+		background-image: url("../img/wallpaper.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.card-login {
+		width: 20rem;
+		margin-top: 4em;
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	.title {
+		margin-top: 12rem;
+	}
+}
