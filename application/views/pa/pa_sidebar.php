@@ -1,84 +1,44 @@
-       <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Information</div>
+                    <a class="nav-link active" href="<?= base_url(); ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Layanan Perkara</div>
+                    <a class="nav-link" href="<?= base_url('pa/banding/banding'); ?>">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Perkara Banding
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Laporan Perkara
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="layout-static.html">Laporan Bulanan</a>
+                            <a class="nav-link" href="layout-sidenav-light.html">Laporan Triwulan</a>
+                        </nav>
+                    </div>
 
-           <!-- Sidebar - Brand -->
-           <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pa/pa'); ?>">
-               <div class="sidebar-brand-icon">
-                   <img src="<?= base_url('assets/img/logoapp.png'); ?>" class="img-fluid" width="70%">
-               </div>
-           </a>
-
-           <!-- Divider -->
-           <hr class="sidebar-divider my-0">
-
-           <!-- Nav Item - Dashboard -->
-           <li class="nav-item active">
-               <a class="nav-link" href="<?= base_url('pa/pa'); ?>">
-                   <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>Dashboard</span></a>
-           </li>
-           <!-- ========================================================= -->
-           <!-- Divider -->
-           <hr class="sidebar-divider">
-
-           <!-- Heading -->
-           <div class="sidebar-heading">
-               Menu
-           </div>
-           <!-- Menu Banding -->
-           <li class="nav-item">
-               <a class="nav-link" href="<?= base_url('pa/banding/banding'); ?>">
-                   <i class="fas fa-fw fa-chart-area"></i>
-                   <span>Perkara Banding</span></a>
-           </li>
-
-           <!-- ======================================================== -->
-
-
-           <!-- Nav Item - Pages Collapse Menu -->
-           <li class="nav-item">
-               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                   <i class="fas fa-fw fa-cog"></i>
-                   <span>Laporan Perkara</span>
-               </a>
-               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                   <div class="bg-white py-2 collapse-inner rounded">
-                       <h6 class="collapse-header">Pilih Laporan:</h6>
-                       <a class="collapse-item" href="buttons.html">Laporan Bulanan</a>
-                       <a class="collapse-item" href="cards.html">Laporan Triwulan</a>
-                   </div>
-               </div>
-           </li>
-           <!-- ======================================================== -->
-
-           <!-- Divider -->
-           <hr class="sidebar-divider">
-
-           <!-- Heading -->
-           <div class="sidebar-heading">
-               User
-           </div>
-
-           <!-- Nav Item - Charts -->
-           <li class="nav-item">
-               <a class="nav-link" href="charts.html">
-                   <i class="fas fa-fw fa-chart-area"></i>
-                   <span>User Profile</span></a>
-           </li>
-
-           <!-- Nav Item - Tables -->
-           <li class="nav-item">
-               <a class="nav-link" href="tables.html">
-                   <i class="fas fa-fw fa-table"></i>
-                   <span>Logout</span></a>
-           </li>
-
-           <!-- Divider -->
-           <hr class="sidebar-divider d-none d-md-block">
-
-           <!-- Sidebar Toggler (Sidebar) -->
-           <div class="text-center d-none d-md-inline">
-               <button class="rounded-circle border-0" id="sidebarToggle"></button>
-           </div>
-       </ul>
-       <!-- End of Sidebar -->
+                    <div class="sb-sidenav-menu-heading">user</div>
+                    <a class="nav-link" href="charts.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        User Setting
+                    </a>
+                    <a class="nav-link" href="tables.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Logout
+                    </a>
+                </div>
+            </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as:</div>
+                Start Bootstrap
+            </div>
+        </nav>
+    </div>

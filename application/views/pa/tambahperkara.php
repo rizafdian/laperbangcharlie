@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row mt-3">
 
     <div class="col-lg-6">
 
         <div class="card mb-4">
-            <div class="card-header text-primary">
+            <div class="card-header fw-bold">
                 Tambah Perkara
             </div>
             <div class="card-boddy mb-3">
@@ -151,7 +151,7 @@
                         </div>
 
 
-                        <button class="btn btn-primary" type="submit">Kirim</button>
+                        <button class="btn btn-success" type="submit">Kirim</button>
 
 
                     </form> <!-- end form addBerkas -->

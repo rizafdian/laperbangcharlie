@@ -175,4 +175,24 @@ class Banding extends CI_Controller
             redirect('pa/banding/banding');
         }
     }
+
+    public function uploadberkas($id)
+    {
+
+        $data['judul'] = 'Perkara Banding';
+        //ambil data
+        $data['perkara'] = $this->db->get_where('list_perkara', ['id_perkara' => $id])->result_array();
+
+        //cek user data sesuai atau tidak
+        if ($this->session->userdata('id') != $data['perkara'][0]['id_user']) {
+            redirect('pa/banding/banding'); //jika tidak sesuai lempar kembali ke controller banding method banding
+        } else {
+            //jika user sesuai tampilkan view
+            $this->load->view('pa/pa_header');
+            $this->load->view('pa/pa_sidebar');
+            $this->load->view('pa/pa_topbar', $data);
+            $this->load->view('pa/uploadberkas');
+            $this->load->view('pa/pa_footer');
+        }
+    }
 }

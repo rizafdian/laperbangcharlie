@@ -6,13 +6,13 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
 
 ?>
 
-<div class="row">
+<div class="row mt-3">
 
 
     <div class="col-lg-6">
 
         <div class="card mb-4">
-            <div class="card-header text-primary">
+            <div class="card-header fw-bold">
                 Update Perkara
             </div>
             <div class="card-boddy mb-3">
@@ -168,7 +168,7 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
                         </div>
 
 
-                        <button type="submit" class="btn btn-primary">Kirim</button>
+                        <button type="submit" class="btn btn-success">Kirim</button>
 
 
                     </form> <!-- end form addBerkas -->

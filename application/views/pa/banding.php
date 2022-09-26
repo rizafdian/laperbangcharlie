@@ -1,4 +1,4 @@
-<div class="row mt-5">
+<div class="row mt-3">
 
     <div class="col">
 
@@ -7,9 +7,7 @@
         ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?= $this->session->flashdata('message'); ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php
         endif;
@@ -17,13 +15,13 @@
         ?>
 
         <div class="card mb-4">
-            <div class="card-header text-primary">
+            <div class="card-header fw-bold">
                 <i class="fas fa-table"></i>
                 Daftar Perkara
             </div>
             <div class="card-body">
                 <!-- Button trigger modal -->
-                <a href="<?= base_url('pa/banding/tambahperkara'); ?>" class="btn btn-primary mb-4">Tambah Perkara</a>
+                <a href="<?= base_url('pa/banding/tambahperkara'); ?>" class="btn btn-success mb-4">Tambah Perkara</a>
                 <!-- button tambah perkara -->
                 <div class="table-responsive">
                     <table class="table" id="tablePerkara">
@@ -49,14 +47,14 @@
                                     <td><?php echo $lhs['tgl_register']; ?></td>
                                     <td><?php echo $lhs['status_perkara']; ?></td>
                                     <td>
-                                        <a class="text-decoration-none" href="<?= base_url('pa/banding/uploadbundle/') . $lhs['id_perkara'] ?>">
-                                            <i class="fas fa-fw fa-upload text-primary" title="Unggah Berkas"></i>
+                                        <a class="text-decoration-none" href="<?= base_url('pa/banding/uploadberkas/') . $lhs['id_perkara'] ?>">
+                                            <i class="fas fa-fw fa-upload text-success" title="Unggah Berkas"></i>
                                         </a>
                                         <a class="text-decoration-none" href="<?= base_url('pa/banding/updateperkara/') . $lhs['id_perkara']; ?>">
-                                            <i class="fas fa-pen-square text-primary" title="Edit"></i>
+                                            <i class="fas fa-pen-square text-success" title="Edit"></i>
                                         </a>
                                         <a class="text-decoration-none" href="<?= base_url('pa/suratpengantar/downloadsurat/') . $lhs['id_perkara'] ?>">
-                                            <i class="fas fa-fw fa-file-download text-primary" title="Download Surat Pengantar"></i>
+                                            <i class="fas fa-fw fa-file-download text-success" title="Download Surat Pengantar"></i>
                                         </a>
                                     </td>
                                 </tr>
