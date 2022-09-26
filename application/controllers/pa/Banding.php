@@ -195,4 +195,268 @@ class Banding extends CI_Controller
             $this->load->view('pa/pa_footer');
         }
     }
+
+    function pengantar_upload()
+    {
+        //ambil nama user
+        $pengedit = $this->session->userdata('nama');
+
+        //config Upload
+        $config['upload_path']          = './files/SuratPengantar';
+        $config['allowed_types']        = 'pdf';
+        $config['max_size']             = 5024;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (($_FILES['file1']['name'] != null)) {
+            if ($this->upload->do_upload('file1')) {
+                $sp_perkara = $this->upload->data("file_name");
+                $this->db->set('sp_perkara', $sp_perkara);
+            } else {
+                $this->session->set_flashdata('message', 'Upload file gagal, ekstensi file harus pdf dan ukuran tidak boleh lebih dari 5 mb !');
+                redirect('pa/banding/banding');
+            }
+        } else {
+            $this->session->set_flashdata('message', 'Tidak ada file yang di upload !');
+            redirect('pa/banding/banding/');
+        }
+
+        $id_perkara = $this->input->post('id_perkara');
+        $this->db->where('id_perkara', $id_perkara);
+        $this->db->update('list_perkara');
+
+        $this->session->set_flashdata('message', 'Surat Pengantar Berhasil di Upload !');
+
+        $audittrail = array(
+            'log_id' => '',
+            'isi_log' => "User <b>" . $pengedit . "</b> telah upload surat pengantar pada id perkara <b>" . $id_perkara . "</b>",
+            'nama_log' => $pengedit
+        );
+
+        $this->db->set('rekam_log', 'NOW()', FALSE);
+        $this->db->insert('log_audittrail', $audittrail);
+
+        redirect('pa/banding/banding');
+    }
+
+    function multiple_upload()
+    {
+
+        $pengedit = $this->session->userdata('nama');
+
+        $config['upload_path']          = './files/bundle_a';
+        $config['allowed_types']        = 'pdf';
+        $config['max_size']             = 80000;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        //untuk upload file 1 dan seterusnya.....
+
+        if (($_FILES['file1']['name']) == null && ($_FILES['file2']['name']) == null && ($_FILES['file3']['name']) == null
+            && ($_FILES['file4']['name']) == null && ($_FILES['file5']['name']) == null && ($_FILES['file6']['name']) == null && ($_FILES['file7']['name']) == null
+            && ($_FILES['file8']['name']) == null && ($_FILES['file9']['name']) == null && ($_FILES['file10']['name']) == null && ($_FILES['file11']['name']) == null
+            && ($_FILES['file12']['name']) == null && ($_FILES['file13']['name']) == null && ($_FILES['file14']['name']) == null && ($_FILES['file15']['name']) == null
+            && ($_FILES['file16']['name']) == null && ($_FILES['file17']['name']) == null && ($_FILES['file18']['name']) == null
+        ) {
+            $this->session->set_flashdata('message', 'Tidak ada file yang di upload');
+            redirect('banding/');
+        } else {
+            if (($_FILES['file1']['name'])) {
+                if ($this->upload->do_upload('file1')) {
+                    $suratgugatan = $this->upload->data("file_name");
+                    $this->db->set('surat_gugatan', $suratgugatan);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Surat Gugatan gagal !');
+                    redirect('pa/banding/banding/');
+                }
+            }
+
+            if (($_FILES['file2']['name'])) {
+                if ($this->upload->do_upload('file2')) {
+                    $skbundlea = $this->upload->data("file_name");
+                    $this->db->set('sk_bundelA', $skbundlea);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Surat kuasa dari kedua belah pihak gagal !');
+                    redirect('pa/banding/banding/');
+                }
+            }
+
+            if (($_FILES['file3']['name'])) {
+                if ($this->upload->do_upload('file3')) {
+                    $bukti_pemb_panjar = $this->upload->data("file_name");
+                    $this->db->set('bukti_pemb_panjar', $bukti_pemb_panjar);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Bukti Pembayaran Panjar gagal !');
+                    redirect('pa/banding/banding/');
+                }
+            }
+
+            if (($_FILES['file4']['name'])) {
+                if ($this->upload->do_upload('file4')) {
+                    $majelis_hakim = $this->upload->data("file_name");
+                    $this->db->set('majelis_hakim', $majelis_hakim);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Penetapan Majelis Hakim gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file5']['name'])) {
+                if ($this->upload->do_upload('file5')) {
+                    $penunjukan_pp = $this->upload->data("file_name");
+                    $this->db->set('penunjukan_pp', $penunjukan_pp);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Penunjukan Panitera Pengganti gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file6']['name'])) {
+                if ($this->upload->do_upload('file6')) {
+                    $penunjukan_js = $this->upload->data("file_name");
+                    $this->db->set('penunjukan_js', $penunjukan_js);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Penunjukan jurusita/Jurusita Pengganti gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file7']['name'])) {
+                if ($this->upload->do_upload('file7')) {
+                    $penetapan_hari_sidang = $this->upload->data("file_name");
+                    $this->db->set('penetapan_hari_sidang', $penetapan_hari_sidang);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Penetapan hari sidang gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file8']['name'])) {
+                if ($this->upload->do_upload('file8')) {
+                    $relaas_panggilan = $this->upload->data("file_name");
+                    $this->db->set('relaas_panggilan', $relaas_panggilan);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Relaas - relaas panggilan gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file9']['name'])) {
+                if ($this->upload->do_upload('file9')) {
+                    $ba_sidang = $this->upload->data("file_name");
+                    $this->db->set('ba_sidang', $ba_sidang);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Berita acara sidang gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file10']['name'])) {
+                if ($this->upload->do_upload('file10')) {
+                    $penetapan_sita = $this->upload->data("file_name");
+                    $this->db->set('penetapan_sita', $penetapan_sita);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Penetapan sita Conservatoir/Revindicatoir gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file11']['name'])) {
+                if ($this->upload->do_upload('file11')) {
+                    $ba_sita = $this->upload->data("file_name");
+                    $this->db->set('ba_sita', $ba_sita);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Berita acara sita Conservatoir/Revindicatoir gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file12']['name'])) {
+                if ($this->upload->do_upload('file12')) {
+                    $lampiran_surat = $this->upload->data("file_name");
+                    $this->db->set('lampiran_surat', $lampiran_surat);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload Lampiran-lampiran surat yang diajukan oleh kedua belah pihak gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file13']['name'])) {
+                if ($this->upload->do_upload('file13')) {
+                    $surat_bukti_penggugat = $this->upload->data("file_name");
+                    $this->db->set('surat_bukti_penggugat', $surat_bukti_penggugat);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Surat-surat bukti penggugat gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file14']['name'])) {
+                if ($this->upload->do_upload('file14')) {
+                    $surat_bukti_tergugat = $this->upload->data("file_name");
+                    $this->db->set('surat_bukti_tergugat', $surat_bukti_tergugat);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Surat-surat bukti tergugat gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file15']['name'])) {
+                if ($this->upload->do_upload('file15')) {
+                    $tanggapan_bukti_tergugat = $this->upload->data("file_name");
+                    $this->db->set('tanggapan_bukti_tergugat', $tanggapan_bukti_tergugat);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Tanggapan bukti-bukti tergugat dari penggugat gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file16']['name'])) {
+                if ($this->upload->do_upload('file16')) {
+                    $tanggapan_bukti_penggugat = $this->upload->data("file_name");
+                    $this->db->set('tanggapan_bukti_penggugat', $tanggapan_bukti_penggugat);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Tanggapan bukti-bukti penggugat dari tergugat gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file17']['name'])) {
+                if ($this->upload->do_upload('file17')) {
+                    $gambar_situasi = $this->upload->data("file_name");
+                    $this->db->set('gambar_situasi', $gambar_situasi);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Gambar situasi gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+
+            if (($_FILES['file18']['name'])) {
+                if ($this->upload->do_upload('file18')) {
+                    $surat_lain = $this->upload->data("file_name");
+                    $this->db->set('surat_lain', $surat_lain);
+                } else {
+                    $this->session->set_flashdata('message', 'Upload  Surat-surat lain gagal !');
+                    redirect('pa/banding/banding');
+                }
+            }
+        }
+
+
+        $id_perkara = $this->input->post('id_perkara');
+        $this->db->where('id_perkara', $id_perkara);
+        $this->db->update('list_perkara');
+        $this->session->set_flashdata('message', 'berhasil upload bundel A');
+
+        $audittrail = array(
+            'log_id' => '',
+            'isi_log' => "User <b>" . $pengedit . "</b> telah upload berkas bundel A pada id perkara <b>" . $id_perkara . "</b>",
+            'nama_log' => $pengedit
+        );
+
+        $this->db->set('rekam_log', 'NOW()', FALSE);
+        $this->db->insert('log_audittrail', $audittrail);
+
+        redirect('pa/banding/banding');
+    }
 }
