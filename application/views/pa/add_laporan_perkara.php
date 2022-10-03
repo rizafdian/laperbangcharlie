@@ -25,13 +25,12 @@
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="upload_zip" class="col-sm-2 col-form-label">Upload File ZIP</label>
+                        <label for="upload_zip" class="col-sm-2 col-form-label">Upload File Excel</label>
                         <div class="col-sm-10">
-                            <input type="file" name="file2" class="form-control" id="upload_zip" accept=".zip">
+                            <input type="file" name="file2" class="form-control" id="upload_zip" accept=".xls,.xlsx">
                             <div class="form-text text-danger"><?= form_error('file2') ?></div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-success">Simpan</button>
 
                 </form> <!-- Form end -->

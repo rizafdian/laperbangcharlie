@@ -8,7 +8,8 @@ class PA_laper extends CI_Controller
     {
         parent::__construct();
 
-        //download library dan model
+        //download library, helper dan model
+        $this->load->helper('download');
         $this->load->library('zip');
         $this->load->library('form_validation');
         $this->load->model('M_laper', 'm_laper');
@@ -22,7 +23,7 @@ class PA_laper extends CI_Controller
     public function index()
     {
 
-        $data['judul'] = 'Laporan Perkara';
+        $data['judul'] = 'Laporan Perkara Bulanan';
         $data['laporan'] = $this->m_laper->get_data();
         $data['years'] = $this->m_laper->get_years();
         $this->load->view('pa/pa_header');
@@ -45,7 +46,8 @@ class PA_laper extends CI_Controller
 
     public function view_laporan($id)
     {
-        $data['js'] = 'modalpdf.js';
+
+        $data['judul'] = 'Laporan Perkara Bulanan';
         $data['laporan'] = $this->db->get_where('v_user_laporan', ['id' => $id])->result_array();
         $data['catatan'] = $this->db->get_where('catatan_laporan', ['laper_id' => $id])->result_array();
 
@@ -54,10 +56,12 @@ class PA_laper extends CI_Controller
         if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) {
             redirect('PA_laper');
         } else {
-            $this->load->view('templates/header');
-            $this->load->view('templates/side');
-            $this->load->view('PA/actionview', $data);
-            $this->load->view('templates/footer', $data);
+
+            $this->load->view('pa/pa_header');
+            $this->load->view('pa/pa_sidebar');
+            $this->load->view('pa/pa_topbar', $data);
+            $this->load->view('pa/view_detil_bulanan', $data);
+            $this->load->view('pa/pa_footer');
         }
     }
 
@@ -71,7 +75,7 @@ class PA_laper extends CI_Controller
 
 
         if ($data['laporan'][0]['laper_xls'] != null) {
-            force_download("files_laporan/$folder/" . $data['laporan'][0]['laper_xls'], null);
+            force_download("./files/files_laporan/$folder/" . $data['laporan'][0]['laper_xls'], null);
         } else {
             $this->session->set_flashdata('msg', 'Belum ada laporan');
         }
@@ -79,6 +83,7 @@ class PA_laper extends CI_Controller
 
     public function zip_file($id)
     {
+        $data['judul'] = '';
 
         $data['laporan'] = $this->db->get_where('v_user_laporan', ['id' => $id])->result_array();
         $satker = $this->session->userdata('kode_pa');
@@ -93,7 +98,13 @@ class PA_laper extends CI_Controller
             // Download the file to your desktop
             $this->zip->download("$folder-revisi.zip");
         } else {
-            $this->session->set_flashdata('msg', 'Tidak ada Revisi');
+            $this->session->set_flashdata('msg', 'Tidak ada Revisi'); //kop pesannya
+            $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena belum ada data Revisi !'); //isi pesannya.
+            $this->load->view('pa/pa_header');
+            $this->load->view('pa/pa_sidebar');
+            $this->load->view('pa/pa_topbar', $data);
+            $this->load->view('errors/view_message');
+            $this->load->view('pa/pa_footer');
         }
     }
 
@@ -140,7 +151,7 @@ class PA_laper extends CI_Controller
 
 
             $config['upload_path']          = "./files/files_laporan/$folder/";
-            $config['allowed_types']        = 'pdf|zip';
+            $config['allowed_types']        = 'pdf|xls|xlsx';
             $config['max_size']             = 5024;
             $this->load->library('upload', $config);
             $this->upload->initialize($config);

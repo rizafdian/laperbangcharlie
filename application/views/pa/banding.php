@@ -1,6 +1,6 @@
 <div class="row mt-3">
 
-    <div class="col">
+    <div class="col-lg-6 col-md-12">
 
         <?php //session flash data
         if ($this->session->flashdata('message')) :

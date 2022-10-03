@@ -21,9 +21,7 @@
       </div>
     </div>
     <!-- dropdown end -->
-    <div class="div mt-3">
-
-
+    <div class="div mt-3 col-lg-6 col-md-12">
       <!-- alert start -->
       <?php //session flash data
       if ($this->session->flashdata('message')) :
@@ -121,7 +119,7 @@
                   <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Download">
                     <i class="fas fa-download"></i>
                   </a> | -->
-                  <a href="<?= base_url('PA_laper/view_laporan/') . $lhs['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat" title="Detail">
+                  <a href="<?= base_url('pa/PA_laper/view_laporan/') . $lhs['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat" title="Detail">
                     <i class="fa fa-eye"></i>
                   </a>
                 </td>
