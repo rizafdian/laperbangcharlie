@@ -11,14 +11,25 @@
           Pilih Tahun
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
+          <li>
+            <a class="dropdown-item" href="<?= base_url('pa/pa_laper'); ?>">All</a>
+          </li>
+
           <?php foreach ($years as $y) : ?>
 
-            <li><a class="dropdown-item" href="<?php echo base_url(); ?>index.php/PA_laper/laporan/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>
+            <li>
+              <a class="dropdown-item" href="<?php echo base_url('pa/pa_laper/laporan/'); ?><?= $y['year'];  ?>"><?= $y['year']; ?></a>
+            </li>
 
 
           <?php endforeach; ?>
         </ul>
       </div>
+
+
+
+
+
     </div>
     <!-- dropdown end -->
     <div class="div mt-3 col-lg-6 col-md-12">

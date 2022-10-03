@@ -35,13 +35,15 @@ class PA_laper extends CI_Controller
 
     public function laporan($year)
     {
+        $data['judul'] = 'Laporan Perkara Bulanan';
         $data['js'] = 'status.js';
         $data['laporan'] = $this->m_laper->get_year($year);
         $data['years'] = $this->m_laper->get_years();
-        $this->load->view('templates/header');
-        $this->load->view('templates/side');
-        $this->load->view('PA/index', $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('pa/pa_header');
+        $this->load->view('pa/pa_sidebar');
+        $this->load->view('pa/pa_topbar', $data);
+        $this->load->view('pa/laporan_bulanan', $data);
+        $this->load->view('pa/pa_footer');
     }
 
     public function view_laporan($id)
