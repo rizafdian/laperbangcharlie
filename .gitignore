@@ -36,7 +36,7 @@ zoutside/
 ##perlu ditambahkan
 application/config/config.php
 application/config/database.php
-.htaccess
+# /.htaccess
 /files/bundle_a/*
 /files/bundle_b/*
 /files/files_laporan/*
