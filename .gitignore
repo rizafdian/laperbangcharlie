@@ -33,7 +33,19 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 ##tambahan riyan
 zoutside/
+##perlu ditambahkan
 application/config/config.php
 application/config/database.php
 .htaccess
-/files/
+/files/bundle_a/*
+/files/bundle_b/*
+/files/files_laporan/*
+/files/qrcodeimg/*
+/files/SuratPengantar/*
+
+##/files/bundle_a
+##/files/bundle_b
+##/files/files_laporan
+##/files/qrcodeimg
+##/files/SuratPengantar
+##/files/templates
