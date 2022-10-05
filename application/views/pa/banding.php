@@ -48,7 +48,7 @@
                                     <a class="text-decoration-none" href="<?= base_url('pa/banding/updateperkara/') . $lhs['id_perkara']; ?>">
                                         <i class="fas fa-pen-square text-success" title="Edit"></i>
                                     </a>
-                                    <a class="text-decoration-none" href="<?= base_url('pa/suratpengantar/downloadsurat/') . $lhs['id_perkara'] ?>">
+                                    <a class="text-decoration-none" href="<?= base_url('pa/SuratPengantar/downloadsurat/') . $lhs['id_perkara'] ?>">
                                         <i class="fas fa-fw fa-file-download text-success" title="Download Surat Pengantar"></i>
                                     </a>
                                 </td>
