@@ -164,7 +164,7 @@ class PA_laper extends CI_Controller
                 } else {
                     // $error_upload = ['error' => $this->upload->display_errors()];
                     $this->session->set_flashdata('message', 'file PDF Error Upload');
-                    redirect('pa/pa_laper/');
+                    redirect('pa/PA_laper/');
                 }
             }
 
@@ -174,7 +174,7 @@ class PA_laper extends CI_Controller
                 } else {
                     $error_upload = ['error' => $this->upload->display_errors()];
                     $this->session->set_flashdata('message', 'file ZIP Error Upload');
-                    redirect('pa/pa_laper/');
+                    redirect('pa/PA_laper/');
                 }
             }
 
@@ -191,7 +191,7 @@ class PA_laper extends CI_Controller
 
             $this->db->insert('laporan_perkara', $data);
             $this->session->set_flashdata('message', 'Tambah Perkara dan Upload File berhasil');
-            redirect('pa/pa_laper/');
+            redirect('pa/PA_laper/');
         }
     }
 

@@ -12,13 +12,13 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
           <li>
-            <a class="dropdown-item" href="<?= base_url('pa/pa_laper'); ?>">All</a>
+            <a class="dropdown-item" href="<?= base_url('pa/PA_laper'); ?>">All</a>
           </li>
 
           <?php foreach ($years as $y) : ?>
 
             <li>
-              <a class="dropdown-item" href="<?php echo base_url('pa/pa_laper/laporan/'); ?><?= $y['year'];  ?>"><?= $y['year']; ?></a>
+              <a class="dropdown-item" href="<?php echo base_url('pa/PA_laper/laporan/'); ?><?= $y['year'];  ?>"><?= $y['year']; ?></a>
             </li>
 
 
@@ -58,7 +58,7 @@
   <div class="col">
 
     <!-- button tambah laporan -->
-    <a class="btn btn-success" href="<?= base_url('pa/pa_laper/add_laporan_perkara'); ?>">Tambah laporan</a>
+    <a class="btn btn-success" href="<?= base_url('pa/PA_laper/add_laporan_perkara'); ?>">Tambah laporan</a>
 
     <div class="card mt-3">
       <div class="table-responsive">

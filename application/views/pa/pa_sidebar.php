@@ -20,7 +20,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="<?= base_url('pa/pa_laper') ?>">Laporan Bulanan</a>
+                            <a class="nav-link" href="<?= base_url('pa/PA_laper') ?>">Laporan Bulanan</a>
                             <a class="nav-link" href="layout-sidenav-light.html">Laporan Triwulan</a>
                         </nav>
                     </div>

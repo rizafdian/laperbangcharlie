@@ -84,7 +84,7 @@
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-normal">
                                             <a href="<?= base_url() . 'files/files_laporan/' . $laporan['0']['kode_pa'] ?> <?= $laporan['0']['periode'] ?>/<?= $laporan['0']['laper_pdf'] ?>" target="_blank"><i class="fas fa-file-pdf text-secondary"></i></a> |
-                                            <a href="<?php echo base_url() ?>pa/pa_laper/download_xls/<?= $laporan['0']['id'] ?>"><i class="fas fa-file-excel text-secondary"></i></a>
+                                            <a href="<?php echo base_url() ?>pa/PA_laper/download_xls/<?= $laporan['0']['id'] ?>"><i class="fas fa-file-excel text-secondary"></i></a>
                                         </span>
                                     </td>
                                     <td class="align-middle text-center">
@@ -95,7 +95,7 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-normal">
-                                            <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal"><i class="fas fa-upload text-secondary"></i></a> | <a href="<?php echo base_url() ?>pa/pa_laper/zip_file/<?= $laporan['0']['id'] ?>"><i class="fas fa-download text-secondary"></i></a>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal"><i class="fas fa-upload text-secondary"></i></a> | <a href="<?php echo base_url() ?>pa/PA_laper/zip_file/<?= $laporan['0']['id'] ?>"><i class="fas fa-download text-secondary"></i></a>
                                         </span>
 
                                     </td>

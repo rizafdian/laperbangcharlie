@@ -5,7 +5,7 @@
         <h6 class="mt-3">Tambah Laporan Perkara Bulanan</h6>
         <div class="row mt-3">
             <div class="col-lg-4">
-                <form method="POST" action="<?php echo base_url('pa/pa_laper/add_laporan_perkara'); ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?php echo base_url('pa/PA_laper/add_laporan_perkara'); ?>" enctype="multipart/form-data">
 
                     <!-- form start -->
                     <div class="mb-3 row">
