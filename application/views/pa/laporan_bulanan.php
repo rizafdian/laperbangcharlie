@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col">
+  <div class="col text-center">
     <h6>Laporan Perkara Tahun <script>
         document.write(new Date().getFullYear())
       </script>
