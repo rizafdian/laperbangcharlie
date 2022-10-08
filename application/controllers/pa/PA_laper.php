@@ -440,13 +440,18 @@ class PA_laper extends CI_Controller
 
         $path = "./files/laporan_triwulan/$folder/$nm_laporan/revisi/";
 
+
+
         if (file_exists($path)) {
-            $this->zip->read_dir($path);
+            $this->zip->read_dir($path, false);
 
             // Download the file to your desktop
             $this->zip->download("$folder-revisi.zip");
         } else {
-            $this->session->set_flashdata('msg', 'Tidak ada Revisi');
+            $this->session->set_flashdata('msg', 'File Kosong');
+            $this->session->set_flashdata('properties', 'Anda tidak bisa Mendowload File Zip, karena belum ada file revisi Triwulan!');
+            //kirim ke error ke view
+            redirect('pa/errorview');
         }
     }
 
@@ -461,14 +466,16 @@ class PA_laper extends CI_Controller
         $satker = $this->session->userdata('kode_pa');
         $folder = "$satker $periode $tahun";
 
-        $path = "./laporan_triwulan/$folder/$nm_laporan/revisi/";
+        $path = "./files/laporan_triwulan/$folder/$nm_laporan/revisi/";
 
         if (!file_exists($path)) {
-            mkdir($path);
+            if (!mkdir($path, 0777, true)) {
+                die('filed create directories');
+            }
         }
 
-        $config['upload_path']          = "./laporan_triwulan/$folder/$nm_laporan/revisi/";
-        $config['allowed_types']        = 'pdf|xls';
+        $config['upload_path']          = $path;
+        $config['allowed_types']        = 'pdf|xls|xlsx';
         $config['max_size']             = 5024;
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
@@ -477,8 +484,8 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file1')) {
                 $laper_pdf = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan/');
+                $this->session->set_flashdata('message', 'Upload file gagal');
+                redirect('pa/PA_laper/triwulan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -488,8 +495,8 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file2')) {
                 $laper_xls = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/triwulan/');
+                $this->session->set_flashdata('message', 'Upload file gagal');
+                redirect('pa/PA_laper/triwulan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
             }
@@ -504,7 +511,7 @@ class PA_laper extends CI_Controller
         $where = $this->db->where('id', $triwulan_id);
         $this->db->update('lap_tri_detail', $data, $where);
 
-        $this->session->set_flashdata('flash', 'Upload file berhasil');
-        redirect('PA_laper/triwulan/');
+        $this->session->set_flashdata('message', 'Upload file berhasil');
+        redirect('pa/PA_laper/triwulan/');
     }
 }

@@ -6,8 +6,8 @@
         <?php foreach ($triwulan as $lp) : ?>
             <div class="row bg-gray-400 justify-content-start">
 
-                <div class="row mt-3">
-                    <div class="col-md-2">
+                <div class="row mt-5">
+                    <div class="col-md-3">
                         <p class="fw-bold">Satker</p>
                     </div>
                     <div class="col-md-auto">
@@ -17,8 +17,8 @@
                         <p><?php echo $lp['nama']; ?></p>
                     </div>
                 </div>
-                <div class="row mt-n3">
-                    <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-3">
                         <p class="fw-bold">Laporan Triwulan</p>
                     </div>
                     <div class="col-md-auto">
@@ -28,8 +28,8 @@
                         <p><?php echo $lp['berkas_laporan']; ?></p>
                     </div>
                 </div>
-                <div class="row mt-n3">
-                    <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-3">
                         <p class="fw-bold">Tahun</p>
                     </div>
                     <div class="col-md-auto">
@@ -101,21 +101,30 @@
                                 <td class="align-middle text-center">
 
                                     <span class="text-secondary text-xs font-weight-normal">
-                                        <a href="#!" data-bs-toggle="modal" data-bs-target="#triwulanPdf" data-id="<?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="fas fa-file-pdf"></a> |
-                                        <a href="<?php echo base_url() ?>laporan/PA_laper/download_xls_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-file-excel"></a>
+                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="text-decoration-none text-secondary">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </a> |
+                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" class="text-decoration-none text-secondary">
+                                            <i class="fas fa-file-excel"></i>
+                                        </a>
                                     </span>
                                 </td>
 
-                                <td class="align-middle text-center">
+                                <td class="text-secondary align-middle text-center">
                                     <span class="text-success text-xs font-weight-normal">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#catatanModal<?= $lhs['id_triwulan'] ?>"><i class="fas fa-clipboard"></i></a>
-
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#catatanModalbaru<?= $lhs['id_triwulan']; ?>" class="text-decoration-none text-secondary"><i class="fas fa-clipboard"></i></a>
                                     </span>
                                 </td>
 
                                 <td class="align-middle text-center">
                                     <span class="text-secondary text-xs font-weight-normal">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal<?= $lhs['id_triwulan'] ?>" class="fas fa-upload"></a> | <a href="<?php echo base_url() ?>laporan/PA_laper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-download"></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#revisiModal<?= $lhs['id_triwulan'] ?>" class="text-decoration-none text-secondary">
+                                            <i class="fas fa-upload"></i>
+                                        </a>
+                                        |
+                                        <a href="<?php echo base_url() ?>pa/PA_laper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>" class="text-decoration-none text-secondary">
+                                            <i class="fas fa-download"></i>
+                                        </a>
                                     </span>
 
                                 </td>
@@ -143,7 +152,6 @@
                             <?php $i++ ?>
                         <?php endforeach; ?>
                         <!-- looping data end -->
-
                     </tbody>
                 </table>
             </div>
@@ -152,16 +160,18 @@
     </div>
 </div> <!-- end row -->
 
+
+
+<!-- inimodal catatan nda bisa jalan riz -->
 <!-- catatanModal start -->
+<!-- karena $lhs['id_triwulan'] yg ada di modal ini beda dengan $lhs['id_triwulan'] yang ada di table yang jadi trigernya -->
 <?php foreach ($catatan as $lhs) : ?>
-    <div class="modal fade" id="catatanModal<?= $lhs['id_triwulan'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="catatanModalbaru<?= $lhs['id_triwulan']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Catatan Perbaikan</h5>
-                    <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
@@ -175,51 +185,31 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-<?php endforeach; ?>
+<?php
+endforeach;
+?>
 <!-- catatan modal end -->
 
-<!-- //modal tampil pdf -->
-
-<div class="modal fade" id="triwulanPdf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Laporan Triwulan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="triwulan_pdf">
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary mx-auto" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- end modal tampil pdf -->
-
 <!-- modal -->
+<!-- kalo revisi modalnya jalan, karena foreachnya dari $laporan  -->
 <?php foreach ($laporan as $lhs) : ?>
     <div class="modal fade" id="revisiModal<?= $lhs['id_triwulan'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Revisi Laporan Perkara</h5>
-                    <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
                     <!-- form start -->
 
-                    <form method="POST" action="<?php echo base_url('PA_laper/revisi_laporan_triwulan'); ?>" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo base_url('pa/PA_laper/revisi_laporan_triwulan'); ?>" enctype="multipart/form-data">
 
                         <input type="hidden" class="form-controll" value="<?php echo $lhs['id_triwulan'] ?>" name="id">
                         <input type="hidden" class="form-controll" value="<?php echo $lhs['berkas_laporan'] ?>" name="berkas_laporan">
@@ -228,17 +218,17 @@
 
                         <div class="input-group input-group-static my-3">
                             <label for="upload-pdf">Upload file PDF</label>
-                            <input id="upload-pdf" type="file" name="file1" class="form-control">
+                            <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf">
                         </div>
                         <div class="input-group input-group-static my-3">
                             <label for="upload-zip">Upload file XLS</label>
-                            <input id="upload-zip" type="file" name="file2" class="form-control">
+                            <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls, .xlsx">
                         </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn bg-gradient-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
                 </form>
 
