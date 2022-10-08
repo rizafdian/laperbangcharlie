@@ -278,9 +278,12 @@ class PA_laper extends CI_Controller
 
     public function add_lap_triwulan()
     {
-        $year = '%Y';
-        $tahun = mdate($year);
+        // $year = '%Y';
+        // $tahun = mdate($year);
+        //karna fungsi mdate tidak dikenali maka diganti dengan fungsi date(Y) biasa
+        $tahun = date('Y');
         $periode_triwulan = $this->input->post('lap_triwulan');
+
 
         if ($periode_triwulan == "03") {
             $berkas_laporan = "Triwulan I";
@@ -303,8 +306,8 @@ class PA_laper extends CI_Controller
         ];
 
         $this->db->insert('laporan_triwulan', $data);
-
-        redirect('PA_laper/triwulan/');
+        $this->session->set_flashdata('message', 'Data Laporan Triwulan Berhasil Ditambahkan !');
+        redirect('pa/PA_laper/triwulan');
     }
 
     public function addTriwulan($id)
@@ -363,7 +366,7 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file1')) {
                 $laper_pdf = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
+                $this->session->set_flashdata('message', 'Upload file gagal');
                 redirect('PA_laper/triwulan/');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);
@@ -374,7 +377,7 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file2')) {
                 $laper_xls = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
+                $this->session->set_flashdata('message', 'Upload file gagal');
                 redirect('PA_laper/triwulan');
                 // $error = array('error' => $this->upload->display_errors());
                 // $this->load->view('banding/uploadbundle', $error);

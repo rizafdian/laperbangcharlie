@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="col text-center">
-    <h6 class="d-block">Laporan Perkara Tahun <script>
+  <div class="col">
+    <h6>Laporan Perkara Tahun <script>
         document.write(new Date().getFullYear())
       </script>
     </h6>
     <!-- dropdown start -->
-    <div class="d-flex justify-content-center">
+    <div>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Pilih Tahun
@@ -32,6 +32,11 @@
 
     </div>
     <!-- dropdown end -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
     <div class="div mt-3 col-lg-6 col-md-12">
       <!-- alert start -->
       <?php //session flash data
@@ -47,8 +52,6 @@
       ?>
       <!-- alert end -->
     </div>
-
-
   </div>
 </div>
 
