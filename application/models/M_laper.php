@@ -189,8 +189,10 @@ class M_laper extends CI_model
 
     public function get_data_triwulan()
     {
-        $year = '%Y';
-        $periode_tahun = mdate($year);
+        //$year = '%Y';
+        //masih kurang tau fungsi mdate dapat dari mana library atau helper
+        //jadi untuk sementara diriku pake fungsi date langsung
+        $periode_tahun = date('Y'); //ini fungsi date langsung, hasilnya date tahun sekarang.
         $id = $this->session->userdata('id');
         $this->db->select('*');
         $this->db->select('day(`tgl_upload`) as tanggal');

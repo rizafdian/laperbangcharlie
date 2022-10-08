@@ -209,7 +209,7 @@ class PA_laper extends CI_Controller
             mkdir($path);
         }
 
-        $config['upload_path']          = "./files_laporan/$folder/revisi/";
+        $config['upload_path']          = "./files/files_laporan/$folder/revisi/";
         $config['allowed_types']        = 'pdf|zip|xls';
         $config['max_size']             = 5024;
         $this->load->library('upload', $config);
@@ -219,10 +219,8 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file1')) {
                 $laper_pdf = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
-                // $error = array('error' => $this->upload->display_errors());
-                // $this->load->view('banding/uploadbundle', $error);
+                $this->session->set_flashdata('message', 'Upload file gagal');
+                redirect('pa/PA_laper/');
             }
         }
 
@@ -230,10 +228,8 @@ class PA_laper extends CI_Controller
             if ($this->upload->do_upload('file2')) {
                 $laper_xls = $this->upload->data("file_name");
             } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('PA_laper/');
-                // $error = array('error' => $this->upload->display_errors());
-                // $this->load->view('banding/uploadbundle', $error);
+                $this->session->set_flashdata('message', 'Upload file gagal');
+                redirect('pa/PA_laper/');
             }
         }
 
@@ -247,21 +243,24 @@ class PA_laper extends CI_Controller
 
         $this->db->insert('revisi_laporan', $data);
 
-        $this->session->set_flashdata('flash', 'Upload file berhasil');
-        redirect('PA_laper/');
+        $this->session->set_flashdata('message', 'Upload file berhasil');
+        redirect('pa/PA_laper/');
     }
+
+    //triwulan
 
     public function triwulan()
     {
-        $data['js'] = '';
+        $data['judul'] = "Laporan Triwulan";
         $data['laporan'] = $this->m_laper->get_data_triwulan();
         $data['years'] = $this->m_laper->get_years_triwulan();
 
 
-        $this->load->view('templates/header');
-        $this->load->view('templates/side');
-        $this->load->view('PA/triwulan', $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('pa/pa_header');
+        $this->load->view('pa/pa_sidebar');
+        $this->load->view('pa/pa_topbar', $data);
+        $this->load->view('pa/triwulan', $data);
+        $this->load->view('pa/pa_footer');
     }
 
     public function triwulan_search_year($year)
