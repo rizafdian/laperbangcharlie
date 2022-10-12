@@ -10,6 +10,7 @@ class Banding extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('m_banding', 'banding');
+        $this->load->helper('download');
 
         //user jika user tidak punya sesssion
         if (!$this->session->userdata('id') || $this->session->userdata('role_id') != 2) {
@@ -458,5 +459,18 @@ class Banding extends CI_Controller
         $this->db->insert('log_audittrail', $audittrail);
 
         redirect('pa/banding/banding');
+    }
+
+    public function download_putusan($id)
+    {
+        $data['perkara'] = $this->db->get_where('list_perkara', ['id_perkara' => $id])->result_array();
+        force_download('files/putusan/' . $data['perkara'][0]['putusan_banding'], NULL);
+
+        if ($data['perkara'][0]['putusan_banding'] != null) {
+            force_download('files/putusan/' . $data['perkara'][0]['putusan_banding'], NULL);
+        } else {
+            $this->session->set_flashdata('msg', 'Belum ada file putusan');
+            redirect('pa/banding/');
+        }
     }
 }

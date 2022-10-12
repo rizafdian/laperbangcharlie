@@ -645,7 +645,7 @@
                 </h2>
                 <div id="putusan" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <a class="btn btn-success" href="<?php echo base_url() ?>index.php/banding/download_putusan/<?= $perkara[0]['id_perkara'] ?>">Download Putusan</a>
+                        <a class="btn btn-success" href="<?php echo base_url() ?>pa/banding/download_putusan/<?= $perkara[0]['id_perkara'] ?>">Download Putusan</a>
                     </div>
                 </div>
             </div>
