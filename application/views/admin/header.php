@@ -77,10 +77,28 @@
                             </a>
 
 
-                            <div class="sb-sidenav-menu-heading">Kelola Perkara</div>
+                            <div class="sb-sidenav-menu-heading">Perkara Banding</div>
                             <a class="nav-link <?= $judul == 'Input Nomor Perkara' ? 'active' : '' ?>" href="<?= base_url('admin/admin/inputnoper/') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-fw fa-keyboard"></i></div>
-                                Manajemen Perkara
+                                Perkara Banding
+                            </a>
+
+                            <div class="sb-sidenav-menu-heading">Laporan Perkara</div>
+                            <a class="nav-link <?= $judul == 'Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-fw fa-chart-pie"></i></div>
+                                Laporan Perkara
+                            </a>
+                            <a class="nav-link <?= $judul == 'Rekap Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Rekap Laporan Perkara
+                            </a>
+                            <a class="nav-link <?= $judul == 'Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Laporan Triwulan
+                            </a>
+                            <a class="nav-link <?= $judul == 'Rekap Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Rekap Laporan Triwulan
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Manajemen User</div>
@@ -92,6 +110,8 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-fw fa-users-cog"></i></div>
                                 Majelis Hakim
                             </a>
+
+
 
                             <div class="sb-sidenav-menu-heading">Log</div>
                             <a class="nav-link <?= $judul == 'Audit Trail' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
