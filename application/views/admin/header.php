@@ -88,7 +88,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-fw fa-chart-pie"></i></div>
                                 Laporan Perkara
                             </a>
-                            <a class="nav-link <?= $judul == 'Rekap Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
+                            <a class="nav-link <?= $judul == 'Rekap Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper/rekap_laporan/') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Rekap Laporan Perkara
                             </a>
