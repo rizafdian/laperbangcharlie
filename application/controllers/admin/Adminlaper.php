@@ -47,6 +47,8 @@ class Adminlaper extends CI_Controller
 
     public function view_document($id)
     {
+        $data['judul'] = 'Laporan Bulanan';
+        $data['css'] = 'dashboard_admin.css';
         $data['js'] = 'modalpdf.js';
         $data['laporan'] = $this->db->get_where('v_user_laporan', ['id' => $id])->result_array();
         $data['catatan'] = $this->db->get_where('catatan_laporan', ['laper_id' => $id])->result_array();
@@ -55,10 +57,10 @@ class Adminlaper extends CI_Controller
         if ($this->session->userdata('role_id') != '1') {
             redirect('Admin');
         } else {
-            $this->load->view('templates/header');
-            $this->load->view('templates/sideadmin');
-            $this->load->view('admin_view/view_document', $data);
-            $this->load->view('templates/footer', $data);
+
+            $this->load->view('admin/header', $data);
+            $this->load->view('admin/lapbulandetail', $data);
+            $this->load->view('admin/footer', $data);
         }
 
         // $this->load->view('templates/header');
@@ -95,9 +97,9 @@ class Adminlaper extends CI_Controller
         ];
 
         $this->db->insert('catatan_laporan', $data);
-        $this->session->set_flashdata('flash', 'Berhasil memberikan catatan');
+        $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
 
-        redirect('Admin');
+        redirect('Admin/adminlaper');
     }
 
     public function add_validasi()
@@ -110,14 +112,15 @@ class Adminlaper extends CI_Controller
         ];
         $where = array('id' => $id_laper);
         $this->db->update('laporan_perkara', $data, $where);
-        $this->session->set_flashdata('flash', 'Validasi Laporan Berhasil');
+        $this->session->set_flashdata('message', 'Validasi Laporan Berhasil');
 
-        redirect('Admin');
+        redirect('admin/adminlaper');
     }
 
     public function zip_file($id)
     {
-
+        $data['judul'] = '';
+        $data['css'] = 'dashboard_admin.css';
         $data['laporan'] = $this->db->get_where('v_user_laporan', ['id' => $id])->result_array();
         $satker = $data['laporan'][0]['kode_pa'];
         $periode = $data['laporan'][0]['periode'];
@@ -131,7 +134,12 @@ class Adminlaper extends CI_Controller
             // Download the file to your desktop
             $this->zip->download("$folder-revisi.zip");
         } else {
-            $this->session->set_flashdata('msg', 'Tidak ada Revisi');
+            $this->session->set_flashdata('msg', 'Tidak ada Revisi'); //kop pesannya
+            $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena belum ada data Revisi !'); //isi pesannya.
+
+            $this->load->view('admin/header', $data);
+            $this->load->view('errors/view_message');
+            $this->load->view('admin/footer', $data);
         }
     }
 
