@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/') . $css ?>">
     <!-- dropzone -->
     <link rel="stylesheet" href="<?= base_url('assets/dropzone/dropzone.css') ?>">
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title><?= $judul ?></title>
 </head>
@@ -37,16 +39,16 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" aria-current="page" href="<?= base_url('ViewHakim/') ?>">Dasbor</a>
+                        <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" aria-current="page" href="<?= base_url('hakim/hakim') ?>">Dasbor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'Banding' ? 'active' : '' ?>" href="<?= base_url('ViewHakim/banding/') ?>">Banding</a>
+                        <a class="nav-link <?= $judul == 'Banding' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/banding/') ?>">Banding</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled <?= $judul == 'Ekasaminasi' ? 'active' : '' ?>" href="<?= base_url('viewhakim/eksaminasi/') ?>">Eksaminasi</a>
+                        <a class="nav-link disabled <?= $judul == 'Ekasaminasi' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/eksaminasi/') ?>">Eksaminasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  disabled<?= $judul == 'laper' ? 'active' : '' ?>" href="<?= base_url('viewhakim/laper/') ?>">Laporan Perkara</a>
+                        <a class="nav-link  disabled<?= $judul == 'laper' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/laper/') ?>">Laporan Perkara</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
