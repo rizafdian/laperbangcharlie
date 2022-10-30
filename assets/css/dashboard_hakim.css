@@ -1,0 +1,68 @@
+/* all version */
+body{
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.bg-satu{
+    background-color: #206A5D;
+}
+.bg-satu-dark{
+    background-color: #1d5f53;
+}
+.bg-dua{
+    background-color: #81B214;
+}
+.bg-dua-dark{
+    background-color: #719e0f;
+}
+.bg-tiga{
+    background-color: #FFCC29;
+}
+.bg-tiga-dark{
+    background-color: #be9a21;
+}
+.bg-empat{
+    background-color: #F58634;
+}
+.bg-empat-dark{
+    background-color: #e07c35;
+}
+
+.garis-bawah{
+    border-bottom-style: solid;
+    border-bottom-color: #81B214;
+
+}
+
+.text-satu {
+    color:#206A5D ;
+}
+.text-dua {
+    color:#81B214 ;
+}
+.text-tiga {
+    color:#FFCC29 ;
+}
+.text-empat {
+    color:#F58634 ;
+}
+
+.bg-gradient-satu{
+    background: rgb(32,106,93);
+    background: linear-gradient(277deg, rgba(32,106,93,1) 0%, rgba(129,178,20,1) 76%, rgba(255,204,41,1) 100%);
+
+}
+
+.drop-shadow {
+    filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+
+
+
+
+/* desktop version  */
+@media (min-width: 992px) {
+
+
+
+}
