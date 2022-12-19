@@ -16,41 +16,41 @@ $user = $userprofile[0];
                             <img src="<?= base_url('assets/img/') ?>user.svg" alt="" class="img-fluid" style="width: 30%;">
                             <h5>My Profile</h5>
                         </div>
+                        <?php foreach ($userprofile as $profile) : ?>
+                            <form>
+                                <input type="text" id="profile-id" hidden='true'>
+                                <div class="mb-1">
+                                    <small class="text-success">
+                                        <label for="profile-name" class="form-label">Nama</label>
+                                    </small>
+                                    <input type="text" class="form-control" id="profile-name" value="<?= $profile['nama'] ?>">
+                                </div>
+                                <div class="mb-1">
+                                    <small class="text-success">
+                                        <label for="profile-email" class="form-label">email</label>
+                                    </small>
+                                    <input type="email" class="form-control" id="profile-email" value="<?= $profile['email'] ?>">
+                                </div>
+                                <div class=" mb-1">
+                                    <small class="text-success">
+                                        <label for="profile-username" class="form-label">Username</label>
+                                    </small>
+                                    <input type="text" class="form-control text-secondary" id="profile-username" value="<?= $profile['username'] ?>" disabled>
+                                </div>
+                                <div class=" mb-1">
+                                    <small class="text-success">
+                                        <label for="profile-since" class="form-label">Aktif Sejak</label>
+                                    </small>
+                                    <input type="text" class="form-control text-secondary" id="profile-since" value="<?= $profile['data_created'] ?>" disabled>
+                                </div>
 
-                        <form>
-                            <input type="text" id="profile-id" hidden='true'>
-                            <div class="mb-1">
-                                <small class="text-success">
-                                    <label for="profile-name" class="form-label">Nama</label>
-                                </small>
-                                <input type="text" class="form-control" id="profile-name">
-                            </div>
-                            <div class="mb-1">
-                                <small class="text-success">
-                                    <label for="profile-email" class="form-label">email</label>
-                                </small>
-                                <input type="email" class="form-control" id="profile-email">
-                            </div>
-                            <div class=" mb-1">
-                                <small class="text-success">
-                                    <label for="profile-username" class="form-label">Username</label>
-                                </small>
-                                <input type="text" class="form-control text-secondary" id="profile-username" disabled>
-                            </div>
-                            <div class=" mb-1">
-                                <small class="text-success">
-                                    <label for="profile-since" class="form-label">Aktif Sejak</label>
-                                </small>
-                                <input type="text" class="form-control text-secondary" id="profile-since" disabled>
-                            </div>
 
+                                <div class=" d-grid gap-2 col-3 mx-auto">
+                                    <button class="btn btn-success mt-3" type="button" id="profile-save">Simpan</button>
+                                </div>
 
-                            <div class=" d-grid gap-2 col-3 mx-auto">
-                                <button class="btn btn-success mt-3" type="button" id="profile-save">Simpan</button>
-                            </div>
-
-                        </form>
-
+                            </form>
+                        <?php endforeach; ?>
 
                     </div>
                 </div>

@@ -34,6 +34,10 @@
                         Pilih Tahun
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
+
+                        <li>
+                            <a class="dropdown-item" href="<?= base_url('admin/Adminlaper/rekap_triwulan'); ?>">All</a>
+                        </li>
                         <?php foreach ($years as $y) : ?>
 
                             <li><a class="dropdown-item" href="<?php echo base_url(); ?>admin/adminlaper/rekap_triwulan_year/<?php echo $y['periode_tahun'];  ?>" value="1"><?php echo $y['periode_tahun']; ?></a></li>

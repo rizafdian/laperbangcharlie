@@ -111,9 +111,7 @@
                                     </td>
 
                                     <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-normal">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>" class="fas fa-download"></a>
-                                        </span>
+                                        <a class="text-secondary text-xs font-weight-normal" href="<?php echo base_url() ?>admin/adminlaper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>"> <i class="fas fa-download"></i></a>
 
                                     </td>
                                     <td class="align-middle text-center">

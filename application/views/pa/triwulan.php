@@ -2,17 +2,31 @@
     <div class="col text-center">
         <h6 class="d-block">Laporan Triwulan Tahun 2022</h6>
         <!-- dropdown start -->
-        <div class="d-flex justify-content-center">
+        <div>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Pilih Tahun
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">2022</a></li>
-                    <li><a class="dropdown-item" href="#">2023</a></li>
-                    <li><a class="dropdown-item" href="#">2024</a></li>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
+                    <li>
+                        <a class="dropdown-item" href="<?= base_url('pa/PA_laper/triwulan'); ?>">All</a>
+                    </li>
+
+                    <?php foreach ($years as $y) : ?>
+
+                        <li>
+                            <a class="dropdown-item" href="<?php echo base_url('pa/PA_laper/triwulan_search_year/'); ?><?= $y['year'];  ?>"><?= $y['year']; ?></a>
+                        </li>
+
+
+                    <?php endforeach; ?>
                 </ul>
             </div>
+
+
+
+
+
         </div>
         <!-- dropdown end -->
     </div>

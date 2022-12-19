@@ -461,6 +461,225 @@ class Banding extends CI_Controller
         redirect('pa/banding/banding');
     }
 
+    function multiple_uploadB()
+    {
+
+        $pengedit = $this->session->userdata('nama');
+
+        $config['upload_path']          = "./files/bundle_b";
+        $config['allowed_types']        = 'pdf|rtf';
+        $config['max_size']             = 80024;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        //untuk upload file 1 dan seterusnya.....
+
+        if (($_FILES['file1']['name']) == null && ($_FILES['file2']['name']) == null && ($_FILES['file3']['name']) == null && ($_FILES['file4']['name']) == null
+            && ($_FILES['file5']['name']) == null && ($_FILES['file6']['name']) == null && ($_FILES['file7']['name']) == null && ($_FILES['file8']['name']) == null
+            && ($_FILES['file9']['name']) == null && ($_FILES['file10']['name']) == null && ($_FILES['file11']['name']) == null && ($_FILES['file12']['name']) == null
+            && ($_FILES['file13']['name']) == null && ($_FILES['file14']['name']) == null && ($_FILES['file15']['name']) == null && ($_FILES['file16']['name']) == null
+            && ($_FILES['file17']['name']) == null && ($_FILES['file18']['name']) == null
+        ) {
+            $this->session->set_flashdata('msg', 'Tidak ada file yang di upload');
+            redirect('banding/');
+        } else {
+            if (($_FILES['file1']['name'])) {
+                if ($this->upload->do_upload('file1')) {
+                    $salinan_putusan_pa = $this->upload->data("file_name");
+                    $this->db->set('salinan_putusan_pa', $salinan_putusan_pa);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Surat kuasa dari kedua belah pihak gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file2']['name'])) {
+                if ($this->upload->do_upload('file2')) {
+                    $skbundleb = $this->upload->data("file_name");
+                    $this->db->set('sk_bundelb', $skbundleb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Surat kuasa dari kedua belah pihak gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file3']['name'])) {
+                if ($this->upload->do_upload('file3')) {
+                    $akta_banding = $this->upload->data("file_name");
+                    $this->db->set('akta_banding', $akta_banding);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Akta banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file4']['name'])) {
+                if ($this->upload->do_upload('file4')) {
+                    $akta_penerimaan_mb = $this->upload->data("file_name");
+                    $this->db->set('akta_penerimaan_mb', $akta_penerimaan_mb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Akta penerimaan memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file5']['name'])) {
+                if ($this->upload->do_upload('file5')) {
+                    $memori_banding = $this->upload->data("file_name");
+                    $this->db->set('memori_banding', $memori_banding);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file6']['name'])) {
+                if ($this->upload->do_upload('file6')) {
+                    $akta_pemberitahuan_banding = $this->upload->data("file_name");
+                    $this->db->set('akta_pemberitahuan_banding', $akta_pemberitahuan_banding);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Akta pemberitahuan banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file7']['name'])) {
+                if ($this->upload->do_upload('file7')) {
+                    $pemberitahuan_penyerahan_mb = $this->upload->data("file_name");
+                    $this->db->set('pemberitahuan_penyerahan_mb', $pemberitahuan_penyerahan_mb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Pemberitahuan penyerahan memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file8']['name'])) {
+                if ($this->upload->do_upload('file8')) {
+                    $akta_penerimaankontra_mb = $this->upload->data("file_name");
+                    $this->db->set('akta_penerimaankontra_mb', $akta_penerimaankontra_mb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Akta penerimaan kontra memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file9']['name'])) {
+                if ($this->upload->do_upload('file9')) {
+                    $kontra_mb = $this->upload->data("file_name");
+                    $this->db->set('kontra_mb', $kontra_mb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Kontra memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file10']['name'])) {
+                if ($this->upload->do_upload('file10')) {
+                    $pemberitahuan_penyerahankontra_mb = $this->upload->data("file_name");
+                    $this->db->set('pemberitahuan_penyerahankontra_mb', $pemberitahuan_penyerahankontra_mb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Pemberitahuan penyerahan kontra memori banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file11']['name'])) {
+                if ($this->upload->do_upload('file11')) {
+                    $relaas_periksa_berkas_pb = $this->upload->data("file_name");
+                    $this->db->set('relaas_periksa_berkas_pb', $relaas_periksa_berkas_pb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Relaas pemberitahuan untuk memeriksa (Inzage) berkas perkara banding gagal');
+                    redirect('banding/');
+                }
+            }
+            if (($_FILES['file12']['name'])) {
+                if ($this->upload->do_upload('file12')) {
+                    $sk_khusus = $this->upload->data("file_name");
+                    $this->db->set('sk_khusus', $sk_khusus);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Surat kuasa khusus gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file13']['name'])) {
+                if ($this->upload->do_upload('file13')) {
+                    $bukt_pengiriman_bpb = $this->upload->data("file_name");
+                    $this->db->set('bukt_pengiriman_bpb', $bukt_pengiriman_bpb);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Bukti pengiriman biaya perkara banding gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file14']['name'])) {
+                if ($this->upload->do_upload('file14')) {
+                    $bukti_setor_bp_kasnegara = $this->upload->data("file_name");
+                    $this->db->set('bukti_setor_bp_kasnegara', $bukti_setor_bp_kasnegara);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload data Bukti setor biaya pendaftaran ke kas negara gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file15']['name'])) {
+                if ($this->upload->do_upload('file15')) {
+                    $surat_lainnya_b = $this->upload->data("file_name");
+                    $this->db->set('surat_lainnya_b', $surat_lainnya_b);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload surat lainnya gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file16']['name'])) {
+                if ($this->upload->do_upload('file16')) {
+                    $salinan_putusan_pa_rtf = $this->upload->data("file_name");
+                    $this->db->set('salinan_putusan_pa_rtf', $salinan_putusan_pa_rtf);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload salinan putusan.rtf gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file17']['name'])) {
+                if ($this->upload->do_upload('file17')) {
+                    $memori_banding_rtf = $this->upload->data("file_name");
+                    $this->db->set('memori_banding_rtf', $memori_banding_rtf);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload memori banding.rtf gagal');
+                    redirect('banding/');
+                }
+            }
+
+            if (($_FILES['file18']['name'])) {
+                if ($this->upload->do_upload('file18')) {
+                    $kontra_mb_rtf = $this->upload->data("file_name");
+                    $this->db->set('kontra_mb_rtf', $kontra_mb_rtf);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload kontra memori banding.rtf gagal');
+                    redirect('banding/');
+                }
+            }
+        }
+
+        $id_perkara = $this->input->post('id_perkara');
+        $this->db->where('id_perkara', $id_perkara);
+        $this->db->update('list_perkara');
+        $this->session->set_flashdata('message', 'berhasil upload bundel B');
+
+        $audittrail = array(
+            'log_id' => '',
+            'isi_log' => "User <b>" . $pengedit . "</b> telah upload berkas bundel B pada id perkara <b>" . $id_perkara . "</b>",
+            'nama_log' => $pengedit
+        );
+
+        $this->db->set('rekam_log', 'NOW()', FALSE);
+        $this->db->insert('log_audittrail', $audittrail);
+
+        redirect('pa/banding/banding');
+    }
+
     public function download_putusan($id)
     {
         $data['perkara'] = $this->db->get_where('list_perkara', ['id_perkara' => $id])->result_array();
@@ -469,8 +688,8 @@ class Banding extends CI_Controller
         if ($data['perkara'][0]['putusan_banding'] != null) {
             force_download('files/putusan/' . $data['perkara'][0]['putusan_banding'], NULL);
         } else {
-            $this->session->set_flashdata('msg', 'Belum ada file putusan');
-            redirect('pa/banding/');
+            $this->session->set_flashdata('message', 'Belum ada file putusan');
+            redirect('pa/banding/banding');
         }
     }
 }

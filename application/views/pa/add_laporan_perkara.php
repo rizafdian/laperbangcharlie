@@ -19,7 +19,7 @@
                     <div class="mb-3 row">
                         <label for="upload_pdf" class="col-sm-2 col-form-label">Upload File PDF</label>
                         <div class="col-sm-10">
-                            <input type="file" name="file1" class="form-control" id="upload_pdf" accept=".pdf">
+                            <input type="file" name="file1" class="form-control" id="upload_pdf" accept=".pdf" required>
                             <div class="form-text text-danger"><?= form_error('file1') ?></div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="mb-3 row">
                         <label for="upload_zip" class="col-sm-2 col-form-label">Upload File Excel</label>
                         <div class="col-sm-10">
-                            <input type="file" name="file2" class="form-control" id="upload_zip" accept=".xls,.xlsx">
+                            <input type="file" name="file2" class="form-control" id="upload_zip" accept=".xls,.xlsx" required>
                             <div class="form-text text-danger"><?= form_error('file2') ?></div>
                         </div>
                     </div>

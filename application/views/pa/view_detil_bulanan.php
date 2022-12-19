@@ -83,8 +83,8 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-normal">
-                                            <a href="<?= base_url() . 'files/files_laporan/' . $laporan['0']['kode_pa'] ?> <?= $laporan['0']['periode'] ?>/<?= $laporan['0']['laper_pdf'] ?>" target="_blank"><i class="fas fa-file-pdf text-secondary"></i></a> |
-                                            <a href="<?php echo base_url() ?>pa/PA_laper/download_xls/<?= $laporan['0']['id'] ?>"><i class="fas fa-file-excel text-secondary"></i></a>
+                                            <a href="<?= base_url() . 'files/laporan_perkara/' . $laporan['0']['kode_pa'] ?> <?= $laporan['0']['periode'] ?>/<?= $laporan['0']['laper_pdf'] ?>" target="blank"><i class="fas fa-file-pdf text-secondary"></i></a> |
+                                            <a href="<?= base_url() . 'files/laporan_perkara/' . $laporan['0']['kode_pa'] ?> <?= $laporan['0']['periode'] ?>/<?= $laporan['0']['laper_xls'] ?>" target="blank"><i class="fas fa-file-excel text-secondary"></i></a>
                                         </span>
                                     </td>
                                     <td class="align-middle text-center">
@@ -106,15 +106,15 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <?php if ($lhs['status'] == "Belum Validasi") : ?>
-                                            <span id="validate" class="text-white bg-gradient-danger text-xs font-weight-normal">
+                                            <span id="validate" class="text-white bg-danger text-xs font-weight-normal">
                                                 <?php echo $lhs['status']; ?>
                                             </span>
                                         <?php elseif ($lhs['status'] == "Revisi") : ?>
-                                            <span id="validate" class="text-white bg-gradient-dark text-xs font-weight-normal">
+                                            <span id="validate" class="text-white bg-dark text-xs font-weight-normal">
                                                 <?php echo $lhs['status']; ?>
                                             </span>
                                         <?php else : ?>
-                                            <span id="validate" class="text-white bg-gradient-success text-xs font-weight-normal">
+                                            <span id="validate" class="text-white bg-success text-xs font-weight-normal">
                                                 <?php echo $lhs['status']; ?>
                                             </span>
                                         <?php endif; ?>
@@ -153,6 +153,7 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -175,24 +176,24 @@
             <div class="modal-body">
                 <!-- form start -->
                 <?php foreach ($laporan as $lp) : ?>
-                    <form method="POST" action="<?php echo base_url('PA_laper/revisi_laporan_perkara'); ?>" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo base_url('pa/PA_laper/revisi_laporan_perkara'); ?>" enctype="multipart/form-data">
 
                         <input type="hidden" class="form-controll" value="<?php echo $lp['id'] ?>" name="id">
                         <input type="hidden" class="form-controll" value="<?php echo $lp['periode'] ?>" name="periode">
 
                         <div class="input-group input-group-static my-3">
                             <label for="upload-pdf">Upload file PDF</label>
-                            <input id="upload-pdf" type="file" name="file1" class="form-control">
+                            <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf" required>
                         </div>
                         <div class="input-group input-group-static my-3">
-                            <label for="upload-zip">Upload file ZIP/XLS</label>
-                            <input id="upload-zip" type="file" name="file2" class="form-control">
+                            <label for="upload-zip">Upload file XLS</label>
+                            <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls,.xlsx" required>
                         </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn bg-gradient-primary">Simpan</button>
+                <button type="button" class="text-white btn bg-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="text-white btn bg-primary">Simpan</button>
             </div>
             </form>
         <?php endforeach; ?>

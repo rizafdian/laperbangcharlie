@@ -105,7 +105,7 @@
                                 <label class="form-label">File PDF</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf">
+                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -113,7 +113,7 @@
                                 <label class="form-label">File Excel</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls,.xlsx">
+                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls,.xlsx" required>
                             </div>
                         </div>
 
@@ -149,7 +149,7 @@
                                 <label class="form-label">File PDF</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf">
+                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -157,7 +157,7 @@
                                 <label class="form-label">File Excel</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx">
+                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx" required>
                             </div>
                         </div>
 
@@ -194,7 +194,7 @@
                                 <label class="form-label">File PDF</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf">
+                                <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -202,7 +202,7 @@
                                 <label class="form-label">File Excel</label>
                             </div>
                             <div class="col">
-                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx">
+                                <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx" required>
                             </div>
                         </div>
 

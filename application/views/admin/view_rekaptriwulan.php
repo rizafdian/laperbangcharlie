@@ -88,8 +88,13 @@
                                     <td class="align-middle text-center">
 
                                         <span class="text-secondary text-xs font-weight-normal">
-                                            <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
-                                            <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
+                                            <?php if ($lhs['lap_pdf'] == null && $lhs['lap_xls'] == null) : ?>
+                                                <a href="<?php echo base_url() ?>admin/adminlaper/file_not_found" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
+                                                <a href="<?php echo base_url() ?>admin/adminlaper/file_not_found" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
+                                            <?php else : ?>
+                                                <a href="<?= base_url('files/rekap_laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
+                                                <a href="<?= base_url('files/rekap_laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
+                                            <?php endif; ?>
                                         </span>
                                     </td>
                                 </tr>
@@ -127,7 +132,7 @@
                                     <label class="form-label">File PDF</label>
                                 </div>
                                 <div class="col">
-                                    <input type="file" name="file_pdf" class="form-control form-control-sm" placeholder="tes">
+                                    <input type="file" name="file_pdf" class="form-control form-control-sm" placeholder="tes" accept=".pdf" required>
                                 </div>
                             </div>
                             <div class="input-group input-group-sm input-group-outline my-3">
@@ -135,7 +140,7 @@
                                     <label class="form-label">File Excel</label>
                                 </div>
                                 <div class="col">
-                                    <input type="file" name="file_excel" class="form-control form-control-sm" placeholder="tes">
+                                    <input type="file" name="file_excel" class="form-control form-control-sm" placeholder="tes" accept=".xls,.xlsx" required>
                                 </div>
                             </div>
                     </div>
