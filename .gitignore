@@ -42,7 +42,7 @@ application/config/database.php
 /files/files_laporan/*
 /files/qrcodeimg/*
 /files/SuratPengantar/*
-/files/laporan_triwulan/
+# /files/laporan_triwulan/
 
 ##/files/bundle_a
 ##/files/bundle_b
