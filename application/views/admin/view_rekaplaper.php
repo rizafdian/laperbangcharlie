@@ -35,6 +35,10 @@
                             Pilih Tahun
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
+
+                            <li>
+                                <a class="dropdown-item" href="<?= base_url('admin/Adminlaper/rekap_laporan'); ?>">All</a>
+                            </li>
                             <?php foreach ($years as $y) : ?>
 
                                 <li><a class="dropdown-item" href="<?php echo base_url(); ?>admin/adminlaper/rekap_search_year/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>
@@ -77,13 +81,13 @@
                                     <div class="input-group mb-2">
                                         <label for="upload-pdf" class="col-md-4">Upload file PDF</label>
                                         <div class="col-md-8">
-                                            <input id="upload-pdf" type="file" name="file1" class="form-control">
+                                            <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf" required>
                                         </div>
                                     </div>
                                     <div class="input-group mb-2">
                                         <label for="upload-zip" class="col-md-4">Upload file XLS</label>
                                         <div class="col-md-8">
-                                            <input id="upload-zip" type="file" name="file2" class="form-control">
+                                            <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls,.xlsx" required>
                                         </div>
                                     </div>
 
@@ -285,15 +289,15 @@
         </div>
 
         <!-- viewdocument Modal start -->
-        <?php foreach ($all as $one) : ?>
+        <!-- <?php foreach ($all as $one) : ?>
             <div class="modal fade" id="viewdocumentModal<?= $one['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-fullscreen" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title font-weight-normal" id="exampleModalLabel">View Document</h5>
-                            <!-- <button type="button" class="btn bg-gradient-success">
+                            <button type="button" class="btn bg-gradient-success">
                             Download Excel
-                        </button> -->
+                        </button>
                             <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -313,7 +317,7 @@
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php endforeach; ?> -->
         <!-- viewdocument modal end -->
 
     </div>

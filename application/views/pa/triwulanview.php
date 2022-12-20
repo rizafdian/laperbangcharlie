@@ -101,10 +101,10 @@
                                 <td class="align-middle text-center">
 
                                     <span class="text-secondary text-xs font-weight-normal">
-                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="text-decoration-none text-secondary">
+                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" class="text-decoration-none text-secondary" target="blank">
                                             <i class="fas fa-file-pdf"></i>
                                         </a> |
-                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" class="text-decoration-none text-secondary">
+                                        <a href="<?= base_url('files/laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" class="text-decoration-none text-secondary" target="blank">
                                             <i class="fas fa-file-excel"></i>
                                         </a>
                                     </span>
@@ -112,7 +112,7 @@
 
                                 <td class="text-secondary align-middle text-center">
                                     <span class="text-success text-xs font-weight-normal">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#catatanModalbaru<?= $lhs['id_triwulan']; ?>" class="text-decoration-none text-secondary"><i class="fas fa-clipboard"></i></a>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#catatanModalbaru<?= $lhs['id_triwulan'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-clipboard"></i></a>
                                     </span>
                                 </td>
 
@@ -135,15 +135,15 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <?php if ($lhs['status_validasi'] == "Belum Validasi") : ?>
-                                        <span id="validate" class="text-white bg-gradient-danger text-xs font-weight-normal">
+                                        <span id="validate" class="text-white bg-danger text-xs font-weight-normal">
                                             <?php echo $lhs['status_validasi']; ?>
                                         </span>
-                                    <?php elseif ($lhs['status'] == "Revisi") : ?>
-                                        <span id="validate" class="text-white bg-gradient-warning text-xs font-weight-normal">
-                                            <?php echo $lhs['status']; ?>
+                                    <?php elseif ($lhs['status_validasi'] == "Revisi") : ?>
+                                        <span id="validate" class="text-white bg-dark text-xs font-weight-normal">
+                                            <?php echo $lhs['status_validasi']; ?>
                                         </span>
                                     <?php else : ?>
-                                        <span id="validate" class="text-white bg-gradient-success text-xs font-weight-normal">
+                                        <span id="validate" class="text-white bg-success text-xs font-weight-normal">
                                             <?php echo $lhs['status_validasi']; ?>
                                         </span>
                                     <?php endif; ?>
@@ -162,11 +162,11 @@
 
 
 
-<!-- inimodal catatan nda bisa jalan riz -->
+<!-- inimodal catatan sudah bisa jalan om riyan -->
 <!-- catatanModal start -->
-<!-- karena $lhs['id_triwulan'] yg ada di modal ini beda dengan $lhs['id_triwulan'] yang ada di table yang jadi trigernya -->
-<?php foreach ($catatan as $lhs) : ?>
-    <div class="modal fade" id="catatanModalbaru<?= $lhs['id_triwulan']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+
+<?php foreach ($laporan as $lhs) : ?>
+    <div class="modal fade" id="catatanModalbaru<?= $lhs['id_triwulan'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -175,14 +175,18 @@
                 </div>
                 <div class="modal-body">
 
-
-                    <div class="card card-frame mb-2">
-                        <div class="card-body">
-                            <h6><?php echo $lhs['tgl_catatan']; ?></h6>
-                            <p><?php echo $lhs['catatan']; ?></p>
-                        </div>
-                    </div>
-
+                    <?php foreach ($catatan as $ct) : ?>
+                        <?php if ($ct['id_triwulan'] == $lhs['id_triwulan']) : ?>
+                            <div class="card card-frame mb-2">
+                                <div class="card-body">
+                                    <h6><?php echo $ct['tgl_catatan']; ?></h6>
+                                    <p><?php echo $ct['catatan']; ?></p>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php
+                    endforeach;
+                    ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -193,6 +197,7 @@
 <?php
 endforeach;
 ?>
+
 <!-- catatan modal end -->
 
 <!-- modal -->
@@ -218,11 +223,11 @@ endforeach;
 
                         <div class="input-group input-group-static my-3">
                             <label for="upload-pdf">Upload file PDF</label>
-                            <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf">
+                            <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf" required>
                         </div>
                         <div class="input-group input-group-static my-3">
                             <label for="upload-zip">Upload file XLS</label>
-                            <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls, .xlsx">
+                            <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls, .xlsx" required>
                         </div>
 
                 </div>

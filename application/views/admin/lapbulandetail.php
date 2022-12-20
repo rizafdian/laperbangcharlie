@@ -90,10 +90,10 @@
                                     </td>
                                     <td class="align-middle text-center">
 
-                                        <a class="text-decoration-none text-secondary" href="<?= base_url('files/files_laporan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['laper_pdf'] ?>" target="_blank">
+                                        <a class="text-decoration-none text-secondary" href="<?= base_url('files/laporan_perkara/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['laper_pdf'] ?>" target="_blank">
                                             <i class="fas fa-file-pdf"></i> |
                                         </a>
-                                        <a class="text-decoration-none text-secondary" href="<?php echo base_url('files/files_laporan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['laper_xls'] ?>" target="_blank">
+                                        <a class="text-decoration-none text-secondary" href="<?php echo base_url('files/laporan_perkara/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['laper_xls'] ?>" target="_blank">
                                             <i class="fas fa-file-excel"></i>
                                         </a>
 

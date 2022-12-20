@@ -67,7 +67,7 @@ class Auth extends CI_Controller
                         } elseif ($user['role_id'] == 4) {
                             redirect('panmud/panmud');
                         } else {
-                            redirect('pp/pp');
+                            redirect('pp/panitera_pengganti');
                         }
                     } else {
                         $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Password salah</div>');

@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-3 text-success <?= $perkara['0']['sp_perkara'] ? '' : 'd-none' ?> ">
                                     <span class="text-satu"> <i class="fas fa-paperclip"></i></span>
-                                    <a href="<?= base_url('files/suratpengantar/') . $perkara['0']['sp_perkara'] ?>" class="text-decoration-none text-reset" target="_blank">
+                                    <a href="<?= base_url('files/SuratPengantar/') . $perkara['0']['sp_perkara'] ?>" class="text-decoration-none text-reset" target="_blank">
                                         <?= $perkara['0']['sp_perkara'] ?>
                                     </a>
                                 </div>

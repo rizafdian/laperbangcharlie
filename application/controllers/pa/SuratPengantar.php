@@ -1,4 +1,7 @@
 <?php
+
+use PhpOffice\PhpWord\TemplateProcessor;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 
@@ -28,6 +31,7 @@ class SuratPengantar extends CI_Controller
         $params['savename'] = FCPATH . 'files/qrcodeimg/qr_' . $id . '.png';
         $this->ciqrcode->generate($params);
 
+        require_once APPPATH . 'libraries/vendor/autoload.php';
         //tentukan template yang mau digunakan, sesuaikan dengan ID PA yang masuk
         switch ($this->session->userdata('id')) {
             case '2':
