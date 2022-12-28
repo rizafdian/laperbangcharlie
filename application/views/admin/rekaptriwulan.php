@@ -23,7 +23,7 @@
 
     <div class="row">
         <div class="col text-center">
-            <h6 class="d-block">Rekap Laporan Perkara <br> Tahun <script>
+            <h6 class="d-block">Rekap Laporan Triwulan <br> Tahun <script>
                     document.write(new Date().getFullYear())
                 </script>
             </h6>
@@ -55,6 +55,9 @@
     <div class="row">
         <div class="col">
             <!-- button -->
+            <!-- <a class="btn btn-success btn-sm my-3" href="<?php echo base_url() ?>admin/adminlaper/v_add_rekap_triwulan/" role="button">
+                Tambah Rekap Laporan Triwulan
+            </a> -->
             <button type="button" class="btn btn-success btn-sm my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Tambah Rekap Laporan Triwulan
             </button>
