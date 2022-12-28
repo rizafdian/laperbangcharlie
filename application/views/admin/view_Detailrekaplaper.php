@@ -1,7 +1,8 @@
+<main>
 <!-- contonet start -->
-<div class="container-fluid py-4 mx-4">
+<div class="container-fluid py-4 px-5">
 
-    <?php foreach ($triwulan as $lp) : ?>
+    <?php foreach ($laporan as $lp) : ?>
         <div class="row bg-gray-400 justify-content-start">
 
         <div class="row mt-3">
@@ -12,18 +13,18 @@
                     <p>:</p>
                 </div>
                 <div class="col-md-auto">
-                    <p><?php echo $this->session->userdata('nama'); ?></p>
+                    <p><?php echo $lp['nama']; ?></p>
                 </div>
             </div>
             <div class="row mt-n3">
                 <div class="col-md-2">
-                    <p class="fw-bold">Laporan Triwulan</p>
+                    <p class="fw-bold">Periode</p>
                 </div>
                 <div class="col-md-auto">
                     <p>:</p>
                 </div>
                 <div class="col-md-auto">
-                    <p><?php echo $lp['berkas_laporan']; ?></p>
+                    <p><?php echo date('M Y', strtotime($lp['periode'])); ?></p>
                 </div>
             </div>
             <div class="row mt-n3">
@@ -34,7 +35,7 @@
                     <p>:</p>
                 </div>
                 <div class="col-md-auto">
-                    <p><?php echo $lp['periode_tahun']; ?></p>
+                    <p><?php echo date('Y', strtotime($lp['periode'])); ?></p>
                 </div>
             </div>
         </div>
@@ -42,13 +43,6 @@
 
     <div class="row mt-5">
         <div class="col">
-
-            <?php foreach ($triwulan as $lhs) : ?>
-                <!-- button -->
-                <a class="btn btn-primary btn-sm mb-3" href="<?php echo base_url() ?>admin/adminlaper/zip_rekap_triwulan/<?= $lhs['id'] ?>">
-                    Download ZIP <i class="fas fa-download"></i>
-                </a>
-            <?php endforeach; ?>
 
             <!-- table start -->
             <div class="card">
@@ -60,6 +54,9 @@
                                     No</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                     Laporan</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Tanggal
+                                </th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Action
                                 </th>
@@ -82,23 +79,27 @@
                                     </td>
                                     <td>
                                         <div class="d-flex flex-column justify-content-center">
-                                            <p class="text-xs text-secondary mb-0"><?php echo $lhs['nm_laporan']; ?></p>
+                                            <h6 class="mb-0"><?php echo $lhs['periode']; ?></h6>
+                                            <p class="text-secondary mb-0">Rekap Lap Per <?php echo $lhs['periode']; ?></p>
                                         </div>
                                     </td>
                                     <td class="align-middle text-center">
+                                        <span class="text-secondary font-weight-normal"><?php echo $lhs['tgl_upload']; ?></span>
+                                    </td>
+                                    <td class="align-middle text-center">
                                         <span class="text-secondary text-xs font-weight-normal">
-                                            <a href="#!" data-bs-toggle="modal" data-bs-target="#triwulan<?= $lhs['id_triwulan'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-upload"></i></a>
+                                            <a href="#!" data-bs-toggle="modal" data-bs-target="#triwulan<?= $lhs['id'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-upload"></i></a>
                                         </span>
                                     </td>
                                     <td class="align-middle text-center">
 
                                         <span class="text-secondary text-xs font-weight-normal">
-                                            <?php if ($lhs['lap_pdf'] == null && $lhs['lap_xls'] == null) : ?>
+                                            <?php if ($lhs['rekap_pdf'] == null && $lhs['rekap_xls'] == null) : ?>
                                                 <a href="<?php echo base_url() ?>admin/adminlaper/file_not_found" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
                                                 <a href="<?php echo base_url() ?>admin/adminlaper/file_not_found" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
                                             <?php else : ?>
-                                                <a href="<?= base_url('files/rekap_laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_pdf'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
-                                                <a href="<?= base_url('files/rekap_laporan_triwulan/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['berkas_laporan'] ?> <?= $lhs['periode_tahun'] ?>/<?= $lhs['nm_laporan'] ?>/<?= $lhs['lap_xls'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
+                                                <a href="<?= base_url('files/rekap_laporan_perkara/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['rekap_pdf'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-pdf"></i></a> |
+                                                <a href="<?= base_url('files/rekap_laporan_perkara/') ?><?= $lhs['kode_pa'] ?> <?= $lhs['periode'] ?>/<?= $lhs['rekap_xls'] ?>" target="blank" class="text-decoration-none text-secondary"><i class="fas fa-file-excel"></i></a>
                                             <?php endif; ?>
                                         </span>
                                     </td>
@@ -116,28 +117,28 @@
 
     <!-- modal upload start -->
     <?php foreach ($laporan as $lhs) : ?>
-        <div class="modal fade" id="triwulan<?= $lhs['id_triwulan'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="triwulan<?= $lhs['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Laporan <?php echo $lhs['nm_laporan'] ?></h5>
+                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Update Laporan</h5>
                         <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="<?php echo base_url('admin/adminlaper/lap_RekapTriwulan'); ?>" enctype="multipart/form-data">
+                        <form method="POST" action="<?php echo base_url('admin/adminlaper/edit_rekap_laporan'); ?>" enctype="multipart/form-data">
 
-                            <input type="text" id="id_laper" name="id_triwulan" value="<?php echo $lhs['id_triwulan'] ?>" hidden>
-                            <input type="text" id="id_laper" name="tahun" value="<?php echo $lhs['periode_tahun'] ?>" hidden>
-                            <input type="text" id="id_laper" name="berkas_laporan" value="<?php echo $lhs['berkas_laporan'] ?>" hidden>
-                            <input type="text" id="id_laper" name="nm_laporan" value="<?php echo $lhs['nm_laporan'] ?>" hidden>
+                            <input type="text" id="id_laper" name="id" value="<?php echo $lhs['id'] ?>" hidden>
+                            <input type="text" id="id_laper" name="periode" value="<?php echo $lhs['periode'] ?>" hidden>
+                            <input type="text" id="id_laper" name="old_pdf" value="<?php echo $lhs['rekap_pdf'] ?>" hidden>
+                            <input type="text" id="id_laper" name="old_xls" value="<?php echo $lhs['rekap_xls'] ?>" hidden>
 
                             <div class="input-group input-group-sm input-group-outline my-3">
                                 <div class="col-3">
                                     <label class="form-label">File PDF</label>
                                 </div>
                                 <div class="col">
-                                    <input type="file" name="file_pdf" class="form-control form-control-sm" placeholder="tes" accept=".pdf" required>
+                                    <input type="file" name="file1" class="form-control form-control-sm" placeholder="tes" accept=".pdf">
                                 </div>
                             </div>
                             <div class="input-group input-group-sm input-group-outline my-3">
@@ -145,7 +146,7 @@
                                     <label class="form-label">File Excel</label>
                                 </div>
                                 <div class="col">
-                                    <input type="file" name="file_excel" class="form-control form-control-sm" placeholder="tes" accept=".xls,.xlsx" required>
+                                    <input type="file" name="file2" class="form-control form-control-sm" placeholder="tes" accept=".xls,.xlsx">
                                 </div>
                             </div>
                     </div>
@@ -187,3 +188,4 @@
 
 </div>
 <!-- content end -->
+</main>

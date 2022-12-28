@@ -32,7 +32,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pilih Tahun
+                            Pilih Tahun 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
 
@@ -136,7 +136,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '01') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -147,7 +147,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '02') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -159,7 +159,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '03') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -170,7 +170,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '04') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -181,7 +181,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '05') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -192,7 +192,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '06') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -203,7 +203,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '07') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -214,7 +214,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '08') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -225,7 +225,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '09') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -236,7 +236,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '10') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -247,7 +247,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '11') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 
@@ -258,7 +258,7 @@
                                 <?php foreach ($all as $one) : ?>
                                     <?php if (date('m', strtotime($one['periode'])) == '12') : ?>
                                         <div class="d-flex flex-column justifxy-content-center px-3">
-                                            <a href="<?php echo base_url() ?>admin/adminlaper/zip_file_rekap/<?= $one['id'] ?>">
+                                            <a href="<?php echo base_url() ?>admin/adminlaper/detail_rekap_laporan/<?= $one['id'] ?>">
                                                 <p class="text-xs text-center bg-success rounded text-white mb-0">√</p>
                                         </div>
 

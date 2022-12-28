@@ -159,6 +159,21 @@ class Adminlaper extends CI_Controller
         $this->load->view('admin/footer', $data);
     }
 
+    public function detail_rekap_laporan($id)
+    {
+        $data['judul'] = 'Rekap Laporan Bulanan';
+        $data['css'] = 'dashboard_admin.css';
+        $data['js'] = '';
+        $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
+
+        // var_dump($data);
+        // die;
+
+        $this->load->view('admin/header', $data);
+        $this->load->view('admin/view_Detailrekaplaper', $data);
+        $this->load->view('admin/footer', $data);
+    }
+
     public function rekap_search_year($year)
     {
         $data['judul'] = 'Rekap Laporan Bulanan';
@@ -234,32 +249,106 @@ class Adminlaper extends CI_Controller
         redirect('admin/adminlaper/rekap_laporan/');
     }
 
-
-    public function zip_file_rekap($id)
+    public function edit_rekap_laporan()
     {
-        $data['judul'] = '';
-        $data['css'] = 'dashboard_admin.css';
-        $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
-        $satker = $data['laporan'][0]['kode_pa'];
-        $periode = $data['laporan'][0]['periode'];
+        $id_rekap = $this->input->post('id', true);
+        $periode = $this->input->post('periode', true);
+        $old_pdf = $this->input->post('old_pdf', true);
+        $old_xls = $this->input->post('old_xls', true);
+        $tanggal = date('Y-m-d');
+        $satker = $this->session->userdata('kode_pa');
         $folder = "$satker $periode";
+        $path = "./files/rekap_laporan_perkara/$folder";
+        $path_pdf = "./files/rekap_laporan_perkara/$folder/".$old_pdf;
+        $path_xls = "./files/rekap_laporan_perkara/$folder/".$old_xls;
 
-        $path = "./files/rekap_laporan_perkara/$folder/";
-
-        if (file_exists($path)) {
-            $this->zip->read_dir($path, false);
-
-            // Download the file to your desktop
-            $this->zip->download("$folder.zip");
-        } else {
-            $this->session->set_flashdata('msg', 'Tidak ada File'); //kop pesannya
-            $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena Tidak ada filenya. !'); //isi pesannya.
-
-            $this->load->view('admin/header', $data);
-            $this->load->view('errors/view_message');
-            $this->load->view('admin/footer', $data);
+        if (!file_exists($path)) {
+            mkdir($path);
         }
+        $config['upload_path']          = $path;
+        $config['allowed_types']        = 'pdf|xls|xlsx';
+        $config['max_size']             = 5024;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if (($_FILES['file1']['name'] != null || $_FILES['file2']['name'] != null)) {
+            if (($_FILES['file1']['name'])) {
+                if ($this->upload->do_upload('file1')) {
+                    $lap_pdf = $this->upload->data("file_name");
+                    $this->db->set('rekap_pdf', $lap_pdf);
+                    unlink($path_pdf);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload file gagal');
+                    redirect('admin/adminlaper/rekap_laporan/');
+                    
+                }
+            }
+
+            if (($_FILES['file2']['name'])) {
+                if ($this->upload->do_upload('file2')) {
+                    $lap_xls = $this->upload->data("file_name");
+                    $this->db->set('rekap_xls', $lap_xls);
+                    unlink($path_xls);
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload file gagal');
+                    redirect('admin/adminlaper/rekap_laporan');
+                    // $error = array('error' => $this->upload->display_errors());
+                    // $this->load->view('banding/uploadbundle', $error);
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('msg', 'Tidak ada file yang di upload');
+            redirect('admin/adminlaper/rekap_laporan');
+        }
+
+        $data = [
+            'tgl_upload' => $tanggal
+        ];
+
+        $this->db->where('id', $id_rekap);
+        $this->db->update('rekap_laporan_perkara', $data);
+
+        $pengedit = $this->session->userdata('nama');
+
+        $audittrail = array(
+            'log_id' => '',
+            'isi_log' => "User <b>" . $pengedit . "</b> telah melakukan update rekap laporan perkara untuk periode <b>" . $periode . "</b>",
+            'nama_log' => $pengedit
+        );
+        $this->db->set('rekam_log', 'NOW()', FALSE);
+        $this->db->insert('log_audittrail', $audittrail);
+
+        $this->session->set_flashdata('msg', 'Upload file berhasil');
+
+        redirect('admin/adminlaper/rekap_laporan/');
     }
+
+    // public function zip_file_rekap($id)
+    // {
+    //     $data['judul'] = '';
+    //     $data['css'] = 'dashboard_admin.css';
+    //     $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
+    //     $satker = $data['laporan'][0]['kode_pa'];
+    //     $periode = $data['laporan'][0]['periode'];
+    //     $folder = "$satker $periode";
+
+    //     $path = "./files/rekap_laporan_perkara/$folder/";
+
+    //     if (file_exists($path)) {
+    //         $this->zip->read_dir($path, false);
+
+    //         // Download the file to your desktop
+    //         $this->zip->download("$folder.zip");
+    //     } else {
+    //         $this->session->set_flashdata('msg', 'Tidak ada File'); //kop pesannya
+    //         $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena Tidak ada filenya. !'); //isi pesannya.
+
+    //         $this->load->view('admin/header', $data);
+    //         $this->load->view('errors/view_message');
+    //         $this->load->view('admin/footer', $data);
+    //     }
+    // }
 
     public function triwulan()
     {
@@ -412,6 +501,15 @@ class Adminlaper extends CI_Controller
         $this->load->view('admin/rekaptriwulan', $data);
         $this->load->view('admin/footer', $data);
     }
+
+    // public function v_add_rekap_triwulan(){
+    //     $data['judul'] = 'Rekap Laporan Triwulan';
+    //     $data['css'] = 'dashboard_admin.css';
+
+    //     $this->load->view('admin/header', $data);
+    //     $this->load->view('admin/view_Addrekaptriwulan', $data);
+    //     $this->load->view('admin/footer', $data);
+    // }
 
     public function add_rekap_triwulan()
     {
