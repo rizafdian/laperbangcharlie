@@ -36,9 +36,9 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
 
-                            <li>
+                            <!-- <li>
                                 <a class="dropdown-item" href="<?= base_url('pp/Pp_laper/rekap_laporan'); ?>">All</a>
-                            </li>
+                            </li> -->
                             <?php foreach ($years as $y) : ?>
 
                                 <li><a class="dropdown-item" href="<?php echo base_url(); ?>pp/Pp_laper/rekap_search_year/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>
@@ -51,7 +51,7 @@
                 <!-- dropdown end -->
             </div>
         </div>
-
+        <br>
         <!-- modal start -->
         <!-- <div class="row">
             <div class="col">
@@ -273,7 +273,7 @@
         </div>
         <!-- table end -->
 
-        <div class="row mt-4">
+        <!-- <div class="row mt-4">
             <div class="col">
                 <div class="card card-frame">
                     <div class="card-body">
@@ -286,7 +286,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- viewdocument Modal start -->
         <!-- <?php foreach ($all as $one) : ?>

@@ -1,6 +1,9 @@
 <div class="row mt-5">
     <div class="col text-center">
-        <h6 class="d-block">Laporan Triwulan Tahun 2022</h6>
+        <h6 class="d-block">Laporan Triwulan Tahun <script>
+        document.write(new Date().getFullYear())
+        </script>
+        </h6>
         <!-- dropdown start -->
         <div>
             <div class="dropdown">

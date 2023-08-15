@@ -29,27 +29,29 @@
             </h6>
             <!-- dropdown start -->
             <div class="d-flex justify-content-center">
-                <div class="dropdown">
+                <di class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Pilih Tahun
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="tahun">
 
-                        <li>
+                        <!-- <li>
                             <a class="dropdown-item" href="<?= base_url('pp/Pp_laper/rekap_triwulan'); ?>">All</a>
-                        </li>
+                        </li> -->
                         <?php foreach ($years as $y) : ?>
 
-                            <li><a class="dropdown-item" href="<?php echo base_url(); ?>admin/adminlaper/rekap_triwulan_year/<?php echo $y['periode_tahun'];  ?>" value="1"><?php echo $y['periode_tahun']; ?></a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url(); ?>pp/Pp_laper/rekap_triwulan_year/<?php echo $y['periode_tahun'];  ?>" value="1"><?php echo $y['periode_tahun']; ?></a></li>
 
 
                         <?php endforeach; ?>
                     </ul>
-                </div>
+                </di
+                v>
             </div>
             <!-- dropdown end -->
         </div>
     </div>
+    <br>
 
     <!-- modal start -->
     <!-- <div class="row">
@@ -171,7 +173,7 @@
     </div>
     <!-- table end -->
 
-    <div class="row mt-4">
+    <!-- <div class="row mt-4">
         <div class="col">
             <div class="card card-frame">
                 <div class="card-body">
@@ -184,7 +186,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- viewdocument Modal start -->
     <?php foreach ($all as $one) : ?>

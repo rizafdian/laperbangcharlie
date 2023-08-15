@@ -59,6 +59,9 @@
                 <button type="button" class="btn btn-success btn-sm my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Tambah Rekap Laporan Perkara
                 </button>
+                <!-- <a type="button" class="btn btn-success btn-sm my-3" href="<?php echo base_url() ?>admin/adminlaper/send_message">
+                    Send Message
+                </a> -->
 
                 <!-- modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

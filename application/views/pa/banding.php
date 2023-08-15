@@ -1,6 +1,6 @@
 <div class="row mt-3">
 
-    <div class="col-lg-6 col-md-12">
+    
 
         <?php //session flash data
         if ($this->session->flashdata('message')) :
@@ -14,12 +14,14 @@
         //end flash data
         ?>
 
-        <div class="mt-5">
+        <div class="row mt-3">
+        <div class="col">
             <!-- Button trigger modal -->
             <a href="<?= base_url('pa/banding/tambahperkara'); ?>" class="btn btn-success mb-4">Tambah Perkara</a>
             <!-- button tambah perkara -->
+            <div class="mt-3">
             <div class="table-responsive">
-                <table class="table" id="tablePerkara">
+                <table class="table table-hover" id="tablePerkara">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -59,11 +61,13 @@
                     </tbody>
                 </table>
             </div>
+            </div>
+        </div>
         </div>
 
 
 
 
-    </div>
+    
 
 </div>
