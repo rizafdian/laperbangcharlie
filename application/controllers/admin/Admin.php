@@ -392,9 +392,9 @@ class Admin extends CI_Controller
         ),
         ));
 
-        // $response = curl_exec($curl);
+        $response = curl_exec($curl);
 
-        // curl_close($curl);
+        curl_close($curl);
         // echo $response;
     }
 
