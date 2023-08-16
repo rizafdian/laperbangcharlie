@@ -746,12 +746,10 @@ class Adminlaper extends CI_Controller
         ),
         ));
 
+        $response = curl_exec($curl);
+
+        curl_close($curl);
         redirect('admin/adminlaper/rekap_laporan');
-
-        // $response = curl_exec($curl);
-
-        // curl_close($curl);
-        // echo $response;
 
     }
 }
