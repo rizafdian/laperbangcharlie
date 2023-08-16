@@ -103,6 +103,7 @@ $(document).ready(function () {
     $('#listperkara').on('click', '.item_staper', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
         let id_perkara = data['id_perkara'];
+        let no_perkara = data['no_perkara_banding'];
 
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
