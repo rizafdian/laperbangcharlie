@@ -348,6 +348,9 @@ class Admin extends CI_Controller
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
 
+        var_dump($id_perkara);
+        die;
+
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara

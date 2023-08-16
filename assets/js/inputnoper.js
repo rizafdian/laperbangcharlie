@@ -3,8 +3,10 @@ $(document).ready(function () {
     console.log("ini inputt noper.js");
     //data table
     const path = window.location.origin;
+    // const prapath = window.location.origin;
+    // const path = `${prapath}/laperbangcharlie/`;
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}/admin/admin/get_data_banding/`,
+        "ajax": `${path}/admin/Admin/get_data_banding/`,
         "columns": [
             {
                 "data": null, "sortable": false,
@@ -182,7 +184,7 @@ $(document).ready(function () {
                     } else {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/admin/admin/updateStatus`,
+                            url: `${path}/admin/Admin/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
