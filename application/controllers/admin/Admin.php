@@ -349,7 +349,7 @@ class Admin extends CI_Controller
         $id_perkara = $this->input->post('id_perkara');
         
         $token = "sAZJpFT7ntDM4+!gJ+h-";
-        $target = $this->input->post('no_hp_penggugat');
+        $target = "6282111127319";
         $no_perkara = $this->input->post('no_perkara_banding');
 
         $data = [
