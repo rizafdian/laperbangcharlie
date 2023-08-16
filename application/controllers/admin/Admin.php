@@ -348,6 +348,7 @@ class Admin extends CI_Controller
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
         $no_perkara = $this->input->post('no_perkara_banding');
+        $target = $this->input->post('no_hp_penggugat');
 
         $data = [
             'id_perkara' => $id_perkara,
@@ -370,7 +371,7 @@ class Admin extends CI_Controller
 
         //API Notifikasi WA
         $token = "sAZJpFT7ntDM4+!gJ+h-";
-        $target = "6282111127319";
+       
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
