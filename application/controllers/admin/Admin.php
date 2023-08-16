@@ -347,10 +347,10 @@ class Admin extends CI_Controller
 
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
+        
+        $token = "sAZJpFT7ntDM4+!gJ+h-";
+        $target = $this->input->post('no_hp_penggugat');
         $no_perkara = $this->input->post('no_perkara_banding');
-
-        var_dump($no_perkara);
-        die;
 
         $data = [
             'id_perkara' => $id_perkara,
@@ -359,6 +359,33 @@ class Admin extends CI_Controller
 
         $this->db->where('id_perkara', $id_perkara);
         $array = $this->db->update('list_perkara', $data);
+
+        //API Notifikasi WA
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.fonnte.com/send',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array(
+        'target' => $target,
+        'message' => $no_perkara,
+
+        ),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: $token"
+        ),
+        ));
+
+        // $response = curl_exec($curl);
+
+        // curl_close($curl);
+        // echo $response;
 
         $audittrail = array(
             'log_id' => '',
