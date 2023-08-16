@@ -184,7 +184,7 @@ $(document).ready(function () {
                     } else {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/admin/Admin/updateStatus`,
+                            url: `${path}/admin/admin/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
