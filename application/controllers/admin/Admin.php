@@ -347,9 +347,6 @@ class Admin extends CI_Controller
 
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
-        
-        $token = "sAZJpFT7ntDM4+!gJ+h-";
-        $target = "6282111127319";
         $no_perkara = $this->input->post('no_perkara_banding');
 
         $data = [
@@ -360,7 +357,20 @@ class Admin extends CI_Controller
         $this->db->where('id_perkara', $id_perkara);
         $array = $this->db->update('list_perkara', $data);
 
+        $audittrail = array(
+            'log_id' => '',
+            'isi_log' => "User <b>" . $pengedit . "</b> telah input status perkara banding pada id perkara <b>" . $id_perkara . "</b>",
+            'nama_log' => $pengedit
+        );
+
+        $this->db->set('rekam_log', 'NOW()', FALSE);
+        $this->db->insert('log_audittrail', $audittrail);
+
+        json_encode($array);
+
         //API Notifikasi WA
+        $token = "sAZJpFT7ntDM4+!gJ+h-";
+        $target = "6282111127319";
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -374,7 +384,7 @@ class Admin extends CI_Controller
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
         'target' => $target,
-        'message' => $no_perkara,
+        'message' => 'Test API Send Message WA',
 
         ),
         CURLOPT_HTTPHEADER => array(
@@ -386,17 +396,6 @@ class Admin extends CI_Controller
 
         // curl_close($curl);
         // echo $response;
-
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah input status perkara banding pada id perkara <b>" . $id_perkara . "</b>",
-            'nama_log' => $pengedit
-        );
-
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
-
-        json_encode($array);
     }
 
     public function uploadPutusan()
