@@ -106,6 +106,8 @@ $(document).ready(function () {
         let no_perkara_banding = data['no_perkara_banding'];
         let no_hp_penggugat = data['no_hp_penggugat'];
 
+        console.log(id_perkara);
+
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
             title: 'Pilih status perkara',
