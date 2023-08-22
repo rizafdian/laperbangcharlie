@@ -107,6 +107,8 @@ $(document).ready(function () {
         let no_hp_penggugat = data['no_hp_penggugat'];
 
         console.log(id_perkara);
+        console.log(no_perkara_banding);
+        console.log(no_perkara_banding);
 
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
