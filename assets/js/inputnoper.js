@@ -102,9 +102,8 @@ $(document).ready(function () {
     //input status perkara
     $('#listperkara').on('click', '.item_staper', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
-        let data2 = list_perkara.row($(this).children('tr')).data();
         let id_perkara = data['id_perkara'];
-        let no_perkara_banding = data2['no_perkara_banding'];
+        let no_perkara_banding = document.querySelector('#baris-noper');
         let no_hp_penggugat = data['no_hp_penggugat'];
 
         console.log(id_perkara);
