@@ -17,6 +17,7 @@ $(document).ready(function () {
             { "data": "nama" },
             { "data": "tgl_register" },
             { "data": "nm_pihak_penggugat" },
+            { "data": "no_hp_penggugat" },
             { "data": "nm_pihak_tergugat" },
             { "data": "no_perkara" },
             { "data": "jns_perkara" },
