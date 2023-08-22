@@ -19,7 +19,7 @@
                                 <th>Nomor Perkara Tk.I</th>
                                 <th>Jenis Perkara</th>
                                 <th>Tanggal Register Banding</th>
-                                <th>Nomor Perkara Banding</th>
+                                <th id="baris-noper">Nomor Perkara Banding</th>
                                 <th>Status</th>
                                 <th style="width: 5%;">Lihat</th>
                             </tr>
