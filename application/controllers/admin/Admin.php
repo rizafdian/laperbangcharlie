@@ -376,10 +376,12 @@ class Admin extends CI_Controller
             $message = "Assamualaikum Wr Wb. 
 Berikut informasi perkara banding nomor: 
 " . $no_perkara . "
+
 1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
 2. Dengan status saat ini: " . $status_perkara . "
+
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
-________________________________________ 
+______________________________________________________________ 
 Ketik informasi untuk mengetahui perintah lainnya. 
 Sistem Informasi Pelayanan Perkara PTA Manado";
                 
