@@ -376,11 +376,12 @@ class Admin extends CI_Controller
             $message = "Assamualaikum Wr Wb. 
 Berikut informasi perkara banding nomor: 
 " . $no_perkara . "
-- Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
-- Dengan status saat ini: " . $status_perkara . "
-Ini adalah sistem pemberitahuan otomatis sesuai tahapan perkara banding anda. 
+1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+2. Dengan status saat ini: " . $status_perkara . "
+Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+________________________________________ 
 Ketik informasi untuk mengetahui perintah lainnya. 
-Terimakasih.";
+Sistem Informasi Pelayanan Perkara PTA Manado";
                 
             $curl = curl_init();
 
