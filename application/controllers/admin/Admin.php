@@ -385,7 +385,7 @@ class Admin extends CI_Controller
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
             'target' => $target,
-            'message' => "Assamualaikum Wr Wb. Dengan hormat diberitahukan Nomor Perkara Banding" . $no_perkara . "statusnya saat ini" . $status_perkara . "</b>" ,
+            'message' => "Assamualaikum Wr Wb. Dengan hormat diberitahukan Nomor Perkara Banding " . $no_perkara . " statusnya saat ini " . $status_perkara .,
 
             ),
             CURLOPT_HTTPHEADER => array(
