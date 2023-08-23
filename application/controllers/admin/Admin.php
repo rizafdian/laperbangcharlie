@@ -373,8 +373,14 @@ class Admin extends CI_Controller
            
         //API Notifikasi WA
             $token = "sAZJpFT7ntDM4+!gJ+h-";
-            $date = "Y-m-d";
-            $message = "Assamualaikum Wr Wb. <p> Berikut informasi perkara banding nomor: </p><p>" . $no_perkara . "</p><p> - Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "</p><P> - Dengan status saat ini: " . $status_perkara . "</P><p> Ini adalah sistem pemberitahuan otomatis sesuai tahapan perkara banding anda. </p><p> Ketik informasi untuk mengetahui perintah lainnya. </p><p> Terimakasih. </p>";
+            $message = "Assamualaikum Wr Wb. 
+            Berikut informasi perkara banding nomor: 
+                " . $no_perkara . "
+                - Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+                - Dengan status saat ini: " . $status_perkara . "
+                Ini adalah sistem pemberitahuan otomatis sesuai tahapan perkara banding anda. 
+                Ketik informasi untuk mengetahui perintah lainnya. 
+                Terimakasih.";
                 
             $curl = curl_init();
 
