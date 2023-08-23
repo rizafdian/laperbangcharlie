@@ -103,14 +103,13 @@ $(document).ready(function () {
     //input status perkara
     $('#listperkara').on('click', '.item_staper', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
-        let no_perkara = data['no_perkara_banding'];
-        let no_hp = data['no_hp_penggugat'];
+        let no_perkara_banding = data['no_perkara_banding'];
+        let no_hp_penggugat = data['no_hp_penggugat'];
         let id_perkara = data['id_perkara'];
-        
 
-        console.log(no_perkara);
+        console.log(no_perkara_banding);
         console.log(id_perkara);
-        console.log(no_hp);
+        console.log(no_hp_penggugat);
 
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
@@ -196,8 +195,8 @@ $(document).ready(function () {
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
-                                no_perkara_banding: no_perkara_banding,
-                                no_hp_penggugat: no_hp_penggugat,
+                                // no_perkara_banding: no_perkara_banding,
+                                // no_hp_penggugat: no_hp_penggugat,
                             },
                             dataType: "json",
                             success: function (e) {
