@@ -105,11 +105,13 @@ $(document).ready(function () {
         let data = list_perkara.row($(this).parents('tr')).data();
         let no_perkara_banding = data['no_perkara_banding'];
         let no_hp_penggugat = data['no_hp_penggugat'];
+        let tgl_reg_banding = data['tgl_reg_banding'];
         let id_perkara = data['id_perkara'];
 
         console.log(no_perkara_banding);
         console.log(id_perkara);
         console.log(no_hp_penggugat);
+        console.log(tgl_reg_banding);
 
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
@@ -197,6 +199,7 @@ $(document).ready(function () {
                                 status_perkara: value,
                                 no_perkara_banding: no_perkara_banding,
                                 no_hp_penggugat: no_hp_penggugat,
+                                tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
                             success: function (e) {

@@ -348,12 +348,14 @@ class Admin extends CI_Controller
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
         $no_perkara = $this->input->post('no_perkara_banding');
+        $tgl_reg_banding = $this->input->post('tgl_reg_banding');
         $target = $this->input->post('no_hp_penggugat');
 
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara,
             'no_perkara_banding' => $no_perkara,
+            'tgl_reg_banding' => $tgl_reg_banding,
             'no_hp_penggugat' => $target
         ];
 
@@ -371,6 +373,8 @@ class Admin extends CI_Controller
            
         //API Notifikasi WA
             $token = "sAZJpFT7ntDM4+!gJ+h-";
+            $date = "Y-m-d";
+            $message = "Assamualaikum Wr Wb. <p> Berikut informasi perkara banding nomor: </p><p>" . $no_perkara . "</p><p> - Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "</p><P> - Dengan status saat ini: " . $status_perkara . "</P><p> Ini adalah sistem pemberitahuan otomatis sesuai tahapan perkara banding anda. </p><p> Ketik informasi untuk mengetahui perintah lainnya. </p><p> Terimakasih. </p>"
                 
             $curl = curl_init();
 
@@ -385,7 +389,7 @@ class Admin extends CI_Controller
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
             'target' => $target,
-            'message' => "Assamualaikum Wr Wb. Dengan hormat diberitahukan Nomor Perkara Banding " . $no_perkara . " statusnya saat ini " . $status_perkara . "",
+            'message' => $message,
 
             ),
             CURLOPT_HTTPHEADER => array(
