@@ -195,8 +195,8 @@ $(document).ready(function () {
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
-                                // no_perkara_banding: no_perkara_banding,
-                                // no_hp_penggugat: no_hp_penggugat,
+                                no_perkara_banding: no_perkara_banding,
+                                no_hp_penggugat: no_hp_penggugat,
                             },
                             dataType: "json",
                             success: function (e) {

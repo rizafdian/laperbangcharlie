@@ -352,7 +352,9 @@ class Admin extends CI_Controller
 
         $data = [
             'id_perkara' => $id_perkara,
-            'status_perkara' => $status_perkara
+            'status_perkara' => $status_perkara,
+            'no_perkara_banding' => $no_perkara,
+            'no_hp_penggugat' => $target
         ];
 
         $this->db->where('id_perkara', $id_perkara);
@@ -366,7 +368,8 @@ class Admin extends CI_Controller
 
         $this->db->set('rekam_log', 'NOW()', FALSE);
         $this->db->insert('log_audittrail', $audittrail);
-            //API Notifikasi WA
+           
+        //API Notifikasi WA
             $token = "sAZJpFT7ntDM4+!gJ+h-";
                 
             $curl = curl_init();
