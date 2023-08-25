@@ -247,6 +247,7 @@ $(document).ready(function () {
         $('#uploadFileModal').modal('show');
         $('#id_perkara').val(id_perkara);
         
+        
     }//end function upload salinan putusan
 
 

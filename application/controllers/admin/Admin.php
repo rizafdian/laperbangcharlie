@@ -512,17 +512,18 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
     {
         $pengedit = $this->session->userdata('nama');
 
-        $id_pmh = $this->input->post('id_pmh');
+        // $id_pmh = $this->input->post('id_pmh');
         $id_perkara = $this->input->post('id_perkara');
         $majelis_hakim = $this->input->post('majelis_hakim');
        
 
         $data = [
-            'id_pmh' => $id_pmh,
+            // 'id_pmh' => $id_pmh,
             'id_perkara' => $id_perkara,
             'majelis_hakim' => $majelis_hakim,
         ];
-        $this->db->insert('pmh', $data);
+        $this->db->where('id_perkara', $id_perkara);
+        $this->db->update('pmh', $data);
 
         $audittrail = array(
             'log_id' => '',
