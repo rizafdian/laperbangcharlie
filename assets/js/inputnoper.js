@@ -148,6 +148,9 @@ $(document).ready(function () {
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
+                                no_perkara_banding: no_perkara_banding,
+                                no_hp_penggugat: no_hp_penggugat,
+                                tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
                             success: function (e) {
@@ -164,6 +167,9 @@ $(document).ready(function () {
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
+                                no_perkara_banding: no_perkara_banding,
+                                no_hp_penggugat: no_hp_penggugat,
+                                tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
                             success: function (e) {
@@ -181,6 +187,9 @@ $(document).ready(function () {
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
+                                no_perkara_banding: no_perkara_banding,
+                                no_hp_penggugat: no_hp_penggugat,
+                                tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
                             success: function (e) {
@@ -237,7 +246,7 @@ $(document).ready(function () {
     function uploadSalinanPutusan(id_perkara) {
         $('#uploadFileModal').modal('show');
         $('#id_perkara').val(id_perkara);
-
+        
     }//end function upload salinan putusan
 
 

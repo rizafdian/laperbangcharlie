@@ -370,10 +370,25 @@ class Admin extends CI_Controller
 
         $this->db->set('rekam_log', 'NOW()', FALSE);
         $this->db->insert('log_audittrail', $audittrail);
+
+        if ($status_perkara == "Pengiriman Salinan Putusan") {
+            
+$token = "sAZJpFT7ntDM4+!gJ+h-";
+$message = "Assamualaikum Wr Wb. 
+Berikut informasi perkara banding nomor: 
+" . $no_perkara . "
+
+1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
+
+Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+______________________________________________________________ 
+Ketik informasi untuk mengetahui perintah lainnya. 
+Sistem Informasi Pelayanan Perkara PTA Manado";
+        }else {
            
-        //API Notifikasi WA
-            $token = "sAZJpFT7ntDM4+!gJ+h-";
-            $message = "Assamualaikum Wr Wb. 
+$token = "sAZJpFT7ntDM4+!gJ+h-";
+$message = "Assamualaikum Wr Wb. 
 Berikut informasi perkara banding nomor: 
 " . $no_perkara . "
 
@@ -384,35 +399,36 @@ Ini adalah sistem pemberitahuan otomatis perkara banding anda.
 ______________________________________________________________ 
 Ketik informasi untuk mengetahui perintah lainnya. 
 Sistem Informasi Pelayanan Perkara PTA Manado";
-                
-            $curl = curl_init();
+        }
 
-            curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.fonnte.com/send',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => array(
-            'target' => $target,
-            'message' => $message,
+         //API Notifikasi WA
+        $curl = curl_init();
 
-            ),
-            CURLOPT_HTTPHEADER => array(
-                "Authorization: $token"
-            ),
-            ));
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.fonnte.com/send',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
 
-            $response = curl_exec($curl);
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array(
+        'target' => $target,
+        'message' => $message,
 
-            curl_close($curl);
-            // echo $response;
+        ),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: $token"
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        // echo $response;
         json_encode($array);
-
-        
     }
 
     public function uploadPutusan()
@@ -430,9 +446,11 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
             if ($this->upload->do_upload('file_putusan')) {
                 $putusan_banding = $this->upload->data("file_name");
                 $id_perkara = $this->input->post('id_perkara');
+                
                 $data = [
                     'id_perkara' => $id_perkara,
-                    'putusan_banding' => $putusan_banding
+                    'putusan_banding' => $putusan_banding,
+                   
                 ];
                 $this->db->where('id_perkara', $id_perkara);
                 $this->db->update('list_perkara', $data);
@@ -466,10 +484,12 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
 
         $id_perkara = $this->input->post('id_perkara');
         $id_user_pp = $this->input->post('id_user_pp');
+        
 
         $data = [
             'id_perkara' => $id_perkara,
-            'id_user_pp' => $id_user_pp
+            'id_user_pp' => $id_user_pp,
+            
         ];
         $this->db->where('id_perkara', $id_perkara);
         $this->db->update('penunjukan_pp', $data);
@@ -495,6 +515,7 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         $id_pmh = $this->input->post('id_pmh');
         $id_perkara = $this->input->post('id_perkara');
         $majelis_hakim = $this->input->post('majelis_hakim');
+       
 
         $data = [
             'id_pmh' => $id_pmh,
