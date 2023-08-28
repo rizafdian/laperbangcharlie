@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
     //data table
-    const path = window.location.origin + '/';
+    const path = window.location.origin;
     // const path = `/`;
     console.log(path);
     //---Tampil data table kegiatan
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}panmud/get_data_banding/`,
+        "ajax": `${path}/panmud/Panmud/get_data_banding/`,
         "columns": [
             {
                 "data": null, "sortable": false,
