@@ -514,6 +514,17 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
 
         // $id_pmh = $this->input->post('id_pmh');
         $id_perkara = $this->input->post('id_perkara');
+
+
+
+
+
+
+
+
+
+
+        
         $majelis_hakim = $this->input->post('majelis_hakim');
        
 

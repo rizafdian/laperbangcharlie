@@ -94,10 +94,16 @@ class Panmud extends CI_Controller
 
         $status_perkara = $this->input->post('status_perkara');
         $id_perkara = $this->input->post('id_perkara');
+        $no_perkara = $this->input->post('no_perkara_banding');
+        $tgl_reg_banding = $this->input->post('tgl_reg_banding');
+        $target = $this->input->post('no_hp_penggugat');
 
         $data = [
             'id_perkara' => $id_perkara,
-            'status_perkara' => $status_perkara
+            'status_perkara' => $status_perkara,
+            'no_perkara_banding' => $no_perkara,
+            'tgl_reg_banding' => $tgl_reg_banding,
+            'no_hp_penggugat' => $target
         ];
 
         $this->db->where('id_perkara', $id_perkara);
@@ -111,6 +117,64 @@ class Panmud extends CI_Controller
 
         $this->db->set('rekam_log', 'NOW()', FALSE);
         $this->db->insert('log_audittrail', $audittrail);
+
+        if ($status_perkara == "Pengiriman Salinan Putusan") {
+            
+            $token = "sAZJpFT7ntDM4+!gJ+h-";
+            $message = "Assamualaikum Wr Wb. 
+            Berikut informasi perkara banding nomor: 
+            " . $no_perkara . "
+            
+            1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+            2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
+            
+            Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+            ______________________________________________________________ 
+            Ketik informasi untuk mengetahui perintah lainnya. 
+            Sistem Informasi Pelayanan Perkara PTA Manado";
+                    }else {
+                       
+            $token = "sAZJpFT7ntDM4+!gJ+h-";
+            $message = "Assamualaikum Wr Wb. 
+            Berikut informasi perkara banding nomor: 
+            " . $no_perkara . "
+            
+            1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+            2. Dengan status saat ini: " . $status_perkara . "
+            
+            Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+            ______________________________________________________________ 
+            Ketik informasi untuk mengetahui perintah lainnya. 
+            Sistem Informasi Pelayanan Perkara PTA Manado";
+                    }
+            
+                     //API Notifikasi WA
+                    $curl = curl_init();
+            
+                    curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://api.fonnte.com/send',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+            
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array(
+                    'target' => $target,
+                    'message' => $message,
+            
+                    ),
+                    CURLOPT_HTTPHEADER => array(
+                        "Authorization: $token"
+                    ),
+                    ));
+            
+                    $response = curl_exec($curl);
+            
+                    curl_close($curl);
+                    // echo $response;
 
         json_encode($array);
     }
