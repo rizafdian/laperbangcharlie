@@ -416,11 +416,19 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array(
-        'target' => [$target, $target2],
+        // Data yang ingin Anda kirimkan
+        $data = http_build_query(array(
+        'target' => array($target, $target2),
         'message' => $message,
+        ));
 
-        ),
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        // CURLOPT_POSTFIELDS => array(
+        // 'target' => ($target, $target2),
+        // 'message' => $message,
+
+        // ),
+
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"
         ),
