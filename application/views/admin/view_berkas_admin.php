@@ -9,10 +9,10 @@
                             <div class="col-md-auto">
                                 <p class="fw-bold">Nomor Perkara Banding</p>
                             </div>
-                            <div class="col-md-auto">
+                            <div class="col-md-1">
                                 <p>:</p>
                             </div>
-                            <div class="col-md-auto">
+                            <div class="col-md-6">
                                 <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
 
