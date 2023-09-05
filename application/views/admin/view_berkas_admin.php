@@ -13,7 +13,7 @@
                                 <p>:</p>
                             </div>
                             <div class="col-md-auto">
-                                <p><?php echo $lp['no_perkara_banding']; ?></p>
+                                <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
                         </div>
                         <div class="row mt-n3">
@@ -24,7 +24,7 @@
                                 <p>:</p>
                             </div>
                             <div class="col-md-auto">
-                                <p><?php echo $lp['nm_pihak_penggugat']; ?> / <?php echo $lp['no_hp_penggugat']; ?></p>
+                                <p><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></p>
                             </div>
                         </div>
                         <div class="row mt-n3">
@@ -35,7 +35,7 @@
                                 <p>:</p>
                             </div>
                             <div class="col-md-auto">
-                                <p><?php echo $lp['nm_pihak_tergugat']; ?> / <?php echo $lp['no_hp_tergugat']; ?></p>
+                                <p><?= $lp->nm_pihak_tergugat; ?> / <?= $lp->no_hp_tergugat; ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
