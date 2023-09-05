@@ -417,7 +417,7 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
-        'target' => $target2,
+        'target' => [$target, $target2],
         'message' => $message,
 
         ),
