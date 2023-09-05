@@ -35,9 +35,11 @@
                             <div class="col-md-auto">
                                 <text>:</text>
                             </div>
+                            <?php foreach ($nm_pp as $lp) : ?>
                             <div class="col-md-4">
-                                <text><?= $lp->id_user_pp; ?></text>
+                                <text><?= $lp->nama; ?></text>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-2">

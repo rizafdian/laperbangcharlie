@@ -60,7 +60,7 @@ class Admin extends CI_Controller
         $data['js'] = 'view_berkas_admin.js';
 
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
-        $datapp['nm_pp'] = $this->m_banding->get_nm_pp();
+        $data['nm_pp'] = $this->db->get_where('v_nm_pp', ['id_perkara' => $id])->result_object();
 
         var_dump($datapp);
         die;
