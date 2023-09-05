@@ -6,8 +6,8 @@
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-2">
-                            <div class="col-md-4">
-                                <text class="fw-bold">Nomor Perkara Banding</text>
+                            <div class="col-md-3">
+                                <text class="fw">Nomor Perkara Banding</text>
                             </div>
                             <div class="col-md-auto">
                                 <text>:</text>
@@ -17,8 +17,8 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-4">
-                                <text class="fw-bold">Majelis Hakim</text>
+                            <div class="col-md-3">
+                                <text class="fw">Majelis Hakim</text>
                             </div>
                             <div class="col-md-auto">
                                 <text>:</text>
@@ -28,8 +28,8 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-4">
-                                <text class="fw-bold">Panitera Pengganti</text>
+                            <div class="col-md-3">
+                                <text class="fw">Panitera Pengganti</text>
                             </div>
                             <div class="col-md-auto">
                                 <text>:</text>
@@ -39,8 +39,8 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-4">
-                                <text class="fw-bold">Nama / No. Hp Penggugat</text>
+                            <div class="col-md-3">
+                                <text class="fw">Nama / No. Hp Penggugat</text>
                             </div>
                             <div class="col-md-auto">
                                 <text>:</text>
@@ -50,8 +50,8 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-4">
-                                <text class="fw-bold">Nama / No. Hp Tergugat</text>
+                            <div class="col-md-3">
+                                <text class="fw">Nama / No. Hp Tergugat</text>
                             </div>
                             <div class="col-md-auto">
                                 <text>:</text>
