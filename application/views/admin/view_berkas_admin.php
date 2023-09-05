@@ -12,7 +12,7 @@
                             <div class="col-md-auto">
                                 <p>:</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
 
