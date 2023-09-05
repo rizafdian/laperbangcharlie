@@ -25,7 +25,7 @@
                                 <text>:</text>
                             </div>
                             <div class="col-md-4">
-                                <text><?= $lp->MajelisHakim; ?></text>
+                                <text><?= $lp->majelis_hakim; ?></text>
                             </div>
                         </div>
                         <div class="row mt-2">
