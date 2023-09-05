@@ -6,13 +6,13 @@
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-3">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <p class="fw-bold">Nomor Perkara Banding</p>
                             </div>
                             <div class="col-md-1">
                                 <p>:</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-1">
                                 <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
 
