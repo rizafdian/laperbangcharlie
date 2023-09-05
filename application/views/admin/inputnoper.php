@@ -17,6 +17,7 @@
                                 <th>Pihak Penggugat</th>
                                 <th>No. Hp Penggugat</th>
                                 <th>Pihak Tergugat</th>
+                                <th>No. Hp Tergugat</th>
                                 <th>Nomor Perkara Tk.I</th>
                                 <th>Jenis Perkara</th>
                                 <th>Tanggal Register Banding</th>
