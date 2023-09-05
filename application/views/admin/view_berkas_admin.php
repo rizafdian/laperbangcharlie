@@ -6,7 +6,7 @@
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-2">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <text class="fw-bold">Nomor Perkara Banding</text>
                             </div>
                             <div class="col-md-auto">
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <text class="fw-bold">Majelis Hakim</text>
                             </div>
                             <div class="col-md-auto">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <text class="fw-bold">Panitera Pengganti</text>
                             </div>
                             <div class="col-md-auto">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <text class="fw-bold">Nama / No. Hp Penggugat</text>
                             </div>
                             <div class="col-md-auto">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <text class="fw-bold">Nama / No. Hp Tergugat</text>
                             </div>
                             <div class="col-md-auto">
@@ -67,7 +67,7 @@
     </div>
 
 
-    <div class="row mt-5 mb-3">
+    <div class="row mt-4 mb-3">
         <div class="col">
             <?php foreach ($detail_berkas as $db) : ?>
 
