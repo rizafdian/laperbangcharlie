@@ -3,6 +3,7 @@ $(document).ready(function () {
     console.log("ini inputt noper.js");
     //data table
     const path = window.location.origin;
+    console.log(path);
     // const prapath = window.location.origin;
     // const path = `${prapath}/laperbangcharlie/`;
     let list_perkara = $('#listperkara').DataTable({
