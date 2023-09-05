@@ -6,14 +6,24 @@
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-3">
-                            <div class="col-md-auto">
+                            <div class="col-md-4">
                                 <p class="fw-bold">Nomor Perkara Banding</p>
                             </div>
-                            <div class="col-md-auto">
+                            <div class="col-md-2">
                                 <p>:</p>
                             </div>
                             <div class="col-md-auto">
                                 <p><?= $lp->no_perkara_banding; ?></p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p class="fw-bold">Jenis Perkara</p>
+                            </div>
+                            <div class="col-md-2">
+                                <p>:</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p><?= $lp->jns_perkara; ?></p>
                             </div>
                         </div>
                         <div class="row mt-3">
