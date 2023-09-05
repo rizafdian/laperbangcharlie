@@ -1,63 +1,63 @@
 <div class="container">
 
-    <div class="row mt-3">
+    <div class="row mt-4">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Nomor Perkara Banding</p>
+                                <text class="fw-bold">Nomor Perkara Banding</text>
                             </div>
                             <div class="col-md-auto">
-                                <p>:</p>
+                                <text>:</text>
                             </div>
                             <div class="col-md-4">
-                                <p><?= $lp->no_perkara_banding; ?></p>
+                                <text><?= $lp->no_perkara_banding; ?></text>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Majelis Hakim</p>
+                                <text class="fw-bold">Majelis Hakim</text>
                             </div>
                             <div class="col-md-auto">
-                                <p>:</p>
+                                <text>:</text>
                             </div>
                             <div class="col-md-4">
-                                <p><?= $lp->MajelisHakim; ?></p>
+                                <text><?= $lp->MajelisHakim; ?></text>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Panitera Pengganti</p>
+                                <text class="fw-bold">Panitera Pengganti</text>
                             </div>
                             <div class="col-md-auto">
-                                <p>:</p>
+                                <text>:</text>
                             </div>
                             <div class="col-md-4">
-                                <p><?= $lp->id_user_pp; ?></p>
+                                <text><?= $lp->id_user_pp; ?></text>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Nama / No. Hp Penggugat</p>
+                                <text class="fw-bold">Nama / No. Hp Penggugat</text>
                             </div>
                             <div class="col-md-auto">
-                                <p>:</p>
+                                <text>:</text>
                             </div>
                             <div class="col-md-auto">
-                                <p><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></p>
+                                <text><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></text>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Nama / No. Hp Tergugat</p>
+                                <text class="fw-bold">Nama / No. Hp Tergugat</text>
                             </div>
                             <div class="col-md-auto">
-                                <p>:</p>
+                                <text>:</text>
                             </div>
                             <div class="col-md-auto">
-                                <p><?= $lp->nm_pihak_tergugat; ?> / <?= $lp->no_hp_tergugat; ?></p>
+                                <text><?= $lp->nm_pihak_tergugat; ?> / <?= $lp->no_hp_tergugat; ?></text>
                             </div>
                         </div>
                     <?php endforeach; ?>
