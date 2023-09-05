@@ -1,12 +1,12 @@
 <div class="container">
 
 <div class="row mt-5">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
                         <div class="row mt-3">
-                            <div class="col-md-3">
+                            <div class="col-md-auto">
                                 <p class="fw-bold">Nomor Perkara Banding</p>
                             </div>
                             <div class="col-md-auto">
@@ -16,8 +16,8 @@
                                 <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
                         </div>
-                        <div class="row mt-n3">
-                            <div class="col-md-3">
+                        <div class="row mt-3">
+                            <div class="col-md-auto">
                                 <p class="fw-bold">Nama / No. Hp Penggugat</p>
                             </div>
                             <div class="col-md-auto">
@@ -27,8 +27,8 @@
                                 <p><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></p>
                             </div>
                         </div>
-                        <div class="row mt-n3">
-                            <div class="col-md-3">
+                        <div class="row mt-3">
+                            <div class="col-md-auto">
                                 <p class="fw-bold">Nama / No. Hp Tergugat</p>
                             </div>
                             <div class="col-md-auto">
