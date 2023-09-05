@@ -352,6 +352,15 @@ class Admin extends CI_Controller
         $target = $this->input->post('no_hp_penggugat');
         $target2 = $this->input->post('no_hp_tergugat');
 
+        // Data yang ingin Anda kirimkan
+        $data = [
+            'target' => [$target, $target2],
+            
+        ];
+
+        var_dump($data);
+        die;
+
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara,
@@ -406,11 +415,7 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
          //API Notifikasi WA
         $curl = curl_init();
 
-        // Data yang ingin Anda kirimkan
-        // $data = array(
-        //     'target' => array($target, $target2),
-        //     'message' => $message,
-        //     );
+        
 
         curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.fonnte.com/send',
