@@ -4,7 +4,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <?php foreach ($detail_berkas as $lp) : ?>
+                    <?php foreach ($header as $lp) : ?>
                         <div class="row mt-2">
                             <div class="col-md-
                             2">
@@ -35,11 +35,9 @@
                             <div class="col-md-auto">
                                 <text>:</text>
                             </div>
-                            <?php foreach ($nm_pp as $lp) : ?>
                             <div class="col-md-4">
                                 <text><?= $lp->nama; ?></text>
                             </div>
-                            <?php endforeach; ?>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-2">
