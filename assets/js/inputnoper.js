@@ -7,7 +7,7 @@ $(document).ready(function () {
     // const prapath = window.location.origin;
     // const path = `${prapath}/laperbangcharlie/`;
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}/admin/Admin/get_data_banding/`,
+        "ajax": `${path}/admin/admin/get_data_banding`,
         "columns": [
             {
                 "data": null, "sortable": false,
