@@ -62,9 +62,6 @@ class Admin extends CI_Controller
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
         $data['nm_pp'] = $this->db->get_where('v_nm_pp', ['id_perkara' => $id])->result_object();
 
-        var_dump($datapp);
-        die;
-
         $this->load->view('admin/header', $data);
         $this->load->view('admin/view_berkas_admin', $data);
         $this->load->view('admin/footer', $data);
