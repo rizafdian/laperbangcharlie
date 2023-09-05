@@ -407,10 +407,10 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         $curl = curl_init();
 
         // Data yang ingin Anda kirimkan
-        $data = http_build_query(array(
+        $data = array(
             'target' => array($target, $target2),
             'message' => $message,
-            ));
+            );
 
         curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.fonnte.com/send',
