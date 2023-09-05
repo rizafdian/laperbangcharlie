@@ -352,15 +352,6 @@ class Admin extends CI_Controller
         $target = $this->input->post('no_hp_penggugat');
         $target2 = $this->input->post('no_hp_tergugat');
 
-        // Data yang ingin Anda kirimkan
-        $data = [
-            'target' => [$target, $target2],
-            
-        ];
-
-        var_dump($data);
-        die;
-
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara,
@@ -383,7 +374,8 @@ class Admin extends CI_Controller
         $this->db->insert('log_audittrail', $audittrail);
 
         if ($status_perkara == "Pengiriman Salinan Putusan") {
-            
+
+//API Notifikasi WA  
 $token = "sAZJpFT7ntDM4+!gJ+h-";
 $message = "Assamualaikum Wr Wb. 
 Berikut informasi perkara banding nomor: 
@@ -411,11 +403,14 @@ ______________________________________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
 Sistem Informasi Pelayanan Perkara PTA Manado";
         }
+         // Data yang ingin Anda kirimkan
+        $no_hp = [
+            'target1' => $target,
+            'target2' => $target2,
+            
+        ];
 
-         //API Notifikasi WA
         $curl = curl_init();
-
-        
 
         curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.fonnte.com/send',
@@ -430,7 +425,7 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         
         // CURLOPT_POSTFIELDS => $data,
         CURLOPT_POSTFIELDS => array(
-        'target' => array($target, $target2),
+        'target' => $no_hp,
         'message' => $message,
 
         ),
