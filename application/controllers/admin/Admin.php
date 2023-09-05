@@ -407,10 +407,10 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         $curl = curl_init();
 
         // Data yang ingin Anda kirimkan
-        $data = array(
-            'target' => array($target, $target2),
-            'message' => $message,
-            );
+        // $data = array(
+        //     'target' => array($target, $target2),
+        //     'message' => $message,
+        //     );
 
         curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.fonnte.com/send',
@@ -423,12 +423,12 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         
-        CURLOPT_POSTFIELDS => $data,
-        // CURLOPT_POSTFIELDS => array(
-        // 'target' => ($target, $target2),
-        // 'message' => $message,
+        // CURLOPT_POSTFIELDS => $data,
+        CURLOPT_POSTFIELDS => array(
+        'target' => array($target, $target2),
+        'message' => $message,
 
-        // ),
+        ),
 
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"
