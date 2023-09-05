@@ -351,7 +351,7 @@ class Admin extends CI_Controller
         $tgl_reg_banding = $this->input->post('tgl_reg_banding');
         $target1 = $this->input->post('no_hp_penggugat');
         $target2 = $this->input->post('no_hp_tergugat');
-        $target = . $target1 . "," . $target2. ;
+        $target = $target1 . "," . $target2;
 
         $data = [
             'id_perkara' => $id_perkara,
