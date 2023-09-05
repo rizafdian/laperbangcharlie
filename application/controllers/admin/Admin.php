@@ -426,9 +426,8 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_POSTFIELDS => array(
         'target' => $target,
         'message' => $message,
-
+        'delay' => '2'
         ),
-
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"
         ),
