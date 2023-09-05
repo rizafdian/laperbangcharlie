@@ -6,8 +6,7 @@
                 <div class="card-header">
                     <?php foreach ($header as $lp) : ?>
                         <div class="row mt-2">
-                            <div class="col-md-
-                            2">
+                            <div class="col-md-3">
                                 <text class="fw">Nomor Perkara Banding</text>
                             </div>
                             <div class="col-md-auto">
@@ -18,7 +17,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <text class="fw">Majelis Hakim</text>
                             </div>
                             <div class="col-md-auto">
@@ -29,7 +28,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <text class="fw">Panitera Pengganti</text>
                             </div>
                             <div class="col-md-auto">
@@ -40,7 +39,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <text class="fw">Nama / No. Hp Penggugat</text>
                             </div>
                             <div class="col-md-auto">
@@ -51,7 +50,7 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <text class="fw">Nama / No. Hp Tergugat</text>
                             </div>
                             <div class="col-md-auto">
