@@ -349,8 +349,9 @@ class Admin extends CI_Controller
         $id_perkara = $this->input->post('id_perkara');
         $no_perkara = $this->input->post('no_perkara_banding');
         $tgl_reg_banding = $this->input->post('tgl_reg_banding');
-        $target = $this->input->post('no_hp_penggugat');
+        $target1 = $this->input->post('no_hp_penggugat');
         $target2 = $this->input->post('no_hp_tergugat');
+        $target = . $target1 . "," . $target2. ;
 
         $data = [
             'id_perkara' => $id_perkara,
@@ -404,11 +405,11 @@ Ketik informasi untuk mengetahui perintah lainnya.
 Sistem Informasi Pelayanan Perkara PTA Manado";
         }
          // Data yang ingin Anda kirimkan
-        $no_hp = [
-            'target1' => $target,
-            'target2' => $target2,
+        // $no_hp = [
+        //     'target1' => $target,
+        //     'target2' => $target2,
             
-        ];
+        // ];
 
         $curl = curl_init();
 
@@ -422,10 +423,8 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        
-        // CURLOPT_POSTFIELDS => $data,
         CURLOPT_POSTFIELDS => array(
-        'target' => $no_hp,
+        'target' => $target,
         'message' => $message,
 
         ),
