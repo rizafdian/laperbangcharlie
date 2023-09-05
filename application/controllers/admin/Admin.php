@@ -388,7 +388,7 @@ Berikut informasi perkara banding nomor:
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
-Sistem Informasi Pelayanan Perkara PTA Manado";
+SIPEKA PTA Manado";
         }else {
            
 $token = "sAZJpFT7ntDM4+!gJ+h-";
@@ -400,7 +400,7 @@ Berikut informasi perkara banding nomor:
 2. Dengan status saat ini: " . $status_perkara . "
 
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
-______________________________________________________________ 
+____________________________________    
 Ketik informasi untuk mengetahui perintah lainnya. 
 SIPEKA PTA Manado";
         }

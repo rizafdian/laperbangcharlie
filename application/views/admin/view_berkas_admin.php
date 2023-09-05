@@ -1,4 +1,49 @@
 <div class="container">
+
+<div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <?php foreach ($detail_berkas as $lp) : ?>
+                        <div class="row mt-3">
+                            <div class="col-md-3">
+                                <p class="fw-bold">Nomor Perkara Banding</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p>:</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p><?php echo $lp['no_perkara_banding']; ?></p>
+                            </div>
+                        </div>
+                        <div class="row mt-n3">
+                            <div class="col-md-3">
+                                <p class="fw-bold">Nama / No. Hp Penggugat</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p>:</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p><?php echo $lp['nm_pihak_penggugat']; ?> / <?php echo $lp['no_hp_penggugat']; ?></p>
+                            </div>
+                        </div>
+                        <div class="row mt-n3">
+                            <div class="col-md-3">
+                                <p class="fw-bold">Nama / No. Hp Tergugat</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p>:</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p><?php echo $lp['nm_pihak_tergugat']; ?> / <?php echo $lp['no_hp_tergugat']; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row mt-5 mb-3">
         <div class="col">
             <?php foreach ($detail_berkas as $db) : ?>
