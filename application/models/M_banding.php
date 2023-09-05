@@ -171,6 +171,16 @@ class M_banding extends CI_model
         return $query;
     }
 
+    public function get_nm_pp($id){
+        $this->db->select('*');
+        $this->db->from('penunjukkan_pp');
+        $this->db->join('list_perkara', 'penunjukkan_pp.id_perkara = list_perkara.id_perkara');
+        $this->db->join('users', 'penunjukkan_pp.id_user_pp = users.id');
+        $this->db->where('id_perkara', $id); 
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
     public function get_perkara_pp()
     {
         $id_user =  $this->session->userdata('id');

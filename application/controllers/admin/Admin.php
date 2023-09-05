@@ -60,6 +60,10 @@ class Admin extends CI_Controller
         $data['js'] = 'view_berkas_admin.js';
 
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
+        $datapp['nm_pp'] = $this->m_banding->get_nm_pp();
+
+        var_dump($datapp);
+        die;
 
         $this->load->view('admin/header', $data);
         $this->load->view('admin/view_berkas_admin', $data);
@@ -518,16 +522,6 @@ SIPEKA PTA Manado";
         // $id_pmh = $this->input->post('id_pmh');
         $id_perkara = $this->input->post('id_perkara');
 
-
-
-
-
-
-
-
-
-
-        
         $majelis_hakim = $this->input->post('majelis_hakim');
        
 
