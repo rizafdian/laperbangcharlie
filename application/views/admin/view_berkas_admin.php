@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header">
                     <?php foreach ($detail_berkas as $lp) : ?>
-                        <div class="row mt-3">
+                        <div class="row mt-2">
                             <div class="col-md-auto">
                                 <p class="fw-bold">Nomor Perkara Banding</p>
                             </div>
@@ -15,18 +15,30 @@
                             <div class="col-md-4">
                                 <p><?= $lp->no_perkara_banding; ?></p>
                             </div>
-
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-md-auto">
-                                <p class="fw-bold">Jenis Perkara</p>
+                                <p class="fw-bold">Majelis Hakim</p>
                             </div>
                             <div class="col-md-auto">
                                 <p>:</p>
                             </div>
-                            <div class="col-md-auto">
-                                <p><?= $lp->jns_perkara; ?></p>
+                            <div class="col-md-4">
+                                <p><?= $lp->MajelisHakim; ?></p>
                             </div>
                         </div>
-                        <div class="row mt-3">
+                        <div class="row mt-2">
+                            <div class="col-md-auto">
+                                <p class="fw-bold">Panitera Pengganti</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <p>:</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><?= $lp->id_user_pp; ?></p>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-md-auto">
                                 <p class="fw-bold">Nama / No. Hp Penggugat</p>
                             </div>
@@ -37,7 +49,7 @@
                                 <p><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></p>
                             </div>
                         </div>
-                        <div class="row mt-3">
+                        <div class="row mt-2">
                             <div class="col-md-auto">
                                 <p class="fw-bold">Nama / No. Hp Tergugat</p>
                             </div>
