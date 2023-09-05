@@ -125,6 +125,7 @@ class Panmud extends CI_Controller
             Berikut informasi perkara banding nomor: 
             " . $no_perkara . "
             
+            
             1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
             2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
             

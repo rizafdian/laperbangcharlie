@@ -350,13 +350,15 @@ class Admin extends CI_Controller
         $no_perkara = $this->input->post('no_perkara_banding');
         $tgl_reg_banding = $this->input->post('tgl_reg_banding');
         $target = $this->input->post('no_hp_penggugat');
+        $target2 = $this->input->post('no_hp_tergugat');
 
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara,
             'no_perkara_banding' => $no_perkara,
             'tgl_reg_banding' => $tgl_reg_banding,
-            'no_hp_penggugat' => $target
+            'no_hp_penggugat' => $target,
+            'no_hp_tergugat' => $target2
         ];
 
         $this->db->where('id_perkara', $id_perkara);
@@ -415,7 +417,7 @@ Sistem Informasi Pelayanan Perkara PTA Manado";
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array(
-        'target' => $target,
+        'target' => [$target, $target2],
         'message' => $message,
 
         ),
