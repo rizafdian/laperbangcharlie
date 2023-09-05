@@ -20,7 +20,6 @@ $(document).ready(function () {
             { "data": "nm_pihak_penggugat" },
             { "data": "no_hp_penggugat" },
             { "data": "nm_pihak_tergugat" },
-            { "data": "no_hp_tergugat" },
             { "data": "no_perkara" },
             { "data": "jns_perkara" },
             { "data": "tgl_reg_banding" },
