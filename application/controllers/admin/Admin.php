@@ -386,7 +386,7 @@ Berikut informasi perkara banding nomor:
 2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
 
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
-______________________________________________________________ 
+___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
 Sistem Informasi Pelayanan Perkara PTA Manado";
         }else {
@@ -402,14 +402,8 @@ Berikut informasi perkara banding nomor:
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
 ______________________________________________________________ 
 Ketik informasi untuk mengetahui perintah lainnya. 
-Sistem Informasi Pelayanan Perkara PTA Manado";
+SIPEKA PTA Manado";
         }
-         // Data yang ingin Anda kirimkan
-        // $no_hp = [
-        //     'target1' => $target,
-        //     'target2' => $target2,
-            
-        // ];
 
         $curl = curl_init();
 
