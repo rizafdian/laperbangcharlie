@@ -45,15 +45,16 @@ class Panmud extends CI_Controller
     public function view_berkas_admin($id)
     {
         //konten
-        $data['judul'] = 'Halaman Panmud';
+        $data['judul'] = 'Input Nomor Perkara';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = 'view_berkas_admin.js';
 
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
+        $data['header'] = $this->db->get_where('v_header_perkara', ['id_perkara' => $id])->result_object();
 
-        $this->load->view('panmud/header', $data);
-        $this->load->view('panmud/view_berkas_admin', $data);
-        $this->load->view('panmud/footer', $data);
+        $this->load->view('admin/header', $data);
+        $this->load->view('admin/view_berkas_admin', $data);
+        $this->load->view('admin/footer', $data);
     }
 
     public function updatenoper()
@@ -96,14 +97,17 @@ class Panmud extends CI_Controller
         $id_perkara = $this->input->post('id_perkara');
         $no_perkara = $this->input->post('no_perkara_banding');
         $tgl_reg_banding = $this->input->post('tgl_reg_banding');
-        $target = $this->input->post('no_hp_penggugat');
+        $target1 = $this->input->post('no_hp_penggugat');
+        $target2 = $this->input->post('no_hp_tergugat');
+        $target = $target1 . "," . $target2;
 
         $data = [
             'id_perkara' => $id_perkara,
             'status_perkara' => $status_perkara,
             'no_perkara_banding' => $no_perkara,
             'tgl_reg_banding' => $tgl_reg_banding,
-            'no_hp_penggugat' => $target
+            'no_hp_penggugat' => $target,
+            'no_hp_tergugat' => $target2
         ];
 
         $this->db->where('id_perkara', $id_perkara);
@@ -119,64 +123,62 @@ class Panmud extends CI_Controller
         $this->db->insert('log_audittrail', $audittrail);
 
         if ($status_perkara == "Pengiriman Salinan Putusan") {
-            
-            $token = "sAZJpFT7ntDM4+!gJ+h-";
-            $message = "Assamualaikum Wr Wb. 
-            Berikut informasi perkara banding nomor: 
-            " . $no_perkara . "
-            
-            
-            1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
-            2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
-            
-            Ini adalah sistem pemberitahuan otomatis perkara banding anda.
-            ______________________________________________________________ 
-            Ketik informasi untuk mengetahui perintah lainnya. 
-            Sistem Informasi Pelayanan Perkara PTA Manado";
-                    }else {
-                       
-            $token = "sAZJpFT7ntDM4+!gJ+h-";
-            $message = "Assamualaikum Wr Wb. 
-            Berikut informasi perkara banding nomor: 
-            " . $no_perkara . "
-            
-            1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
-            2. Dengan status saat ini: " . $status_perkara . "
-            
-            Ini adalah sistem pemberitahuan otomatis perkara banding anda.
-            ______________________________________________________________ 
-            Ketik informasi untuk mengetahui perintah lainnya. 
-            Sistem Informasi Pelayanan Perkara PTA Manado";
-                    }
-            
-                     //API Notifikasi WA
-                    $curl = curl_init();
-            
-                    curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://api.fonnte.com/send',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-            
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS => array(
-                    'target' => $target,
-                    'message' => $message,
-            
-                    ),
-                    CURLOPT_HTTPHEADER => array(
-                        "Authorization: $token"
-                    ),
-                    ));
-            
-                    $response = curl_exec($curl);
-            
-                    curl_close($curl);
-                    // echo $response;
 
+//API Notifikasi WA  
+$token = "sAZJpFT7ntDM4+!gJ+h-";
+$message = "Assamualaikum Wr Wb. 
+Berikut informasi perkara banding nomor: 
+" . $no_perkara . "
+
+1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+2. Dengan status saat ini: " . $status_perkara . " ke Pengadilan Tingkat Pertama
+
+Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+___________________________________
+Ketik informasi untuk mengetahui perintah lainnya. 
+SIPEKA PTA Manado";
+        }else {
+           
+$token = "sAZJpFT7ntDM4+!gJ+h-";
+$message = "Assamualaikum Wr Wb. 
+Berikut informasi perkara banding nomor: 
+" . $no_perkara . "
+
+1. Telah terdaftar pada PTA Manado tanggal: " . $tgl_reg_banding . "
+2. Dengan status saat ini: " . $status_perkara . "
+
+Ini adalah sistem pemberitahuan otomatis perkara banding anda.
+____________________________________    
+Ketik informasi untuk mengetahui perintah lainnya. 
+SIPEKA PTA Manado";
+        }
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.fonnte.com/send',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array(
+        'target' => $target,
+        'message' => $message,
+        'delay' => '2'
+        ),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: $token"
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        // echo $response;
         json_encode($array);
     }
 
@@ -260,16 +262,19 @@ class Panmud extends CI_Controller
     {
         $pengedit = $this->session->userdata('nama');
 
-        $id_pmh = $this->input->post('id_pmh');
+        // $id_pmh = $this->input->post('id_pmh');
         $id_perkara = $this->input->post('id_perkara');
+
         $majelis_hakim = $this->input->post('majelis_hakim');
+       
 
         $data = [
-            'id_pmh' => $id_pmh,
+            // 'id_pmh' => $id_pmh,
             'id_perkara' => $id_perkara,
             'majelis_hakim' => $majelis_hakim,
         ];
-        $this->db->insert('pmh', $data);
+        $this->db->where('id_perkara', $id_perkara);
+        $this->db->update('pmh', $data);
 
         $audittrail = array(
             'log_id' => '',
@@ -281,7 +286,7 @@ class Panmud extends CI_Controller
         $this->db->insert('log_audittrail', $audittrail);
 
         $this->session->set_flashdata('flash', 'Penunjukkan Majelis Hakim Berhasil');
-        redirect('Panmud');
+        redirect('admin/Admin/inputNoper');
     }
 
     public function get_log_inbox()

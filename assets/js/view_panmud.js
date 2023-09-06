@@ -16,9 +16,9 @@ $(document).ready(function () {
             },
             { "data": "nama" },
             { "data": "tgl_register" },
-            { "data": "nm_pihak_penggugat" },
-            { "data": "no_hp_penggugat" },
-            { "data": "nm_pihak_tergugat" },
+            // { "data": "nm_pihak_penggugat" },
+            // { "data": "no_hp_penggugat" },
+            // { "data": "nm_pihak_tergugat" },
             { "data": "no_perkara" },
             { "data": "jns_perkara" },
             { "data": "tgl_reg_banding" },
@@ -103,10 +103,11 @@ $(document).ready(function () {
     //input status perkara
     $('#listperkara').on('click', '.item_staper', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
-        let id_perkara = data['id_perkara'];
         let no_perkara_banding = data['no_perkara_banding'];
         let no_hp_penggugat = data['no_hp_penggugat'];
+        let no_hp_tergugat = data['no_hp_tergugat'];
         let tgl_reg_banding = data['tgl_reg_banding'];
+        let id_perkara = data['id_perkara'];
         
         //tampilkan pilihan jenis perkara lewat SWAL2
         const { value: staper } = Swal.fire({
@@ -145,6 +146,7 @@ $(document).ready(function () {
                                 status_perkara: value,
                                 no_perkara_banding: no_perkara_banding,
                                 no_hp_penggugat: no_hp_penggugat,
+                                no_hp_tergugat: no_hp_tergugat,
                                 tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
@@ -164,6 +166,7 @@ $(document).ready(function () {
                                 status_perkara: value,
                                 no_perkara_banding: no_perkara_banding,
                                 no_hp_penggugat: no_hp_penggugat,
+                                no_hp_tergugat: no_hp_tergugat,
                                 tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
@@ -183,6 +186,7 @@ $(document).ready(function () {
                                 status_perkara: value,
                                 no_perkara_banding: no_perkara_banding,
                                 no_hp_penggugat: no_hp_penggugat,
+                                no_hp_tergugat: no_hp_tergugat,
                                 tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
@@ -203,6 +207,7 @@ $(document).ready(function () {
                                 status_perkara: value,
                                 no_perkara_banding: no_perkara_banding,
                                 no_hp_penggugat: no_hp_penggugat,
+                                no_hp_tergugat: no_hp_tergugat,
                                 tgl_reg_banding: tgl_reg_banding,
                             },
                             dataType: "json",
@@ -218,8 +223,6 @@ $(document).ready(function () {
 
 
     });//=====
-
-
 
     //function pilih majelis hakim
     function pilihMH(id_perkara) {
