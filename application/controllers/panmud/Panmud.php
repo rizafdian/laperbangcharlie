@@ -52,9 +52,9 @@ class Panmud extends CI_Controller
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
         $data['header'] = $this->db->get_where('v_header_perkara', ['id_perkara' => $id])->result_object();
 
-        $this->load->view('admin/header', $data);
-        $this->load->view('admin/view_berkas_admin', $data);
-        $this->load->view('admin/footer', $data);
+        $this->load->view('panmud/header', $data);
+        $this->load->view('panmud/view_berkas_admin', $data);
+        $this->load->view('panmud/footer', $data);
     }
 
     public function updatenoper()
@@ -286,7 +286,7 @@ SIPEKA PTA Manado";
         $this->db->insert('log_audittrail', $audittrail);
 
         $this->session->set_flashdata('flash', 'Penunjukkan Majelis Hakim Berhasil');
-        redirect('admin/Admin/inputNoper');
+        redirect('panmud/panmud/inputNoper');
     }
 
     public function get_log_inbox()
