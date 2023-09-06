@@ -6,7 +6,7 @@ $(document).ready(function () {
     console.log(path);
     //---Tampil data table kegiatan
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}/panmud/Panmud/get_data_banding/`,
+        "ajax": `${path}/panmud/panmud/get_data_banding`,
         "columns": [
             {
                 "data": null, "sortable": false,
