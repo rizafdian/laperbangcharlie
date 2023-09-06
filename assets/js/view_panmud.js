@@ -71,7 +71,7 @@ $(document).ready(function () {
                     //kalo jadi simpan baru kase ba jalang ajax
                     $.ajax({
                         type: "POST",
-                        url: `${path}/panmud/updatenoper`,
+                        url: `${path}/panmud/panmud/updatenoper`,
                         data: {
                             id_perkara: id_perkara,
                             tgl_reg_banding: tgl_reg_banding,
@@ -140,7 +140,7 @@ $(document).ready(function () {
                     if (value === 'Penunjukan Majelis Hakim') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/updateStatus`,
+                            url: `${path}/panmud/panmud/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -160,7 +160,7 @@ $(document).ready(function () {
                     } else if (value === 'Penunjukkan Panitera Pengganti') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/updateStatus`,
+                            url: `${path}/panmud/panmud/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -180,7 +180,7 @@ $(document).ready(function () {
                     } else if (value === 'Pengiriman Salinan Putusan') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/updateStatus`,
+                            url: `${path}/panmud/panmud/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -201,7 +201,7 @@ $(document).ready(function () {
                     else {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/updateStatus`,
+                            url: `${path}/panmud/panmud/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -255,7 +255,7 @@ $(document).ready(function () {
     $('#listperkara').on('click', '.item_view', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
         let id_perkara = data['id_perkara'];
-        window.location.href = `${path}panmud/view_berkas_admin/${id_perkara}/`;
+        window.location.href = `${path}/panmud/panmud/view_berkas_admin/${id_perkara}/`;
 
     });
 
