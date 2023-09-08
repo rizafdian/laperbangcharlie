@@ -7,7 +7,7 @@ $(document).ready(function () {
     console.log(path);
     //---Tampil data table kegiatan
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}/pp/panitera)_pengganti/get_data_banding/`,
+        "ajax": `${path}/pp/panitera_pengganti/get_data_banding`,
         "columns": [
             {
                 "data": null, "sortable": false,
