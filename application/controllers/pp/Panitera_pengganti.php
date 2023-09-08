@@ -7,6 +7,7 @@ class Panitera_pengganti extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model("M_banding", "m_banding");
         //usir user yang ga punya session
         if (!$this->session->userdata('id')  || $this->session->userdata('role_id') != 5) {
             redirect('auth');
