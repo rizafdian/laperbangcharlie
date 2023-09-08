@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
     //data table
-    const prapath = window.location.origin;
-    const path = `${prapath}/laperbang/Panitera_pengganti/`;
+    const path = window.location.origin;
+    // const path = `${prapath}/laperbang/Panitera_pengganti/`;
     // const path = `../../Panitera_pengganti/`;
     console.log(path);
     //---Tampil data table kegiatan
     let list_perkara = $('#listperkara').DataTable({
-        "ajax": `${path}get_data_banding/`,
+        "ajax": `${path}/pp/pp_laper/get_data_banding/`,
         "columns": [
             {
                 "data": null, "sortable": false,
@@ -37,7 +37,7 @@ $(document).ready(function () {
     $('#listperkara').on('click', '.item_view', function () {
         let data = list_perkara.row($(this).parents('tr')).data();
         let id_perkara = data['id_perkara'];
-        window.location.href = `${path}view_berkas_admin/${id_perkara}/`;
+        window.location.href = `${path}/pp/pp_laper/view_berkas_admin/${id_perkara}/`;
 
     });
 

@@ -193,7 +193,7 @@
             <div class="modal-content">
 
                 <div class="modal-body">
-                    <form method="POST" action="<?php echo base_url('admin/adminlaper/add_validasi'); ?>" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo base_url('pp/pp_laper/add_validasi'); ?>" enctype="multipart/form-data">
                         <?php foreach ($laporan as $lhs) : ?>
                             <input type="text" id="id_laper" name="id_laper" value="<?php echo $lhs['id'] ?>" hidden>
                         <?php endforeach; ?>
