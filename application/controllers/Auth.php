@@ -64,8 +64,6 @@ class Auth extends CI_Controller
                             redirect('pa/pa');
                         } elseif ($user['role_id'] == 3) {
                             redirect('hakim/hakim');
-                        } elseif ($user['role_id'] == 4) {
-                            redirect('panmud/panmud');
                         } else {
                             redirect('pp/panitera_pengganti');
                         }

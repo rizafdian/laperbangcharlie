@@ -27,7 +27,13 @@ class Panitera_pengganti extends CI_Controller
 
     public function get_data_banding()
     {
-        $data = $this->m_banding->get_perkara_pp();
+        $role_id = $this->session->userdata('role_id');
+        if ($role_id == "4") {
+            $data = $this->m_banding->DataBanding();
+        }else {
+            $data = $this->m_banding->get_perkara_pp();
+        }
+        
         $result =  [
             'response' => 'success',
             'code' => 600,
