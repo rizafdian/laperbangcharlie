@@ -51,6 +51,7 @@ class Panitera_pengganti extends CI_Controller
         $data['js'] = 'view_berkas_admin.js';
 
         $data['detail_berkas'] = $this->db->get_where('v_perkara_pp', ['id_perkara' => $id])->result_object();
+        $data['header'] = $this->db->get_where('v_header_perkara', ['id_perkara' => $id])->result_object();
 
         $this->load->view('panitera_pengganti/header', $data);
         $this->load->view('panitera_pengganti/view_berkas_admin', $data);
