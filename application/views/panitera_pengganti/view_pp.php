@@ -14,8 +14,8 @@
                                 <th>#</th>
                                 <th>Satker</th>
                                 <th>Tanggal Upload</th>
-                                <th>Pihak Penggugat</th>
-                                <th>Pihak Tergugat</th>
+                                <!-- <th>Pihak Penggugat</th>
+                                <th>Pihak Tergugat</th> -->
                                 <th>Nomor Perkara Tk.I</th>
                                 <th>Jenis Perkara</th>
                                 <th>Nomor Perkara Banding</th>
