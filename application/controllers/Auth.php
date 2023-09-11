@@ -29,10 +29,10 @@ class Auth extends CI_Controller
                 redirect('hakim/hakim');
                 break;
             case '4':
-                redirect('panmud/panmud');
+                redirect('pp/panitera_pengganti');
                 break;
             case '5':
-                redirect('pp/pp');
+                redirect('pp/panitera_pengganti');
                 break;
         }
 
