@@ -71,7 +71,7 @@ $(document).ready(function () {
                     //kalo jadi simpan baru kase ba jalang ajax
                     $.ajax({
                         type: "POST",
-                        url: `${path}/panmud/panmud/updatenoper`,
+                        url: `${path}/pp/panitera_pengganti/updatenoper`,
                         data: {
                             id_perkara: id_perkara,
                             tgl_reg_banding: tgl_reg_banding,
@@ -140,7 +140,7 @@ $(document).ready(function () {
                     if (value === 'Penunjukan Majelis Hakim') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/panmud/updateStatus`,
+                            url: `${path}/pp/panitera_pengganti/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -160,7 +160,7 @@ $(document).ready(function () {
                     } else if (value === 'Penunjukkan Panitera Pengganti') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/panmud/updateStatus`,
+                            url: `${path}/pp/panitera_pengganti/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -180,7 +180,7 @@ $(document).ready(function () {
                     } else if (value === 'Pengiriman Salinan Putusan') {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/panmud/updateStatus`,
+                            url: `${path}/pp/panitera_pengganti/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
@@ -201,7 +201,7 @@ $(document).ready(function () {
                     else {
                         $.ajax({
                             type: "POST",
-                            url: `${path}/panmud/panmud/updateStatus`,
+                            url: `${path}/pp/panitera_pengganti/updateStatus`,
                             data: {
                                 id_perkara: id_perkara,
                                 status_perkara: value,
