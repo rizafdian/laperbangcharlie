@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_banding', 'banding');
+        $this->load->model("M_banding", "m_banding");
         //usir user yang ga punya session
         if (!$this->session->userdata('id') || $this->session->userdata('role_id') != 1) {
             redirect('auth');
@@ -21,8 +21,8 @@ class Dashboard extends CI_Controller {
         $data['js'] = 'dashboard_admin.js';
 
         //dashboard card
-        $data_harian = $this->banding->countLapHarian();
-        $putus_harian = $this->banding->countPerkaraPutus();
+        $data_harian = $this->m_banding->countLapHarian();
+        $putus_harian = $this->m_banding->countPerkaraPutus();
         $data['perkara'] = $this->db->get('kategori_perkara')->result_array();
         $data['data_harian'] = $data_harian;
         $data['putus_harian'] = $putus_harian;
