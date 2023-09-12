@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("M_banding", "m_banding");
+        $this->load->model('m_banding', 'banding');
         //usir user yang ga punya session
         if (!$this->session->userdata('id') || $this->session->userdata('role_id') != 1) {
             redirect('auth');
