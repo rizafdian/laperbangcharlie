@@ -49,8 +49,7 @@
 
 
         let PAManado = {
-            label: "PA Manado",
-            borderWidth: 1, 
+            label: "PA Manado", 
             lineTension: 0.3,
             borderColor: "#1d5f53",
             pointRadius: 5,

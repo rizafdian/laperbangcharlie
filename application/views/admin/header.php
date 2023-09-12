@@ -31,7 +31,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">
+            <a class="navbar-brand ps-3">
             <img class="img-fluid" width="50%" src="<?= base_url('assets/img/logoapp.png') ?>" alt="">
             </a>
             <!-- Sidebar Toggle-->
