@@ -59,10 +59,11 @@ class Auth extends CI_Controller
                         ];
                         $this->session->set_userdata($data);
                         if ($user['role_id'] == 1) {
-                            redirect('admin/admin/inputnoper');
+                            redirect('admin/dashboard');
                         } elseif ($user['role_id'] == 2) {
                             redirect('pa/pa');
                         } elseif ($user['role_id'] == 3) {
+                            
                             redirect('hakim/hakim');
                         } else {
                             redirect('pp/panitera_pengganti');
