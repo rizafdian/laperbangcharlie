@@ -28,6 +28,20 @@ class Dashboard extends CI_Controller {
         $data['putus_harian'] = $putus_harian;
         $data['sisa_harian'] = $data_harian - $putus_harian;
 
+        //dashboard perkara banding
+        $data['perkara_januari']    = $this->m_banding->perkara_januari()->num_rows();
+        $data['perkara_februari']    = $this->m_banding->perkara_februari()->num_rows();
+        $data['perkara_maret']    = $this->m_banding->perkara_maret()->num_rows();
+        $data['perkara_april']    = $this->m_banding->perkara_april()->num_rows();
+        $data['perkara_may']    = $this->m_banding->perkara_may()->num_rows();
+        $data['perkara_juni']    = $this->m_banding->perkara_juni()->num_rows();
+        $data['perkara_juli']    = $this->m_banding->perkara_juli()->num_rows();
+        $data['perkara_agustus']    = $this->m_banding->perkara_agustus()->num_rows();
+        $data['perkara_september']    = $this->m_banding->perkara_september()->num_rows();
+        $data['perkara_oktober']    = $this->m_banding->perkara_oktober()->num_rows();
+        $data['perkara_november']    = $this->m_banding->perkara_november()->num_rows();
+        $data['perkara_desember']    = $this->m_banding->perkara_desember()->num_rows();
+
         //dashboard chart laporan perkara
         $data_mdo1 = $this->db->get_where('laporan_perkara', ['id_user' => "2", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
         if (empty ($data_mdo1)) {

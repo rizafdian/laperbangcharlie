@@ -38,7 +38,7 @@
 <script src="<?= base_url('assets/js/') . $js ?>"></script>
 
 <script>
-    //untuk chart
+    //untuk chart laper zona 1
 
     $(document).ready(function() {
 
@@ -122,7 +122,7 @@
 </script>
 
 <script>
-    //untuk chart
+    //untuk chart laper zona 2
 
     $(document).ready(function() {
 
@@ -201,6 +201,70 @@
             data: tampungData
         });
         // akhir chart
+    });
+</script>
+
+<script>
+    //untuk chart perkara banding
+
+    $(document).ready(function() {
+
+        Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+        Chart.defaults.global.defaultFontColor = '#292b2c';
+
+        let ctx = document.getElementById("myAreaChart");
+
+
+        let dataBanding = {
+            label: "Banding",
+            lineTension: 0.3,
+            borderColor: "#1d5f53",
+            pointRadius: 5,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#1d5f53",
+            pointHitRadius: 50,
+            pointBorderWidth: 2,
+            data: ["<?php echo $perkara_januari ?>", "<?php echo $perkara_februari ?>", "<?php echo $perkara_maret ?>", "<?php echo $perkara_april ?>", "<?php echo $perkara_may ?>", "<?php echo $perkara_juni ?>", "<?php echo $perkara_juli ?>", "<?php echo $perkara_agustus ?>", "<?php echo $perkara_september ?>", "<?php echo $perkara_oktober ?>", "<?php echo $perkara_november ?>", "<?php echo $perkara_desember ?>"]
+        };
+
+        let dataExaminasi = {
+            label: "Examinasi",
+            lineTension: 0.3,
+            borderColor: "#719e0f",
+            pointRadius: 5,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#719e0f",
+            pointHitRadius: 50,
+            pointBorderWidth: 2,
+            data: []
+        };
+
+        let dataLaporanPerkara = {
+            label: "Laporan Perkara",
+            lineTension: 0.3,
+            borderColor: "#be9a21",
+            pointRadius: 5,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#be9a21",
+            pointHitRadius: 50,
+            pointBorderWidth: 2,
+            data: []
+        };
+
+        let tampungData = {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Okt", "Nov", "Desember"],
+            datasets: [dataBanding, dataExaminasi, dataLaporanPerkara]
+        };
+
+        let linceChart = new Chart(ctx, {
+            type: 'line',
+            data: tampungData
+        });
+
+
+        // akhir chart
+
+
     });
 </script>
 
