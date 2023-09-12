@@ -37,11 +37,11 @@
 <!-- jspribadi -->
 <script src="<?= base_url('assets/js/') . $js ?>"></script>
 
-
 <script>
+    //untuk chart
+
     $(document).ready(function() {
 
-        //untuk chart laper zona 1
         Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
         Chart.defaults.global.defaultFontColor = '#292b2c';
 
@@ -118,8 +118,14 @@
             data: tampungData
         });
         // akhir chart
+    });
+</script>
 
-        //untuk chart laper zona 2
+<script>
+    //untuk chart
+
+    $(document).ready(function() {
+
         Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
         Chart.defaults.global.defaultFontColor = '#292b2c';
 
@@ -195,7 +201,11 @@
             data: tampungData
         });
         // akhir chart
+    });
+</script>
 
+<script>
+    $(document).ready(function() {
 
         const path = window.location.origin;
         //ambil data get_log_inbox
