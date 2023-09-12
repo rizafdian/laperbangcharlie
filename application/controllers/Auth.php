@@ -66,7 +66,7 @@ class Auth extends CI_Controller
                             
                             redirect('hakim/hakim');
                         } else {
-                            redirect('pp/dashboard');
+                            redirect('pp/dashboard_pp');
                         }
                     } else {
                         $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">Password salah</div>');

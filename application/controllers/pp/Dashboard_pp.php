@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard_pp extends CI_Controller {
     
     public function __construct()
     {
@@ -1022,8 +1022,8 @@ class Dashboard extends CI_Controller {
            $data['des_tty'] = date('d', strtotime($data_tty12['tty_des'][0]['tgl_upload']));
        }
 
-        $this->load->view('pp/header', $data);
-        $this->load->view('pp/dashboard', $data);
-        $this->load->view('pp/footer', $data);
+        $this->load->view('panitera_pengganti/header', $data);
+        $this->load->view('panitera_pengganti/dashboard', $data);
+        $this->load->view('panitera_pengganti/footer', $data);
     }
 }
