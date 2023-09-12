@@ -14,9 +14,7 @@ class Dashboard extends CI_Controller {
     }
 
     public function index() {
-        $tes = "ini halaman dashboard";
-        var_dump($tes);
-        die;
+        
         //konten
         $data['judul'] = 'Dashboard';
         $data['css'] = 'dashboard_admin.css';
