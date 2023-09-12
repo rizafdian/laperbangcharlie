@@ -8,7 +8,7 @@ class Dashboard_pp extends CI_Controller {
         parent::__construct();
         $this->load->model("M_banding", "m_banding");
         //usir user yang ga punya session
-        if (!$this->session->userdata('id') || $this->session->userdata('role_id') != 1) {
+        if (!$this->session->userdata('id') || $this->session->userdata('role_id') != 4 && $this->session->userdata('role_id') != 5) {
             redirect('auth');
         }
     }
