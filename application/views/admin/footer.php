@@ -216,31 +216,7 @@
 
 
         let dataBanding = {
-            label: "Banding",
-            lineTension: 0.3,
-            borderColor: "#1d5f53",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#1d5f53",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: ["<?php echo $perkara_januari ?>", "<?php echo $perkara_februari ?>", "<?php echo $perkara_maret ?>", "<?php echo $perkara_april ?>", "<?php echo $perkara_may ?>", "<?php echo $perkara_juni ?>", "<?php echo $perkara_juli ?>", "<?php echo $perkara_agustus ?>", "<?php echo $perkara_september ?>", "<?php echo $perkara_oktober ?>", "<?php echo $perkara_november ?>", "<?php echo $perkara_desember ?>"]
-        };
-
-        let dataExaminasi = {
-            label: "Examinasi",
-            lineTension: 0.3,
-            borderColor: "#719e0f",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#719e0f",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: []
-        };
-
-        let dataLaporanPerkara = {
-            label: "Laporan Perkara",
+            label: "Perkara Banding",
             lineTension: 0.3,
             borderColor: "#be9a21",
             pointRadius: 5,
@@ -248,12 +224,12 @@
             pointHoverBackgroundColor: "#be9a21",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-            data: []
+            data: ["<?php echo $perkara_januari ?>", "<?php echo $perkara_februari ?>", "<?php echo $perkara_maret ?>", "<?php echo $perkara_april ?>", "<?php echo $perkara_may ?>", "<?php echo $perkara_juni ?>", "<?php echo $perkara_juli ?>", "<?php echo $perkara_agustus ?>", "<?php echo $perkara_september ?>", "<?php echo $perkara_oktober ?>", "<?php echo $perkara_november ?>", "<?php echo $perkara_desember ?>"]
         };
 
         let tampungData = {
             labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Okt", "Nov", "Desember"],
-            datasets: [dataBanding, dataExaminasi, dataLaporanPerkara]
+            datasets: [dataBanding]
         };
 
         let linceChart = new Chart(ctx, {
