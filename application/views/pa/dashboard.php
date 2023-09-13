@@ -58,7 +58,7 @@
 </div> -->
 
 <div class="row">
-        <div class="col">
+        <div class="col-xl-6">
 
             <div class="card mb-4">
                 <div class="card-header">
@@ -73,7 +73,7 @@
     </div>
 
     <div class="row">
-        <div class="col">
+        <div class="col-xl-6">
 
             <div class="card mb-4">
                 <div class="card-header">
