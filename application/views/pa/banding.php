@@ -21,7 +21,7 @@
             <!-- button tambah perkara -->
             <div class="mt-3">
             <div class="table-responsive">
-                <table class="table table-hover" id="tablePerkara">
+                <table class="table table-hover" id="myTable">
                     <thead>
                         <tr>
                             <th>#</th>
