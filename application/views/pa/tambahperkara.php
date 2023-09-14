@@ -1,6 +1,6 @@
 <div class="row mt-3">
 
-    <div class="col-lg-6">
+    <div class="col">
 
         <div class="card mb-6">
             <div class="card-header fw-bold">
@@ -74,37 +74,37 @@
 
                         switch ($this->session->userdata('kode_pa')) {
                             case 'PA.Mdo':
-                                $kode_surat_pa = 'KPA.W18.A1';
+                                $kode_surat_pa = 'KPA.W18-A1';
                                 break;
                             case 'PA.Ktg':
-                                $kode_surat_pa = 'KPA.W18.A2';
+                                $kode_surat_pa = 'KPA.W18-A2';
                                 break;
                             case 'PA.Thn':
-                                $kode_surat_pa = 'KPA.W18.A3';
+                                $kode_surat_pa = 'KPA.W18-A3';
                                 break;
                             case 'PA.Tdo':
-                                $kode_surat_pa = 'KPA.W18.A4';
+                                $kode_surat_pa = 'KPA.W18-A4';
                                 break;
                             case 'PA.Btg':
-                                $kode_surat_pa = 'KPA.W18.A5';
+                                $kode_surat_pa = 'KPA.W18-A5';
                                 break;
                             case 'PA.Amg':
-                                $kode_surat_pa = 'KPA.W18.A6';
+                                $kode_surat_pa = 'KPA.W18-A6';
                                 break;
                             case 'PA.Llk':
-                                $kode_surat_pa = 'KPA.W18.A7';
+                                $kode_surat_pa = 'KPA.W18-A7';
                                 break;
                             case 'PA.Blu':
-                                $kode_surat_pa = 'KPA.W18.A8';
+                                $kode_surat_pa = 'KPA.W18-A8';
                                 break;
                             case 'PA.Brk':
-                                $kode_surat_pa = 'KPA.W18.A9';
+                                $kode_surat_pa = 'KPA.W18-A9';
                                 break;
                             case 'PA.Tty':
-                                $kode_surat_pa = 'KPA.W18.A10';
+                                $kode_surat_pa = 'KPA.W18-A10';
                                 break;
                             case 'PA.Per':
-                                $kode_surat_pa = 'KPA.W18.A11';
+                                $kode_surat_pa = 'KPA.W18-A11';
                                 break;
                         }
 
