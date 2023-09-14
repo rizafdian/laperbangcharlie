@@ -1,6 +1,6 @@
 <div class="row mt-3">
 
-    <div class="col">
+    <div class="col-lg-10">
 
         <div class="card mb-6">
             <div class="card-header fw-bold">
@@ -163,9 +163,13 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <div class="col-sm-10">
+                            <button class="btn btn-success" type="submit">Kirim</button>
 
-                        <button class="btn btn-success" type="submit">Kirim</button>
-
+                            </div>
+                        </div>
+                        
 
                     </form> <!-- end form addBerkas -->
                 </div>
