@@ -42,8 +42,8 @@
         let ctx = document.getElementById("LaperZona1");
 
 
-        let PAManado = {
-            label: "PA Manado",
+        let PA = {
+            label: "<?php echo $nama ?>",
             lineTension: 0.3,
             borderColor: "#1d5f53",
             pointRadius: 5,
@@ -54,57 +54,57 @@
             data: ["<?php echo $jan_mdo ?>","<?php echo $feb_mdo ?>","<?php echo $mar_mdo ?>","<?php echo $apr_mdo ?>","<?php echo $mei_mdo ?>","<?php echo $jun_mdo ?>","<?php echo $jul_mdo ?>","<?php echo $aug_mdo ?>","<?php echo $sep_mdo ?>","<?php echo $oct_mdo ?>","<?php echo $nov_mdo ?>","<?php echo $des_mdo ?>"]
         };
 
-        let PATahuna = {
-            label: "PA Tahuna",
-            lineTension: 0.3,
-            borderColor: "#719e0f",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#719e0f",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: ["<?php echo $jan_thn ?>","<?php echo $feb_thn ?>","<?php echo $mar_thn ?>","<?php echo $apr_thn ?>","<?php echo $mei_thn ?>","<?php echo $jun_thn ?>","<?php echo $jul_thn ?>","<?php echo $aug_thn ?>","<?php echo $sep_thn ?>","<?php echo $oct_thn ?>","<?php echo $nov_thn ?>","<?php echo $des_thn ?>"]
-        };
+        // let PATahuna = {
+        //     label: "PA Tahuna",
+        //     lineTension: 0.3,
+        //     borderColor: "#719e0f",
+        //     pointRadius: 5,
+        //     pointHoverRadius: 5,
+        //     pointHoverBackgroundColor: "#719e0f",
+        //     pointHitRadius: 50,
+        //     pointBorderWidth: 2,
+        //     data: ["<?php echo $jan_thn ?>","<?php echo $feb_thn ?>","<?php echo $mar_thn ?>","<?php echo $apr_thn ?>","<?php echo $mei_thn ?>","<?php echo $jun_thn ?>","<?php echo $jul_thn ?>","<?php echo $aug_thn ?>","<?php echo $sep_thn ?>","<?php echo $oct_thn ?>","<?php echo $nov_thn ?>","<?php echo $des_thn ?>"]
+        // };
 
-        let PATondano = {
-            label: "PA Tondano",
-            lineTension: 0.3,
-            borderColor: "#be9a21",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#be9a21",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: ["<?php echo $jan_tdo ?>","<?php echo $feb_tdo ?>","<?php echo $mar_tdo ?>","<?php echo $apr_tdo ?>","<?php echo $mei_tdo ?>","<?php echo $jun_tdo ?>","<?php echo $jul_tdo ?>","<?php echo $aug_tdo ?>","<?php echo $sep_tdo ?>","<?php echo $oct_tdo ?>","<?php echo $nov_tdo ?>","<?php echo $des_tdo ?>"]
-        };
+        // let PATondano = {
+        //     label: "PA Tondano",
+        //     lineTension: 0.3,
+        //     borderColor: "#be9a21",
+        //     pointRadius: 5,
+        //     pointHoverRadius: 5,
+        //     pointHoverBackgroundColor: "#be9a21",
+        //     pointHitRadius: 50,
+        //     pointBorderWidth: 2,
+        //     data: ["<?php echo $jan_tdo ?>","<?php echo $feb_tdo ?>","<?php echo $mar_tdo ?>","<?php echo $apr_tdo ?>","<?php echo $mei_tdo ?>","<?php echo $jun_tdo ?>","<?php echo $jul_tdo ?>","<?php echo $aug_tdo ?>","<?php echo $sep_tdo ?>","<?php echo $oct_tdo ?>","<?php echo $nov_tdo ?>","<?php echo $des_tdo ?>"]
+        // };
 
-        let PABitung = {
-            label: "PA Bitung",
-            lineTension: 0.3,
-            borderColor: "#008080",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#be9a21",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: ["<?php echo $jan_bt ?>","<?php echo $feb_bt ?>","<?php echo $mar_bt ?>","<?php echo $apr_bt ?>","<?php echo $mei_bt ?>","<?php echo $jun_bt ?>","<?php echo $jul_bt ?>","<?php echo $aug_bt ?>","<?php echo $sep_bt ?>","<?php echo $oct_bt ?>","<?php echo $nov_bt ?>","<?php echo $des_bt ?>"]
-        };
+        // let PABitung = {
+        //     label: "PA Bitung",
+        //     lineTension: 0.3,
+        //     borderColor: "#008080",
+        //     pointRadius: 5,
+        //     pointHoverRadius: 5,
+        //     pointHoverBackgroundColor: "#be9a21",
+        //     pointHitRadius: 50,
+        //     pointBorderWidth: 2,
+        //     data: ["<?php echo $jan_bt ?>","<?php echo $feb_bt ?>","<?php echo $mar_bt ?>","<?php echo $apr_bt ?>","<?php echo $mei_bt ?>","<?php echo $jun_bt ?>","<?php echo $jul_bt ?>","<?php echo $aug_bt ?>","<?php echo $sep_bt ?>","<?php echo $oct_bt ?>","<?php echo $nov_bt ?>","<?php echo $des_bt ?>"]
+        // };
 
-        let PAAmurang = {
-            label: "PA Amurang",
-            lineTension: 0.3,
-            borderColor: "#FF4500",
-            pointRadius: 5,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#be9a21",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: ["<?php echo $jan_amu ?>","<?php echo $feb_amu ?>","<?php echo $mar_amu ?>","<?php echo $apr_amu ?>","<?php echo $mei_amu ?>","<?php echo $jun_amu ?>","<?php echo $jul_amu ?>","<?php echo $aug_amu ?>","<?php echo $sep_amu ?>","<?php echo $oct_amu ?>","<?php echo $nov_amu ?>","<?php echo $des_amu ?>"]
-        };
+        // let PAAmurang = {
+        //     label: "PA Amurang",
+        //     lineTension: 0.3,
+        //     borderColor: "#FF4500",
+        //     pointRadius: 5,
+        //     pointHoverRadius: 5,
+        //     pointHoverBackgroundColor: "#be9a21",
+        //     pointHitRadius: 50,
+        //     pointBorderWidth: 2,
+        //     data: ["<?php echo $jan_amu ?>","<?php echo $feb_amu ?>","<?php echo $mar_amu ?>","<?php echo $apr_amu ?>","<?php echo $mei_amu ?>","<?php echo $jun_amu ?>","<?php echo $jul_amu ?>","<?php echo $aug_amu ?>","<?php echo $sep_amu ?>","<?php echo $oct_amu ?>","<?php echo $nov_amu ?>","<?php echo $des_amu ?>"]
+        // };
 
         let tampungData = {
             labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Okt", "Nov", "Des"],
-            datasets: [PAManado, PATahuna, PATondano, PABitung, PAAmurang]
+            datasets: [PA]
         };
 
         let linceChart = new Chart(ctx, {
@@ -119,7 +119,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     //untuk chart
 
     $(document).ready(function() {
@@ -204,7 +204,7 @@
 
 
     });
-</script>
+</script> -->
 </body>
 
 </html>

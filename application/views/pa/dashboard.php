@@ -62,12 +62,12 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
-                        Laporan Perkara Wilayah 1
+                        Laporan Perkara
                     </div>
                     <div class="card-body"><canvas id="LaperZona1" width="100%" height="40"></canvas></div>
                 </div>
             </div>
-            <div class="col-xl-6">
+            <!-- <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
@@ -75,6 +75,6 @@
                     </div>
                     <div class="card-body"><canvas id="LaperZona2" width="100%" height="40"></canvas></div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+</div>
 

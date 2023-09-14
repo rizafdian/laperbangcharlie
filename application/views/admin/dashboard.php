@@ -38,7 +38,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
-                        Laporan Perkara Wilayah 1
+                        Pengiriman Laporan Perkara Wilayah 1
                     </div>
                     <div class="card-body"><canvas id="LaperZona1" width="100%" height="40"></canvas></div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area me-1"></i>
-                        Laporan Perkara Wilayah 2
+                        Pengiriman Laporan Perkara Wilayah 2
                     </div>
                     <div class="card-body"><canvas id="LaperZona2" width="100%" height="40"></canvas></div>
                 </div>

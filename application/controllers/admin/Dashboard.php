@@ -147,7 +147,7 @@ class Dashboard extends CI_Controller {
         } 
         else {
             $data_thn1['thn_jan'] = $this->db->get_where('laporan_perkara', ['id_user' => "10", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
-            $data['thn_mdo'] = date('d', strtotime($data_thn1['thn_jan'][0]['tgl_upload']));
+            $data['jan_thn'] = date('d', strtotime($data_thn1['thn_jan'][0]['tgl_upload']));
         }
         $data_thn2 = $this->db->get_where('laporan_perkara', ['id_user' => "10",'Month(tgl_upload)' => "2", 'Year(tgl_upload)' => date('Y')])->result_array();
         if (empty ($data_thn2)) {
@@ -163,7 +163,7 @@ class Dashboard extends CI_Controller {
         } 
         else {
             $data_thn3['thn_mar'] = $this->db->get_where('laporan_perkara', ['id_user' => "10",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
-            $data['mar_thn'] = date('d', strtotime($data_thn3['mdo_mar'][0]['tgl_upload']));
+            $data['mar_thn'] = date('d', strtotime($data_thn3['thn_mar'][0]['tgl_upload']));
         }
         $data_thn4 = $this->db->get_where('laporan_perkara', ['id_user' => "10",'Month(tgl_upload)' => "4", 'Year(tgl_upload)' => date('Y')])->result_array();
         if (empty ($data_thn4)) {

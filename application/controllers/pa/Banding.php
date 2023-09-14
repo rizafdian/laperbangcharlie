@@ -65,13 +65,15 @@ class Banding extends CI_Controller
             //ambil  nama user
             $pengedit = $this->session->userdata('nama');
             $no_perkara_input = $nomor_perkara . '/' . $kode_perkara . '/' . $tahun_perkara . '/' . $kode_pa;
-            $no_surat_pengantar_input = $kode_surat_pa . '/' . $nomor_surat_pengantar . '/' . 'HK.05/' . $bulan_surat_pengantar . '/' . $tahun_surat_pengantar;
+            $no_surat_pengantar_input = $kode_surat_pa . '/' . $nomor_surat_pengantar . '/' . 'HK2.6/' . $bulan_surat_pengantar . '/' . $tahun_surat_pengantar;
             $data = [
                 'id_perkara' => '',
                 'id_user' => $this->session->userdata('id'),
                 'no_perkara' => $no_perkara_input,
                 'nm_pihak_penggugat' => $this->input->post('nm_pihak_penggugat', true),
+                'no_hp_penggugat' => $this->input->post('no_hp_penggugat', true),
                 'nm_pihak_tergugat' => $this->input->post('nm_pihak_tergugat', true),
+                'no_hp_tergugat' => $this->input->post('no_hp_tergugat', true),
                 'jns_perkara' => $this->input->post('jns_perkara', true),
                 'tgl_register' => $this->input->post('tgl_register', true),
                 'no_surat_pengantar' => $no_surat_pengantar_input,
