@@ -27,7 +27,7 @@
 <script>
     //datatable
     $(document).ready( function() {
-        $('#dataTable1').Datatable();
+        let table = new DataTable('#bandingTable');
     });
 </script>
 
