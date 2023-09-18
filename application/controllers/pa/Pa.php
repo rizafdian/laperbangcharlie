@@ -132,12 +132,13 @@ class Pa extends CI_Controller
             $data_bol12['tty_des'] = $this->db->get_where('laporan_perkara', ['id_user' => "3",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => date('Y')])->result_array();
             $data['des_mdo'] = date('d', strtotime($data_tty12['tty_des'][0]['tgl_upload']));
         
-
+        }
+        
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
         $this->load->view('pa/pa_topbar', $data);
         $this->load->view('pa/dashboard', $data);
         $this->load->view('pa/pa_footer', $data);
-        }
+        
     }
 }
