@@ -61,7 +61,7 @@
         };
 
         let linceChart = new Chart(ctx, {
-            type: 'line',
+            type: 'pie',
             data: tampungData
         });
 
