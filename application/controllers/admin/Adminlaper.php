@@ -717,4 +717,4 @@ class Adminlaper extends CI_Controller
         $this->load->view('errors/view_message');
         $this->load->view('admin/footer', $data);
     }
-
+}
