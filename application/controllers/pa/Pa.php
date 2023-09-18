@@ -138,5 +138,6 @@ class Pa extends CI_Controller
         $this->load->view('pa/pa_topbar', $data);
         $this->load->view('pa/dashboard', $data);
         $this->load->view('pa/pa_footer', $data);
+        }
     }
 }
