@@ -63,7 +63,7 @@
     <!-- button tambah laporan -->
     <a class="btn btn-success" href="<?= base_url('pa/PA_laper/add_laporan_perkara'); ?>">Tambah laporan</a>
 
-    <!-- <div class="card mt-3"> -->
+    <div class="row mt-3">
       <div class="table-responsive">
         <table class="table align-items-center mb-0" id="bandingTable">
           <thead>
@@ -145,7 +145,7 @@
           </tbody>
         </table>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </div>
 <!-- tabel end -->
