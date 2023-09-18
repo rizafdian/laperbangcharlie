@@ -21,9 +21,9 @@ class Pa extends CI_Controller
 
     public function index()
     {
-        $kode = $this->session->userdata('kode_pa');
-        var_dump($kode);
-        die;
+        // $kode = $this->session->userdata('kode_pa');
+        // var_dump($kode);
+        // die;
 
         $data_harian = $this->banding->countLapHarian();
         $putus_harian = $this->banding->countPerkaraPutus();
