@@ -63,9 +63,9 @@
         <!-- <a href="<?php echo base_url() ?>PA_laper/addtriwulan" class="btn bg-gradient-success">Tambah Laporan</a> -->
 
         <!-- table start -->
-        <div class="card">
+        <div class="row">
             <div class="table-responsive">
-                <table class="table align-items-center mb-0">
+                <table class="table align-items-center mb-0" id="bandingTable">
                     <thead>
                         <tr>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
