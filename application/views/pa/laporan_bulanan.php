@@ -123,7 +123,7 @@
                     </span>
                   <?php endif; ?>
                 </td>
-                <td class="align-middle">
+                <td class="align-middle text-center">
                   <!--  <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
                     <i class="fas fa-upload"></i>
                   </a> |
