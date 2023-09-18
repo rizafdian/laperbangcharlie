@@ -219,6 +219,7 @@
             label: "Perkara Banding",
             lineTension: 0.3,
             borderColor: "#008080",
+            backgroundColor: "#008080",
             pointRadius: 5,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: "#008080",
