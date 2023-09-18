@@ -124,7 +124,7 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <a href="<?php echo base_url('pa/PA_laper/addtriwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
-                                        <i class="fas fa-upload" title="Upload Laporan"></i>
+                                        <i class="fas fa-upload"></i>
                                     </a>
                                     <!-- <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Edit">
                                                 <i class="fa fa-edit"></i>
