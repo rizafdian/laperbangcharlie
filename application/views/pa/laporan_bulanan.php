@@ -63,7 +63,7 @@
     <!-- button tambah laporan -->
     <a class="btn btn-success" href="<?= base_url('pa/PA_laper/add_laporan_perkara'); ?>">Tambah laporan</a>
 
-    <div class="card mt-3">
+    <div class="card mt-6">
       <div class="table-responsive">
         <table class="table align-items-center mb-0" id="bandingTable">
           <thead>
