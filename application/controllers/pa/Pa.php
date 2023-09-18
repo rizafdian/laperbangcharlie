@@ -32,11 +32,9 @@ class Pa extends CI_Controller
         $data['sisa_harian'] = $data_harian - $putus_harian;
 
         //data chart laporan perkara PA Tutuyan
-        $data1['nama'] = $this->session->userdata('nama');
+        $data['nama'] = $this->session->userdata('nama');
         $id = $this->session->userdata('id');
-        var_dump($id);
-        var_dump($data1);
-        die;
+       
         $data_tty1 = $this->db->get_where('laporan_perkara', ['id_user' => $id, 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
         if (empty ($data_tty1)) {
             $data['jan_mdo'] = "0";
