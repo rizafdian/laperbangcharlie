@@ -159,7 +159,7 @@ class M_banding extends CI_model
         $this->db->from('laporan_perkara');
         $multiple = array('status' => "validasi", 'YEAR(`tgl_upload`)' => $year);
         $this->db->where($multiple);
-        $query = $this->db->get()->result_array();
+        $query = $this->db->get()->result();
         return $query;
     }
 
