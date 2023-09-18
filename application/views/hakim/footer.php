@@ -71,10 +71,11 @@
         let dataLaporanPerkara = {
             label: "Laporan Perkara",
             lineTension: 0.3,
-            borderColor: "#be9a21",
+            borderColor: "#008080",
+            backgroundColor: "#008080",
             pointRadius: 5,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#be9a21",
+            pointHoverBackgroundColor: "#008080",
             pointHitRadius: 50,
             pointBorderWidth: 2,
             data: []
@@ -86,7 +87,7 @@
         };
 
         let linceChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: tampungData
         });
 
