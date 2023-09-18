@@ -43,7 +43,7 @@
 
 
         let PA = {
-            label: "<?php echo $nama ?>",
+            label: "PA",
             lineTension: 0.3,
             borderColor: "#1d5f53",
             pointRadius: 5,
