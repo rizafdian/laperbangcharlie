@@ -218,10 +218,10 @@
         let dataBanding = {
             label: "Perkara Banding",
             lineTension: 0.3,
-            borderColor: "#be9a21",
+            borderColor: "#008080",
             pointRadius: 5,
             pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#be9a21",
+            pointHoverBackgroundColor: "#008080",
             pointHitRadius: 50,
             pointBorderWidth: 2,
             data: ["<?php echo $perkara_januari ?>", "<?php echo $perkara_februari ?>", "<?php echo $perkara_maret ?>", "<?php echo $perkara_april ?>", "<?php echo $perkara_may ?>", "<?php echo $perkara_juni ?>", "<?php echo $perkara_juli ?>", "<?php echo $perkara_agustus ?>", "<?php echo $perkara_september ?>", "<?php echo $perkara_oktober ?>", "<?php echo $perkara_november ?>", "<?php echo $perkara_desember ?>"]
