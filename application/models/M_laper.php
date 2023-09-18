@@ -49,13 +49,13 @@ class M_laper extends CI_model
 
     public function get_data()
     {
-        $periode_tahun = date('Y');
+        // $periode_tahun = date('Y');
         $id = $this->session->userdata('id');
         $this->db->select('*');
         $this->db->select('day(`tgl_upload`) as tanggal');
         $this->db->from('laporan_perkara');
-        $multiple = array('id_user' => $id, 'periode_tahun' => $periode_tahun);
-        $this->db->where($multiple);
+        // $multiple = array('id_user' => $id, 'periode_tahun' => $periode_tahun);
+        $this->db->where('id_user', $id);
         $this->db->order_by('tgl_upload', 'DESC');
         $this->db->limit(10);
         $query = $this->db->get()->result_array();
