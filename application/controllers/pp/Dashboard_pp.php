@@ -21,8 +21,8 @@ class Dashboard_pp extends CI_Controller {
         $data['js'] = 'dashboard_admin.js';
 
         //dashboard card
-        $data_harian = $this->m_banding->countLapHarian();
-        $putus_harian = $this->m_banding->countPerkaraPutus();
+        $data_harian = $this->m_banding->countLapHarianHakim();
+        $putus_harian = $this->m_banding->countPerkaraPutus_banding();
         $data['perkara'] = $this->db->get('kategori_perkara')->result_array();
         $data['data_harian'] = $data_harian;
         $data['putus_harian'] = $putus_harian;

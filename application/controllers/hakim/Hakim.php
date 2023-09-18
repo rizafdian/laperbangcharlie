@@ -24,6 +24,8 @@ class Hakim extends CI_Controller
         $data['css'] = 'dashboard_hakim.css';
         $data['perkara_harian'] = $this->m_banding->countLapHarianHakim();
         $data['regis_harian'] = $this->m_banding->countRegis();
+        $data['laper_masuk'] = $this->m_banding->count_laper_masuk();
+        $data['laper_validasi'] = $this->m_banding->count_laper_validasi();
         $data['perkara_januari']    = $this->m_banding->perkara_januari()->num_rows();
         $data['perkara_februari']    = $this->m_banding->perkara_februari()->num_rows();
         $data['perkara_maret']    = $this->m_banding->perkara_maret()->num_rows();

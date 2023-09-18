@@ -35,9 +35,9 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
-                            <li>
+                            <!-- <li>
                                 <a class="dropdown-item" href="<?= base_url('admin/Adminlaper/triwulan'); ?>">All</a>
-                            </li>
+                            </li> -->
                             <?php foreach ($years as $y) : ?>
 
                                 <li><a class="dropdown-item" href="<?php echo base_url(); ?>admin/adminlaper/triwulan_search_year/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>

@@ -69,10 +69,11 @@ class M_banding extends CI_model
 
     public function countLapHarianHakim()
     {
-
+        $periode_tahun = date('Y');
         $query = $this->db->query(
             "SELECT COUNT(no_perkara) as list_perkara
-                               FROM list_perkara"
+                               FROM list_perkara
+                               WHERE YEAR(`tgl_register`) = $periode_tahun"
         );
         if ($query->num_rows() > 0) {
             return $query->row()->list_perkara;
@@ -83,10 +84,11 @@ class M_banding extends CI_model
 
     public function countRegis()
     {
-
+        $periode_tahun = date('Y');
         $query = $this->db->query(
             "SELECT COUNT(no_perkara_banding) as list_perkara
-                               FROM list_perkara"
+                               FROM list_perkara
+                               WHERE YEAR(`tgl_reg_banding`) = $periode_tahun"
         );
         if ($query->num_rows() > 0) {
             return $query->row()->list_perkara;
@@ -102,6 +104,21 @@ class M_banding extends CI_model
             "SELECT COUNT(putusan_banding) as list_perkara
                                FROM list_perkara
                                WHERE id_user = $id_user"
+        );
+        if ($query->num_rows() > 0) {
+            return $query->row()->list_perkara;
+        } else {
+            return 0;
+        }
+    }
+    public function countPerkaraPutus_banding()
+    {
+        $periode_tahun = date('Y');
+        $id_user =  $this->session->userdata('id');
+        $query = $this->db->query(
+            "SELECT COUNT(putusan_banding) as list_perkara
+                               FROM list_perkara
+                               WHERE YEAR(`tgl_reg_banding`) = $periode_tahun"
         );
         if ($query->num_rows() > 0) {
             return $query->row()->list_perkara;
@@ -125,6 +142,26 @@ class M_banding extends CI_model
         }
     }
 
+    public function count_laper_masuk()
+    {
+        $periode_tahun = date('Y');
+        $query = $this->db->query(
+            "SELECT COUNT(berkas_laporan) as laporan_perkara
+                               FROM laporan_perkara
+                               WHERE YEAR(`tgl_upload`) = $periode_tahun"
+        );
+    }
+
+    public function count_laper_validasi()
+    {
+        $year = date('Y');
+        $this->db->select('COUNT(status)');
+        $this->db->from('laporan_perkara');
+        $multiple = array('status' => "validasi", 'YEAR(`tgl_upload`)' => $year);
+        $this->db->where($multiple);
+        $query = $this->db->get()->result_array();
+        return $query;
+    }
 
     public function get_list_perkara()
     {
