@@ -123,7 +123,7 @@
                                     <?php endif; ?>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <a href="<?php echo base_url('pa/PA_laper/addtriwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
+                                    <a href="<?php echo base_url('pa/PA_laper/addtriwulan/') . $lp['id'] ?>" class="text-decoration-none text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Upload">
                                         <i class="fas fa-upload"></i>
                                     </a>
                                     <!-- <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Edit">
@@ -132,7 +132,7 @@
                                     <!-- <a href="javascript:;" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Download">
                                                 <i class="fas fa-download"></i>
                                             </a> | -->
-                                    <a href="<?= base_url('pa/PA_laper/view_triwulan/') . $lp['id'] ?>" class="text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat">
+                                    <a href="<?= base_url('pa/PA_laper/view_triwulan/') . $lp['id'] ?>" class="text-decoration-none text-secondary font-weight-normal text-xs" data-toggle="tooltip" data-original-title="Lihat">
                                         <i class="fa fa-eye" title="Detail"></i>
                                     </a>
                                 </td>
