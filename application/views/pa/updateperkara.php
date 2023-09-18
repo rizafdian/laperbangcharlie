@@ -9,7 +9,7 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
 <div class="row mt-3">
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-10">
 
         <div class="card mb-4">
             <div class="card-header fw-bold">
@@ -59,9 +59,22 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
 
                         </div>
                         <div class="row mb-3">
+                            <label for="namaPihak" class="col-sm-2 col-form-label">No. Whatsapp Pihak Penggugat</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="namaPihak" name="no_hp_penggugat" value="<?= $list_perkara_isi['no_hp_penggugat'] ?>" required>
+                            </div>
+
+                        </div>
+                        <div class="row mb-3">
                             <label for="namaPihak" class="col-sm-2 col-form-label">Nama Pihak Tergugat</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="namaPihak" name="nm_pihak_tergugat" value="<?= $list_perkara_isi['nm_pihak_tergugat'] ?>">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="namaPihak" class="col-sm-2 col-form-label">No. Whatsapp Pihak Tergugat</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="namaPihak" name="no_hp_tergugat" value="<?= $list_perkara_isi['no_hp_tergugat'] ?>">
                             </div>
                         </div>
 
@@ -70,37 +83,37 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
 
                         switch ($this->session->userdata('kode_pa')) {
                             case 'PA.Mdo':
-                                $kode_surat_pa = 'W18.A1';
+                                $kode_surat_pa = 'KPA.W18-A1';
                                 break;
                             case 'PA.Ktg':
-                                $kode_surat_pa = 'W18.A2';
+                                $kode_surat_pa = 'KPA.W18-A2';
                                 break;
                             case 'PA.Thn':
-                                $kode_surat_pa = 'W18.A3';
+                                $kode_surat_pa = 'KPA.W18-A3';
                                 break;
                             case 'PA.Tdo':
-                                $kode_surat_pa = 'W18.A4';
+                                $kode_surat_pa = 'KPA.W18-A4';
                                 break;
                             case 'PA.Btg':
-                                $kode_surat_pa = 'W18.A5';
+                                $kode_surat_pa = 'KPA.W18-A5';
                                 break;
                             case 'PA.Amg':
-                                $kode_surat_pa = 'W18.A6';
+                                $kode_surat_pa = 'KPA.W18-A6';
                                 break;
                             case 'PA.Llk':
-                                $kode_surat_pa = 'W18.A7';
+                                $kode_surat_pa = 'KPA.W18-A7';
                                 break;
                             case 'PA.Blu':
-                                $kode_surat_pa = 'W18.A8';
+                                $kode_surat_pa = 'KPA.W18-A8';
                                 break;
                             case 'PA.Brk':
-                                $kode_surat_pa = 'W18.A9';
+                                $kode_surat_pa = 'KPA.W18-A9';
                                 break;
                             case 'PA.Tty':
-                                $kode_surat_pa = 'W18.A10';
+                                $kode_surat_pa = 'KPA.W18-A10';
                                 break;
                             case 'PA.Per':
-                                $kode_surat_pa = 'W18.A11';
+                                $kode_surat_pa = 'KPA.W18-A11';
                                 break;
                         }
 
@@ -121,7 +134,7 @@ $nomor_perkara_explode = explode('/', $nomor_perkara);
                                     <input type="text" name="kode_surat_pa" value="<?= $nomor_surat_pengantar_explode[0]; ?>" hidden>
                                     <span class="input-group-text"><?= $nomor_surat_pengantar_explode[0]; ?>/</span>
                                     <input type="text" class="form-control" name="nomor_surat_pengantar" value="<?= $nomor_surat_pengantar_explode[1]; ?>" required>
-                                    <span class="input-group-text">/HK.05/</span>
+                                    <span class="input-group-text">/HK2.6/</span>
                                     <input type="text" class="form-control" name="bulan_surat_pengantar" value="<?php echo $bulan ?>">
                                     <span class="input-group-text">/</span>
                                     <input type="text" class="form-control" name="tahun_surat_pengantar" value="<?= $tahun ?>">
