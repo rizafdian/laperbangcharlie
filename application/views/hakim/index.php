@@ -4,7 +4,7 @@
         <!-- //card dashboard -->
         <div class="col-xl-6 col-md-6">
             <a class="text-reset text-decoration-none" href="<?= base_url('ViewHakim/banding') ?>">
-                <div class="card bg-satu text-white mb-6">
+                <div class="card bg-satu text-white mb-4">
                     <div class="card-body">
                         <h3>Perkara Banding</h3>
                     </div>
@@ -47,7 +47,7 @@
         </div> -->
 
         <div class="col-xl-6 col-md-6">
-            <div class="card bg-satu text-white mb-6">
+            <div class="card bg-satu text-white mb-4">
                 <div class="card-body">
                     <h3>Laporan Perkara</h3>
                 </div>
