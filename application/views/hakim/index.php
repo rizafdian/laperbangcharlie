@@ -2,9 +2,9 @@
 
     <div class="row mt-5">
         <!-- //card dashboard -->
-        <div class="col-xl-4 col-md-6">
+        <div class="col-xl-6 col-md-6">
             <a class="text-reset text-decoration-none" href="<?= base_url('ViewHakim/banding') ?>">
-                <div class="card bg-satu text-white mb-4">
+                <div class="card bg-satu text-white mb-6">
                     <div class="card-body">
                         <h3>Perkara Banding</h3>
                     </div>
@@ -46,8 +46,8 @@
             </div>
         </div> -->
 
-        <div class="col-xl-4 col-md-6">
-            <div class="card bg-satu text-white mb-4">
+        <div class="col-xl-6 col-md-6">
+            <div class="card bg-satu text-white mb-6">
                 <div class="card-body">
                     <h3>Laporan Perkara</h3>
                 </div>
@@ -55,15 +55,19 @@
                     
                     <div class="d-flex align-items-center justify-content-between">
                         <?php if($laper_masuk == null) : ?>
-                            <small>Laporan Masuk</small> 0
+                            <small>Laporan Bulanan</small> 0
                         <?php elseif ($laper_masuk != null) : ?>
-                            <small>Laporan Masuk</small> <?php echo $laper_masuk;  ?>
+                            <small>Laporan Bulanan</small> <?php echo $laper_masuk;  ?>
                         <?php endif; ?>
                         
                     </div>
-                    <!-- <div class="d-flex align-items-center justify-content-between">
-                        <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
-                    </div> -->
+                    <div class="d-flex align-items-center justify-content-between">
+                    <?php if($laper_triwulan == null) : ?>
+                            <small>Laporan Triwulan</small> 0
+                        <?php elseif ($laper_triwulan != null) : ?>
+                            <small>Laporan Triwulan</small> <?php echo $laper_triwulan;  ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>

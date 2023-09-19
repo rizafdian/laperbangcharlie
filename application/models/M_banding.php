@@ -151,6 +151,15 @@ class M_banding extends CI_model
                                WHERE YEAR(`tgl_upload`) = $periode_tahun"
         );
     }
+    public function count_laper_triwulan()
+    {
+        $periode_tahun = date('Y');
+        $query = $this->db->query(
+            "SELECT COUNT(berkas_laporan) as laporan_triwulan
+                               FROM laporan_triwulan
+                               WHERE periode_tahun = $periode_tahun"
+        );
+    }
 
     // public function count_laper_validasi()
     // {
