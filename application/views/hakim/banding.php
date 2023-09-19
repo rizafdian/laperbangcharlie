@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="konten" id="konten">
+    <div class="row mt-5">
+        <div class="col-12">
+            
                 <div class="table-responsive">
                     <table class="table" id="tablePerkaraHakim">
                         <thead>
@@ -23,7 +23,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            
 
         </div>
     </div>
