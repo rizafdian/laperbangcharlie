@@ -9,8 +9,8 @@
                                 <th>#</th>
                                 <th>Satker</th>
                                 <th>Nomor Perkara Tk.I</th>
-                                <!-- <th>Pihak Penggungat</th>
-                                <th>Pihak Tergugat</th> -->
+                                <th>Pihak Penggungat</th>
+                                <th>Pihak Tergugat</th>
                                 <th>Jenis Perkara</th>
                                 <th>Tanggal Register banding</th>
                                 <th>Nomor Perkara Banding</th>
