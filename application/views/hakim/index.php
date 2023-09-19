@@ -10,10 +10,20 @@
                     </div>
                     <div class="card-footer">
                         <div class="d-flex align-items-center justify-content-between">
+                        <?php if($perkara_harian == null) : ?>
+                            <small>Perkara Masuk</small> 0
+                        <?php elseif ($perkara_harian != null) : ?>
                             <small>Perkara Masuk</small> <?php echo $perkara_harian;  ?>
+                        <?php endif; ?>
+                            
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
+                        <?php if($regis_harian == null) : ?>
+                            <small>Teregistrasi</small> 0
+                        <?php elseif ($regis_harian != null) : ?>
                             <small>Teregistrasi</small> <?php echo $regis_harian;  ?>
+                        <?php endif; ?>
+                            
                         </div>
                     </div>
                 </div>
@@ -52,7 +62,12 @@
                         
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
-                        <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
+                    <?php if($laper_validasi == null) : ?>
+                        <small>Ditanggapi</small> 0
+                        <?php elseif ($laper_validasi != null) : ?>
+                            <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
+                        <?php endif; ?>
+                        
                     </div>
                 </div>
             </div>
