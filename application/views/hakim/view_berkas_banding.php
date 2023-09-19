@@ -432,7 +432,7 @@
                                         <tr>
                                             <td>Putusan Banding</td>
                                             <td>
-                                                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalPdfAdmin" data-id="putusan/<?= $db->putusan_banding; ?>" class="text-decoration-none text-reset">
+                                                <a href="#!" data-bs-toggle="modal" data-bs-target="#blank" data-id="putusan/<?= $db->putusan_banding; ?>" class="text-decoration-none text-reset">
                                                     <?= $db->putusan_banding; ?>
                                                 </a>
                                             </td>
