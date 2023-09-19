@@ -1,4 +1,71 @@
 <div class="container">
+    
+<div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <?php foreach ($header as $lp) : ?>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <text class="fw">Nomor Perkara Banding</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text>:</text>
+                            </div>
+                            <div class="col-md-4">
+                                <text><?= $lp->no_perkara_banding; ?></text>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <text class="fw">Majelis Hakim</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text>:</text>
+                            </div>
+                            <div class="col-md-4">
+                                <text><?= $lp->majelis_hakim; ?></text>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <text class="fw">Panitera Pengganti</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text>:</text>
+                            </div>
+                            <div class="col-md-4">
+                                <text><?= $lp->nama; ?></text>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <text class="fw">Nama / No. Hp Penggugat</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text>:</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text><?= $lp->nm_pihak_penggugat; ?> / <?= $lp->no_hp_penggugat; ?></text>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3">
+                                <text class="fw">Nama / No. Hp Tergugat</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text>:</text>
+                            </div>
+                            <div class="col-md-auto">
+                                <text><?= $lp->nm_pihak_tergugat; ?> / <?= $lp->no_hp_tergugat; ?></text>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="row mt-5 mb-3">
         <div class="col">
             <?php foreach ($detail_berkas as $db) : ?>

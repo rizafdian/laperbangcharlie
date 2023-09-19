@@ -39,14 +39,14 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" aria-current="page" href="<?= base_url('hakim/hakim') ?>">Dasbor</a>
+                        <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" aria-current="page" href="<?= base_url('hakim/hakim') ?>">Dasboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= $judul == 'Banding' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/banding/') ?>">Banding</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link disabled <?= $judul == 'Ekasaminasi' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/eksaminasi/') ?>">Eksaminasi</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link  disabled<?= $judul == 'laper' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/laper/') ?>">Laporan Perkara</a>
                     </li>

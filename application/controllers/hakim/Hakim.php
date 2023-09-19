@@ -84,7 +84,7 @@ class Hakim extends CI_Controller
 
 
         $data['detail_berkas'] = $this->db->get_where('v_all_perkara', ['id_perkara' => $id])->result_object();
-
+        $data['header'] = $this->db->get_where('v_header_perkara', ['id_perkara' => $id])->result_object();
 
         $this->load->view('hakim/header', $data);
         $this->load->view('hakim/view_berkas_banding', $data);
