@@ -154,7 +154,8 @@ class M_banding extends CI_model
 
     public function count_laper_validasi()
     {
-        $year = date('Y');
+        // $year = date('Y');
+        $year = "2022";
         $query = $this->db->query(
             "SELECT COUNT(status) as laporan_perkara
                                FROM laporan_perkara
