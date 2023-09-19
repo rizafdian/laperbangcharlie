@@ -152,16 +152,16 @@ class M_banding extends CI_model
         );
     }
 
-    public function count_laper_validasi()
-    {
-        // $year = date('Y');
-        $year = "2022";
-        $query = $this->db->query(
-            "SELECT COUNT(status_laper) as laporan_perkara
-                               FROM laporan_perkara
-                               WHERE status_laper = validasi"
-        );
-    }
+    // public function count_laper_validasi()
+    // {
+    //     // $year = date('Y');
+    //     $year = "2022";
+    //     $query = $this->db->query(
+    //         "SELECT COUNT(status) as laporan_perkara
+    //                            FROM laporan_perkara
+    //                            WHERE status = validasi"
+    //     );
+    // }
 
     public function get_list_perkara()
     {
