@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-12">
+    <div class="row">
+        <div class="col">
             <div class="konten" id="konten">
                 <div class="table-responsive">
                     <table class="table" id="tablePerkaraHakim">
