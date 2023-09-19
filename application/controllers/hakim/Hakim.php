@@ -93,7 +93,7 @@ class Hakim extends CI_Controller
 
     public function get_data_banding()
     {
-        $data = $this->m_banding->DataBandingHakim();
+        $data = $this->m_banding->DataBanding();
         $result =  [
             'response' => 'success',
             'code' => 600,
