@@ -42,8 +42,14 @@
                     <h3>Laporan Perkara</h3>
                 </div>
                 <div class="card-footer">
+                    
                     <div class="d-flex align-items-center justify-content-between">
-                        <small>Perkara Masuk</small> <?php echo $laper_masuk;  ?>
+                        <?php if($laper_masuk == null) : ?>
+                            <small>Laporan Masuk</small> 0
+                        <?php elseif ($laper_masuk != null) : ?>
+                            <small>Laporan Masuk</small> <?php echo $laper_masuk;  ?>
+                        <?php endif; ?>
+                        
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
