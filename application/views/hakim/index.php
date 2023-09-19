@@ -61,14 +61,9 @@
                         <?php endif; ?>
                         
                     </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                    <?php if($laper_validasi == null) : ?>
-                        <small>Ditanggapi</small> 0
-                        <?php elseif ($laper_validasi != null) : ?>
-                            <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
-                        <?php endif; ?>
-                        
-                    </div>
+                    <!-- <div class="d-flex align-items-center justify-content-between">
+                        <small>Ditanggapi</small> <?php echo $laper_validasi;  ?>
+                    </div> -->
                 </div>
             </div>
         </div>
