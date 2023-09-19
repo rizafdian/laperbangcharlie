@@ -155,12 +155,12 @@ class M_banding extends CI_model
     public function count_laper_validasi()
     {
         $year = date('Y');
-        $this->db->select('COUNT(status)');
-        $this->db->from('laporan_perkara');
-        $multiple = array('status' => "validasi", 'YEAR(`tgl_upload`)' => $year);
-        $this->db->where($multiple);
-        $query = $this->db->get()->result();
-        return $query;
+        $query = $this->db->query(
+            "SELECT COUNT(berkas_laporan) as laporan_perkara
+                               FROM laporan_perkara
+                               WHERE YEAR(`tgl_upload`) = $year
+                               AND status = validasi"
+        );
     }
 
     public function get_list_perkara()
