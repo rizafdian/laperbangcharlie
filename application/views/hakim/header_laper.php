@@ -37,29 +37,26 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" aria-current="page" href="<?= base_url('hakim/hakim') ?>">Dasboard</a>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="bulan-tab" data-toggle="tab" data-target="#bulan" type="button" role="tab" aria-controls="home" aria-selected="true">Laporan Perkara</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'Banding' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/banding/') ?>">Banding</a>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="rekap-bulan-tab" data-toggle="tab" data-target="#rekap-bulan" type="button" role="tab" aria-controls="profile" aria-selected="false">Rekap Laporan Perkara</button>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled <?= $judul == 'Ekasaminasi' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/eksaminasi/') ?>">Eksaminasi</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link <?= $judul == 'laper' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim/laper/') ?>">Laporan Perkara</a>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="triwulan-tab" data-toggle="tab" data-target="#triwulan" type="button" role="tab" aria-controls="contact" aria-selected="false">Laporan Triwulan</button>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-fw fa-user-tie"></i> User
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item disabled" href="">Profile</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-                        </ul>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="rekap-triwulan-tab" data-toggle="tab" data-target="#rekap-triwulan" type="button" role="tab" aria-controls="contact" aria-selected="false">Rekap Laporan Triwulan</button>
                     </li>
                 </ul>
+                <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="bulan-tab">...</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="rekap-bulan-tab">...</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="triwulan-tab">...</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="rekap-triwulan-tab">...</div>
+                </div>
             </div>
         </div>
     </nav>
