@@ -159,8 +159,7 @@ class M_banding extends CI_model
         $query = $this->db->query(
             "SELECT COUNT(status_laper) as laporan_perkara
                                FROM laporan_perkara
-                               WHERE status_laper = Validasi
-                               "
+                               WHERE status_laper = validasi"
         );
     }
 
