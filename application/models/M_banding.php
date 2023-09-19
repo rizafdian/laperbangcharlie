@@ -159,7 +159,7 @@ class M_banding extends CI_model
             "SELECT COUNT(berkas_laporan) as laporan_perkara
                                FROM laporan_perkara
                                WHERE YEAR(`tgl_upload`) = $year
-                               AND status Validasi"
+                               AND status = Validasi"
         );
     }
 
