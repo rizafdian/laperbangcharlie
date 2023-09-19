@@ -156,7 +156,7 @@ class M_banding extends CI_model
     {
         $year = date('Y');
         $query = $this->db->query(
-            "SELECT COUNT(berkas_laporan) as laporan_perkara
+            "SELECT COUNT(status) as laporan_perkara
                                FROM laporan_perkara
                                WHERE YEAR(`tgl_upload`) = $year
                                AND status = Validasi"
