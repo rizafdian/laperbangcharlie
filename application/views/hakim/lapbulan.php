@@ -11,7 +11,7 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-laper" role="tabpanel" aria-labelledby="nav-laper-tab">
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col">
                         Laporan Perkara
                     </div>
@@ -21,8 +21,8 @@
             <!-- <div class="tab-pane fade" id="nav-rekaplaper" role="tabpanel" aria-labelledby="nav-rekaplaper-tab">Rekap Laporan Perkara</div>
             <div class="tab-pane fade" id="nav-triwulan" role="tabpanel" aria-labelledby="nav-triwulan-tab">Laporan Triwulan</div>
             <div class="tab-pane fade" id="nav-rekaptriwulan" role="tabpanel" aria-labelledby="nav-rekaptriwulan-tab">Rekap Laporan Triwulan</div>
-        </div>
+        </div>-->
 
-    </div> -->
+    <!-- </div> 
     
-</div>
+</div> -->
