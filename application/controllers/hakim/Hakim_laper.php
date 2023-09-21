@@ -33,6 +33,9 @@ class Hakim_laper extends CI_Controller
 
         $this->load->view('hakim/header', $data);
         $this->load->view('hakim/lapbulan', $data);
+        $this->load->view('hakim/tab_rekaplaper', $data);
+        $this->load->view('hakim/tab_triwulan', $data);
+        $this->load->view('hakim/tab_rekaptriwulan', $data);
         $this->load->view('hakim/footer', $data);
     }
 
