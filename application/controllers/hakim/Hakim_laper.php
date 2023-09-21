@@ -19,9 +19,9 @@ class Hakim_laper extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Laporan Bulanan';
+        $data['judul'] = 'Laporan Perkara';
         $data['css'] = 'dashboard_admin.css';
-        $data['js'] =
+        $data['js'] = 'view_hakim_laper.js';
         
         
         
