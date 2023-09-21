@@ -22,10 +22,6 @@ class Hakim_laper extends CI_Controller
         $data['judul'] = 'Laporan Perkara';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = 'view_hakim_laper.js';
-        
-        
-        
-        '';
 
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_all_data();
@@ -33,9 +29,6 @@ class Hakim_laper extends CI_Controller
 
         $this->load->view('hakim/header', $data);
         $this->load->view('hakim/lapbulan', $data);
-        $this->load->view('hakim/tab_rekaplaper', $data);
-        $this->load->view('hakim/tab_triwulan', $data);
-        $this->load->view('hakim/tab_rekaptriwulan', $data);
         $this->load->view('hakim/footer', $data);
     }
 
