@@ -93,9 +93,14 @@
             type: 'bar',
             data: tampungData
         });
-
-
         // akhir chart
+
+        $('#tablaper').on('click', function () {
+        $('#nav-laper-tab').attr('class', 'nav-link active');
+        $('#nav-laper').attr('class', 'tab-pane fade show active');
+       
+        
+    })
 
 
     });
