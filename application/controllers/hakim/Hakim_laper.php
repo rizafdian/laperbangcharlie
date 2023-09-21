@@ -34,7 +34,7 @@ class Hakim_laper extends CI_Controller
 
     public function laper_search_year($year)
     {
-        $data['judul'] = 'Laporan Bulanan';
+        $data['judul'] = 'Laporan Perkara';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = '';
 
@@ -42,9 +42,9 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_year_laper($year);
         $data['years'] = $this->m_laper->get_years_laper();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/lapbulan', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/lapbulan', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function view_document($id)

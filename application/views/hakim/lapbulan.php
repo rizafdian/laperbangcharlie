@@ -11,7 +11,7 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-laper" role="tabpanel" aria-labelledby="nav-laper-tab">
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col text-center">
                         <h6 class="d-block">Laporan Perkara <br> Tahun <script>
                                 document.write(new Date().getFullYear())
