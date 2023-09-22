@@ -102,7 +102,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '01' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -110,7 +110,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '01' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -118,7 +118,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '01' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -126,7 +126,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '01' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -142,7 +142,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '02' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -150,7 +150,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '02' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -158,7 +158,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '02' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -166,7 +166,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '02' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -182,7 +182,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '03' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -190,7 +190,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '03' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -198,7 +198,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '03' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -206,7 +206,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '03' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -222,7 +222,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '04' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -230,7 +230,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '04' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -238,7 +238,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '04' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -246,7 +246,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '04' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -262,7 +262,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '05' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -270,7 +270,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '05' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -278,7 +278,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '05' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -286,7 +286,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '05' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -302,7 +302,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '06' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -310,7 +310,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '06' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -318,7 +318,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '06' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -326,7 +326,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '06' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -342,7 +342,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '07' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -350,7 +350,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '07' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -358,7 +358,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '07' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -366,7 +366,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '07' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -382,7 +382,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '08' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -390,7 +390,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '08' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -398,7 +398,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '08' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -406,7 +406,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '08' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -422,7 +422,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '09' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -430,7 +430,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '09' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -438,7 +438,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '09' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -446,7 +446,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '09' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -462,7 +462,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '10' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -470,7 +470,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '10' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -478,7 +478,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '10' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -486,7 +486,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '10' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -502,7 +502,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '11' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -510,7 +510,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '11' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -518,7 +518,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '11' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -526,7 +526,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '11' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>
@@ -542,7 +542,7 @@
                                                                 } ?>     -->
                                                         <?php if ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '12' and $one['tanggal'] <= '5' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-success">
                                                                         √
                                                                     </p>
@@ -550,7 +550,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '12' and $one['tanggal'] > '5' and $one['tanggal'] <= '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-warning">
                                                                         √
                                                                     </p>
@@ -558,7 +558,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '12' and $one['tanggal'] > '10' and $one['status'] != 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-danger">
                                                                         √
                                                                     </p>
@@ -566,7 +566,7 @@
                                                             </div>
                                                         <?php elseif ($nm['id'] == $one['id_user'] and date('m', strtotime($one['periode'])) == '12' and $one['tanggal'] >= '1' and $one['status'] == 'Revisi') : ?>
                                                             <div class="d-flex flex-column justify-content-center">
-                                                                <a class="text-decoration-none" href="<?= base_url('admin/adminlaper/view_document/') . $one['id'] ?>">
+                                                                <a class="text-decoration-none" href="<?= base_url('hakim/hakim_laper/view_document/') . $one['id'] ?>">
                                                                     <p class="text-white mb-0 rounded bg-dark  ">
                                                                         R
                                                                     </p>

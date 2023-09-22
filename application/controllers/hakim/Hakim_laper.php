@@ -60,9 +60,9 @@ class Hakim_laper extends CI_Controller
             redirect('pp/Pp_laper');
         } else {
 
-            $this->load->view('panitera_pengganti/header', $data);
-            $this->load->view('panitera_pengganti/lapbulandetail', $data);
-            $this->load->view('panitera_pengganti/footer', $data);
+            $this->load->view('hakim/header', $data);
+            $this->load->view('hakim/lapbulandetail', $data);
+            $this->load->view('hakim/footer', $data);
         }
     }
 
