@@ -181,6 +181,7 @@ class Hakim_laper extends CI_Controller
         $data['js'] = '';
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
+        $data['nama_user'] = $this->m_laper->get_nama_user();
 
         $this->load->view('hakim/header', $data);
         $this->load->view('hakim/lapbulan', $data);
