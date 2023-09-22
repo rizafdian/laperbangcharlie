@@ -54,9 +54,9 @@
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     File
                                 </th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Catatan
-                                </th>
+                                </th> -->
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Revisi
                                 </th>
