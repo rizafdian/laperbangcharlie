@@ -154,9 +154,9 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/view_rekaplaper', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        // $this->load->view('hakim/header', $data);
+        // $this->load->view('hakim/view_rekaplaper', $data);
+        // $this->load->view('hakim/footer', $data);
     }
 
     public function rekap_search_year($year)
