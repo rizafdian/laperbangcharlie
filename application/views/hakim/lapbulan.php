@@ -822,22 +822,6 @@
                     </div>
                 </div>
                 <!-- table end -->
-
-                <div class="row mt-4">
-                    <div class="col">
-                        <div class="card card-frame">
-                            <div class="card-body">
-                                <h6 class="text-center">
-                                    GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN PELAPORAN PERKARA
-                                </h6>
-                                <div>
-                                    <canvas id="chart_satu"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 </div>
             </div>
 

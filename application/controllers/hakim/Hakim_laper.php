@@ -159,6 +159,21 @@ class Hakim_laper extends CI_Controller
         // $this->load->view('hakim/footer', $data);
     }
 
+    public function detail_rekap_laporan($id)
+    {
+        $data['judul'] = 'Rekap Laporan Bulanan';
+        $data['css'] = 'dashboard_admin.css';
+        $data['js'] = '';
+        $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
+
+        // var_dump($data);
+        // die;
+
+        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/view_Detailrekaplaper', $data);
+        $this->load->view('hakim/footer', $data);
+    }
+
     public function rekap_search_year($year)
     {
         $data['judul'] = 'Rekap Laporan Bulanan';
@@ -167,9 +182,9 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/view_rekaplaper', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/lapbulan', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function zip_file_rekap($id)
