@@ -645,7 +645,7 @@
                                     <!-- <li>
                                         <a class="dropdown-item" href="<?= base_url('hakim/Hakim_laper/rekap_laporan'); ?>">All</a>
                                     </li> -->
-                                    <?php foreach ($years as $y) : ?>
+                                    <?php foreach ($years_rekap as $y) : ?>
 
                                         <li><a class="dropdown-item" href="<?php echo base_url(); ?>hakim/Hakim_laper/rekap_search_year/<?php echo $y['year'];  ?>" value="1"><?php echo $y['year']; ?></a></li>
 
