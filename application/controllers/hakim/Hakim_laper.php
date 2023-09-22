@@ -56,8 +56,8 @@ class Hakim_laper extends CI_Controller
         $data['catatan'] = $this->db->get_where('catatan_laporan', ['laper_id' => $id])->result_array();
 
         //user id tidak sesuai
-        if ($this->session->userdata('role_id') != '4' && $this->session->userdata('role_id') != '5') {
-            redirect('pp/Pp_laper');
+        if ($this->session->userdata('role_id') != '3') {
+            redirect('hakim/Hakim_laper');
         } else {
 
             $this->load->view('hakim/header', $data);
