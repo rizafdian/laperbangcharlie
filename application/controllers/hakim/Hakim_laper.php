@@ -139,9 +139,9 @@ class Hakim_laper extends CI_Controller
             $this->session->set_flashdata('msg', 'Tidak ada Revisi'); //kop pesannya
             $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena belum ada data Revisi !'); //isi pesannya.
 
-            $this->load->view('panitera_pengganti/header', $data);
+            $this->load->view('hakim/header', $data);
             $this->load->view('errors/view_message');
-            $this->load->view('panitera_pengganti/footer', $data);
+            $this->load->view('hakim/footer', $data);
         }
     }
 
