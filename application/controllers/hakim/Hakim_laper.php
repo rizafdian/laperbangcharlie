@@ -178,7 +178,7 @@ class Hakim_laper extends CI_Controller
     {
         $data['judul'] = 'Rekap Laporan Bulanan';
         $data['css'] = 'dashboard_admin.css';
-        $data['js'] = '';
+        $data['js'] = 'view_hakim_laper.js';
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
         $data['nama_user'] = $this->m_laper->get_nama_user();
