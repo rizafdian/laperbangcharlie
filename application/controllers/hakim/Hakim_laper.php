@@ -35,7 +35,7 @@ class Hakim_laper extends CI_Controller
 
     public function laper_search_year($year)
     {
-        $data['judul'] = 'Laporan Perkara';
+        $data['judul'] = 'Laporan Bulanan';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = 'view_hakim_laper.js';
 
@@ -156,7 +156,7 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
 
-        $this->load->view('hakim/header', $data);
+        // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/view_rekaplaper', $data);
         $this->load->view('hakim/footer', $data);
@@ -169,7 +169,7 @@ class Hakim_laper extends CI_Controller
         $data['js'] = '';
         $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
 
-        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/view_Detailrekaplaper', $data);
         $this->load->view('hakim/footer', $data);
     }
@@ -184,8 +184,8 @@ class Hakim_laper extends CI_Controller
         $data['years'] = $this->m_laper->get_years_rekap();
         $data['nama_user'] = $this->m_laper->get_nama_user();
 
-        $this->load->view('hakim/header', $data);
-        $this->load->view('hakim/lapbulan', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/view_rekaplaper', $data);
         $this->load->view('hakim/footer', $data);
     }
 

@@ -1,6 +1,5 @@
 <div class="container">
     <div class="row mt-3">
-        
                 <div class="col text-center">
                         <h6 class="d-block">Laporan Perkara <br> Tahun <script>
                                 document.write(new Date().getFullYear())
@@ -28,7 +27,7 @@
                         </div>
                         <!-- dropdown end -->
                     </div>
-                </div>
+    </div>
 
                  <!-- table start -->
                  <div class="row mt-3">
@@ -614,6 +613,5 @@
                         </div>
 
 
-    </div> 
-    
+                    </div> 
 </div>
