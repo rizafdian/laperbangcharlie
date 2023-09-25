@@ -66,31 +66,61 @@
         </div>
     </nav>
 
-<div id="layoutSidenav">
+    <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link <?= $judul == 'Dashboard' ? 'active' : '' ?>" href="<?= base_url('admin/dashboard/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+
+
+                            <div class="sb-sidenav-menu-heading">Perkara Banding</div>
+                            <a class="nav-link <?= $judul == 'Input Nomor Perkara' ? 'active' : '' ?>" href="<?= base_url('admin/admin/inputnoper/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-fw fa-keyboard"></i></div>
+                                Perkara Banding
+                            </a>
 
                             <div class="sb-sidenav-menu-heading">Laporan Perkara</div>
-                            <a class="nav-link <?= $judul == 'Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim_laper') ?>">
+                            <a class="nav-link <?= $judul == 'Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-fw fa-chart-pie"></i></div>
                                 Laporan Perkara
                             </a>
-                            <a class="nav-link <?= $judul == 'Rekap Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim_laper/rekap_laporan/') ?>">
+                            <a class="nav-link <?= $judul == 'Rekap Laporan Bulanan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper/rekap_laporan/') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Rekap Laporan Perkara
                             </a>
-                            <a class="nav-link <?= $judul == 'Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim_laper/triwulan/') ?>">
+                            <a class="nav-link <?= $judul == 'Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper/triwulan/') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Laporan Triwulan
                             </a>
-                            <a class="nav-link <?= $judul == 'Rekap Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('hakim/hakim_laper/rekap_triwulan/') ?>">
+                            <a class="nav-link <?= $judul == 'Rekap Laporan Triwulan' ? 'active' : '' ?>" href="<?= base_url('admin/adminlaper/rekap_triwulan/') ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Rekap Laporan Triwulan
                             </a>
 
+                            <div class="sb-sidenav-menu-heading">Manajemen User</div>
+                            <a class="nav-link <?= $judul == 'Manajemen Users' ? 'active' : '' ?>" href="<?= base_url('admin/admin/users/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-fw fa-users-cog"></i></div>
+                                Manajemen User
+                            </a>
+                            <a class="nav-link <?= $judul == 'Majelis Hakim' ? 'active' : '' ?>" href="<?= base_url('admin/admin/majelis_hakim/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-fw fa-users-cog"></i></div>
+                                Majelis Hakim
+                            </a>
+
+
+
+                            <div class="sb-sidenav-menu-heading">Log</div>
+                            <a class="nav-link <?= $judul == 'Audit Trail' ? 'active' : '' ?>" href="<?= base_url('admin/admin/audittrail/') ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Audit Trail
+                            </a>
                         </div>
                     </div>
                 </nav>
             </div>
+            <div id="layoutSidenav_content">
