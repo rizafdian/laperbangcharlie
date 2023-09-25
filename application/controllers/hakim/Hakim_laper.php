@@ -19,8 +19,7 @@ class Hakim_laper extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = 'Laporan Perkara';
-        $data['side_judul'] = 'Laporan Bulanan';
+        $data['judul'] = 'Laporan Bulanan';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = 'view_hakim_laper.js';
 
@@ -52,8 +51,7 @@ class Hakim_laper extends CI_Controller
 
     public function view_document($id)
     {
-        $data['judul'] = 'Laporan Perkara';
-        $data['side_judul'] = 'Laporan Bulanan';
+        $data['judul'] = 'Laporan Bulanan';
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = '';
         $data['laporan'] = $this->db->get_where('v_user_laporan', ['id' => $id])->result_array();
