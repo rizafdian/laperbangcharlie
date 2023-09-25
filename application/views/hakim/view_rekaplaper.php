@@ -203,7 +203,7 @@
                                     GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN PELAPORAN PERKARA
                                 </h6>
                                 <div>
-                                    <canvas id="chart_satu"></canvas>
+                                    <canvas id="chart_rekaplaper"></canvas>
                                 </div>
                             </div>
                         </div>
