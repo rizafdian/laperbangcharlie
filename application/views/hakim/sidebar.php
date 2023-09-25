@@ -18,6 +18,8 @@
     <script src="https://kit.fontawesome.com/f8c43fa68d.js" crossorigin="anonymous"></script>
     <!-- css sandiri -->
     <link rel="stylesheet" href="<?= base_url('assets/css/') . $css ?>">
+    <!-- css sidebar -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/') ?>styles.css">
     <!-- dropzone -->
     <link rel="stylesheet" href="<?= base_url('assets/dropzone/dropzone.css') ?>">
     <!-- sweet alert -->
