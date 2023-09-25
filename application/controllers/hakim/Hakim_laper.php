@@ -31,6 +31,7 @@ class Hakim_laper extends CI_Controller
         $data['years_rekap'] = $this->m_laper->get_years_rekap();
 
         $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/lapbulan', $data);
         $this->load->view('hakim/footer', $data);
     }
@@ -46,6 +47,7 @@ class Hakim_laper extends CI_Controller
         $data['years'] = $this->m_laper->get_years_laper();
 
         $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/lapbulan', $data);
         $this->load->view('hakim/footer', $data);
     }
@@ -69,58 +71,58 @@ class Hakim_laper extends CI_Controller
         }
     }
 
-    public function add_catatan()
-    {
-        $id_laper = $this->input->post('id_laper');
-        $pengedit = $this->session->userdata('nama');
+    // public function add_catatan()
+    // {
+    //     $id_laper = $this->input->post('id_laper');
+    //     $pengedit = $this->session->userdata('nama');
 
-        $data = [
-            'id' => '',
-            'laper_id' => $id_laper,
-            'tgl_catatan' => date('Y-m-d H:i:s'),
-            'catatan' => $this->input->post('catatan')
-        ];
+    //     $data = [
+    //         'id' => '',
+    //         'laper_id' => $id_laper,
+    //         'tgl_catatan' => date('Y-m-d H:i:s'),
+    //         'catatan' => $this->input->post('catatan')
+    //     ];
 
-        $this->db->insert('catatan_laporan', $data);
+    //     $this->db->insert('catatan_laporan', $data);
 
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan catatan pada id laporan perkara <b>" . $id_laper . "</b>",
-            'nama_log' => $pengedit
-        );
+    //     $audittrail = array(
+    //         'log_id' => '',
+    //         'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan catatan pada id laporan perkara <b>" . $id_laper . "</b>",
+    //         'nama_log' => $pengedit
+    //     );
 
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
+    //     $this->db->set('rekam_log', 'NOW()', FALSE);
+    //     $this->db->insert('log_audittrail', $audittrail);
 
-        $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
+    //     $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
 
-        redirect('pp/Pp_laper');
-    }
+    //     redirect('pp/Pp_laper');
+    // }
 
-    public function add_validasi()
-    {
+    // public function add_validasi()
+    // {
 
-        $id_laper = $this->input->post('id_laper');
-        $pengedit = $this->session->userdata('nama');
+    //     $id_laper = $this->input->post('id_laper');
+    //     $pengedit = $this->session->userdata('nama');
 
-        $data = [
-            'status' => $this->input->post('validasi')
-        ];
-        $where = array('id' => $id_laper);
-        $this->db->update('laporan_perkara', $data, $where);
+    //     $data = [
+    //         'status' => $this->input->post('validasi')
+    //     ];
+    //     $where = array('id' => $id_laper);
+    //     $this->db->update('laporan_perkara', $data, $where);
 
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah memberikan validasi pada id laporan perkara <b>" . $id_laper . "</b>",
-            'nama_log' => $pengedit
-        );
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
+    //     $audittrail = array(
+    //         'log_id' => '',
+    //         'isi_log' => "User <b>" . $pengedit . "</b> telah memberikan validasi pada id laporan perkara <b>" . $id_laper . "</b>",
+    //         'nama_log' => $pengedit
+    //     );
+    //     $this->db->set('rekam_log', 'NOW()', FALSE);
+    //     $this->db->insert('log_audittrail', $audittrail);
 
-        $this->session->set_flashdata('message', 'Validasi Laporan Berhasil');
+    //     $this->session->set_flashdata('message', 'Validasi Laporan Berhasil');
 
-        redirect('pp/Pp_laper');
-    }
+    //     redirect('pp/Pp_laper');
+    // }
 
     public function zip_file($id)
     {
@@ -157,9 +159,10 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
 
-        // $this->load->view('hakim/header', $data);
-        // $this->load->view('hakim/view_rekaplaper', $data);
-        // $this->load->view('hakim/footer', $data);
+        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/view_rekaplaper', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function detail_rekap_laporan($id)
@@ -168,9 +171,6 @@ class Hakim_laper extends CI_Controller
         $data['css'] = 'dashboard_admin.css';
         $data['js'] = '';
         $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
-
-        // var_dump($data);
-        // die;
 
         $this->load->view('hakim/header', $data);
         $this->load->view('hakim/view_Detailrekaplaper', $data);
