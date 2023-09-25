@@ -27,9 +27,6 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_all_data();
         $data['years'] = $this->m_laper->get_years_laper();
 
-        $data['all_rekap'] = $this->m_laper->get_all_rekap();
-        $data['years_rekap'] = $this->m_laper->get_years_rekap();
-
         // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/lapbulan', $data);
@@ -46,7 +43,7 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_year_laper($year);
         $data['years'] = $this->m_laper->get_years_laper();
 
-        $this->load->view('hakim/header', $data);
+        // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/lapbulan', $data);
         $this->load->view('hakim/footer', $data);
@@ -65,7 +62,7 @@ class Hakim_laper extends CI_Controller
             redirect('hakim/Hakim_laper');
         } else {
 
-            $this->load->view('hakim/header', $data);
+            $this->load->view('hakim/sidebar', $data);
             $this->load->view('hakim/lapbulandetail', $data);
             $this->load->view('hakim/footer', $data);
         }
