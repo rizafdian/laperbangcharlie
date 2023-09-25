@@ -196,11 +196,11 @@
                 <!-- table end -->
 
                 <div class="row mt-4">
-                    <div class="col-sm-12">
+                    <div class="col-sm-10">
                         <div class="card card-frame mb-4">
                             <div class="card-body">
                                 <h6 class="text-center">
-                                    GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN PELAPORAN PERKARA
+                                    GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN REKAP LAPORAN PERKARA
                                 </h6>
                                 <div>
                                     <canvas id="chart_rekaplaper"></canvas>
