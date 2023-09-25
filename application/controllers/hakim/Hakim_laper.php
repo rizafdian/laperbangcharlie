@@ -30,7 +30,7 @@ class Hakim_laper extends CI_Controller
         $data['all_rekap'] = $this->m_laper->get_all_rekap();
         $data['years_rekap'] = $this->m_laper->get_years_rekap();
 
-        $this->load->view('hakim/header', $data);
+        // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/lapbulan', $data);
         $this->load->view('hakim/footer', $data);
