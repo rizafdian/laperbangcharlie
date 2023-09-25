@@ -98,6 +98,33 @@
     });
 </script>
 
+<script>
+    $(document).ready(function () {
+        let ctx = document.getElementById("chart_rekaplaper");
+
+        let rekap_laper = {
+            label: "Rekap Laporan Perkara PTA Manado",
+            lineTension: 0.3,
+            borderColor: "#9ACD32",
+            pointRadius: 5,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "#be9a21",
+            pointHitRadius: 50,
+            pointBorderWidth: 2,
+            data: ["<?php echo $jan_ktg ?>","<?php echo $feb_ktg ?>","<?php echo $mar_ktg ?>","<?php echo $apr_ktg ?>","<?php echo $mei_ktg ?>","<?php echo $jun_ktg ?>","<?php echo $jul_ktg ?>","<?php echo $aug_ktg ?>","<?php echo $sep_ktg ?>","<?php echo $oct_ktg ?>","<?php echo $nov_ktg ?>","<?php echo $des_ktg ?>"]
+        };
+
+        let tampungData = {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Okt", "Nov", "Des"],
+            datasets: [rekap_laper]
+        };
+
+        let linceChart = new Chart(ctx, {
+            type: 'line',
+            data: tampungData
+        });
+    })
+</script>
 
 </body>
 
