@@ -170,7 +170,7 @@ class Hakim_laper extends CI_Controller
         $data['laporan'] = $this->db->get_where('v_rekap_laporan', ['id' => $id])->result_array();
 
         $this->load->view('hakim/sidebar', $data);
-        $this->load->view('hakim/view_detailrekaplaper', $data);
+        $this->load->view('hakim/view_Detailrekaplaper', $data);
         $this->load->view('hakim/footer', $data);
     }
 
