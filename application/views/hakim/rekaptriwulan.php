@@ -176,8 +176,8 @@
     <!-- table end -->
 
         <div class="row mt-4">
-            <div class="col">
-                <div class="card card-frame">
+            <div class="col sm-12">
+                <div class="card card-frame mb-4">
                     <div class="card-body">
                         <h6 class="text-center">
                             GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
