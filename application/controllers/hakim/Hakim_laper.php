@@ -420,7 +420,7 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_triwulan_admin();
         $data['years'] = $this->m_laper->get_years_triwulan();
 
-        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/triwulan', $data);
         $this->load->view('hakim/footer', $data);
     }
