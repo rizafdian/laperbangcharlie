@@ -1,4 +1,4 @@
-<div class="container-fluid py-4 mx-4">
+<div class="container">
 
     <div class="row">
         <div class="col">
@@ -105,8 +105,8 @@
     </div> -->
     <!-- modal end -->
 
-    <div class="row mt-3">
-        <div class="col">
+<div class="row mt-3">
+    <div class="col">
 
         
     <!-- table start -->
@@ -175,22 +175,22 @@
         </div>
     <!-- table end -->
 
-            <div class="row mt-4">
-                <div class="col">
-                    <div class="card card-frame">
-                        <div class="card-body">
-                            <h6 class="text-center">
-                                GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
-                            </h6>
-                            <div>
-                                <canvas id="chart_rekaptriwulan"></canvas>
-                            </div>
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card card-frame">
+                    <div class="card-body">
+                        <h6 class="text-center">
+                            GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
+                        </h6>
+                        <div>
+                            <canvas id="chart_rekaptriwulan"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- viewdocument Modal start -->
     <?php foreach ($all as $one) : ?>
         <div class="modal fade" id="viewdocumentModal<?= $one['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
