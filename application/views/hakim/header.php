@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="<?= base_url('assets/dropzone/dropzone.css') ?>">
     <!-- sweet alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="<?= base_url('bootstrap/') ?>css/styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <title><?= $judul ?></title>
 </head>
@@ -30,11 +35,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-satu">
         <div class="container">
-            <a class="navbar-brand ps-3" href="">
-                <img src="<?= base_url('assets/img/') ?>logoapp.png" alt="" width="80" class="drop-shadow">
-            </a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <a class="navbar-brand ps-3" href="<?= base_url() ?>">
+            <img class="img-fluid" width="50%" src="<?= base_url('assets/img/logoapp.png') ?>" alt="">
+        </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
