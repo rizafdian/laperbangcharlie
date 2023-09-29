@@ -46,6 +46,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <!-- jspribadi -->
 <script src="<?= base_url('assets/js/') . $js ?>"></script>
+<script src="<?= base_url('bootstrap/') ?>js/scripts.js"></script>
 
 <script>
     //untuk chart
