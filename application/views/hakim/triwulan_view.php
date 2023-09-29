@@ -60,9 +60,9 @@
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     File
                                 </th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                <!-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Catatan
-                                </th>
+                                </th> -->
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     revisi
                                 </th>
@@ -102,13 +102,13 @@
                                         </span>
                                     </td>
 
-                                    <td class="align-middle text-center">
+                                    <!-- <td class="align-middle text-center">
 
                                         <span class="text-success text-xs font-weight-normal">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#catatanModal<?= $lhs['id_triwulan'] ?>" class="text-decoration-none text-secondary"><i class="fas fa-clipboard"></i></a>
                                         </span>
 
-                                    </td>
+                                    </td> -->
 
                                     <td class="align-middle text-center">
                                         <a class="text-secondary text-xs font-weight-normal" href="<?php echo base_url() ?>hakim/hakim_laper/zip_file_triwulan/<?= $lhs['id_triwulan'] ?>"> <i class="fas fa-download"></i></a>
