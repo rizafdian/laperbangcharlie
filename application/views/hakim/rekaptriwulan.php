@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col text-center">
             <h6 class="d-block">Rekap Laporan Triwulan <br> Tahun <script>
                     document.write(new Date().getFullYear())
