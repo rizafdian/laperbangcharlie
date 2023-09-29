@@ -78,7 +78,7 @@
     <div class="row">
         <div class="col">
 
-            <div class="card mb-4">
+            <div class="card mb-6">
                 <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
                     Perkara Masuk
