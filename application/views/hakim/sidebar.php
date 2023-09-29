@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-satu">
         <!-- <div class="container"> -->
         <a class="navbar-brand ps-3" href="<?= base_url() ?>">
-            <img class="img-fluid" width="5%" src="<?= base_url('assets/img/logoapp.png') ?>" alt="">
+            <img class="img-fluid" width="100" src="<?= base_url('assets/img/logoapp.png') ?>" alt="">
         </a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
