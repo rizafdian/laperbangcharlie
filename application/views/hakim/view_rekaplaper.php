@@ -200,7 +200,7 @@
                         <div class="card card-frame mb-4">
                             <div class="card-body">
                                 <h6 class="text-center">
-                                    GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN REKAP LAPORAN PERKARA
+                                    GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN PERKARA
                                 </h6>
                                 <div>
                                     <canvas id="chart_rekaplaper"></canvas>
