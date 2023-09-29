@@ -105,9 +105,11 @@
     </div> -->
     <!-- modal end -->
 
+    <div class="row mt-3">
+        <div class="col">
 
+        
     <!-- table start -->
-    <div class="card">
         <div class="table-responsive">
             <table class="table align-items-center mb-3">
                 <thead>
@@ -171,24 +173,24 @@
                 </tbody>
             </table>
         </div>
-    </div>
     <!-- table end -->
 
-    <div class="row mt-4">
-        <div class="col">
-            <div class="card card-frame">
-                <div class="card-body">
-                    <h6 class="text-center">
-                        GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
-                    </h6>
-                    <div>
-                        <canvas id="chart_rekaptriwulan"></canvas>
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="card card-frame">
+                        <div class="card-body">
+                            <h6 class="text-center">
+                                GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
+                            </h6>
+                            <div>
+                                <canvas id="chart_rekaptriwulan"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- viewdocument Modal start -->
     <?php foreach ($all as $one) : ?>
         <div class="modal fade" id="viewdocumentModal<?= $one['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
