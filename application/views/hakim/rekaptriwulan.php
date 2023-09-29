@@ -174,7 +174,7 @@
     </div>
     <!-- table end -->
 
-    <div class="row-sm-3 mt-4">
+    <div class="row mt-4">
         <div class="col">
             <div class="card card-frame">
                 <div class="card-body">
