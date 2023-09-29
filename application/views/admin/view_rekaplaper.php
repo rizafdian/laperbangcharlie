@@ -278,10 +278,10 @@
                 <div class="card card-frame">
                     <div class="card-body">
                         <h6 class="text-center">
-                            GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN PELAPORAN PERKARA
+                           GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN PERKARA
                         </h6>
                         <div>
-                            <canvas id="chart_satu"></canvas>
+                        <canvas id="chart_rekaplaper" width="100%" height="30"></canvas>
                         </div>
                     </div>
                 </div>

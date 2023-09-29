@@ -176,14 +176,14 @@
     <!-- table end -->
 
         <div class="row mt-4">
-            <div class="col sm-12">
+            <div class="col">
                 <div class="card card-frame mb-4">
                     <div class="card-body">
                         <h6 class="text-center">
                             GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
                         </h6>
                         <div>
-                            <canvas id="chart_rekaptriwulan"></canvas>
+                            <canvas id="chart_rekaptriwulan" width="100%" height="30"></canvas>
                         </div>
                     </div>
                 </div>

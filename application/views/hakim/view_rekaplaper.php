@@ -203,7 +203,7 @@
                                     GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN PERKARA
                                 </h6>
                                 <div>
-                                    <canvas id="chart_rekaplaper"></canvas>
+                                    <canvas id="chart_rekaplaper" width="100%" height="30"></canvas>
                                 </div>
                             </div>
                         </div>

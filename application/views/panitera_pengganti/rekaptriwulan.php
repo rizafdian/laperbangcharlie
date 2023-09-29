@@ -173,20 +173,20 @@
     </div>
     <!-- table end -->
 
-    <!-- <div class="row mt-4">
+    <div class="row mt-4">
         <div class="col">
             <div class="card card-frame">
                 <div class="card-body">
                     <h6 class="text-center">
-                        GRAFIK REKAP KECAPATAN & KETEPATAN <br>PENGIRIMAN PELAPORAN TRIWULAN
+                        GRAFIK REKAP KECAPATAN & KETEPATAN <br>REKAP LAPORAN TRIWULAN
                     </h6>
                     <div>
-                        <canvas id="chart_satu"></canvas>
+                    <canvas id="chart_rekaptriwulan" width="100%" height="30"></canvas>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- viewdocument Modal start -->
     <?php foreach ($all as $one) : ?>

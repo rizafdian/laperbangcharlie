@@ -154,6 +154,105 @@ class Adminlaper extends CI_Controller
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
 
+        //data chart laporan perkara PA Kotamobagu
+        $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg1)) {
+            $data['jan_ktg'] = "0";
+        } 
+        else {
+            $data_ktg1['ktg_jan'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['jan_ktg'] = date('d', strtotime($data_ktg1['ktg_jan'][0]['tgl_upload']));
+        }
+        $data_ktg2 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "2", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg2)) {
+            $data['feb_ktg'] = "0";
+        } 
+        else {
+            $data_ktg2['ktg_feb'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "2", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['feb_ktg'] = date('d', strtotime($data_ktg2['ktg_feb'][0]['tgl_upload']));
+        }
+        $data_ktg3 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg3)) {
+            $data['mar_ktg'] = "0";
+        } 
+        else {
+            $data_ktg3['ktg_mar'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['mar_ktg'] = date('d', strtotime($data_tdo3['ktg_mar'][0]['tgl_upload']));
+        }
+        $data_ktg4 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "4", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg4)) {
+            $data['apr_ktg'] = "0";
+        } 
+        else {
+            $data_ktg4['ktg_apr'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "4", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['apr_ktg'] = date('d', strtotime($data_ktg4['ktg_apr'][0]['tgl_upload']));
+        }
+        $data_ktg5 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "5", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg5)) {
+            $data['mei_ktg'] = "0";
+        } 
+        else {
+            $data_ktg5['ktg_mei'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "5", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['mei_ktg'] = date('d', strtotime($data_ktg5['ktg_mei'][0]['tgl_upload']));
+        }
+        $data_ktg6 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg6)) {
+            $data['jun_ktg'] = "0";
+        } 
+        else {
+            $data_ktg6['ktg_jun'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['jun_ktg'] = date('d', strtotime($data_ktg6['ktg_jun'][0]['tgl_upload']));
+        }
+        $data_ktg7 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "7", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg7)) {
+            $data['jul_ktg'] = "0";
+        } 
+        else {
+            $data_ktg7['ktg_jul'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "7", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['jul_ktg'] = date('d', strtotime($data_ktg7['ktg_jul'][0]['tgl_upload']));
+        }
+        $data_ktg8 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "8", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg8)) {
+            $data['aug_ktg'] = "0";
+        } 
+        else {
+            $data_ktg8['ktg_aug'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "8", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['aug_ktg'] = date('d', strtotime($data_ktg8['ktg_aug'][0]['tgl_upload']));
+        }
+        $data_ktg9 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg9)) {
+            $data['sep_ktg'] = "0";
+        } 
+        else {
+            $data_ktg9['ktg_sep'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['sep_ktg'] = date('d', strtotime($data_ktg9['ktg_sep'][0]['tgl_upload']));
+        }
+        $data_ktg10 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "10", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg10)) {
+            $data['oct_ktg'] = "0";
+        } 
+        else {
+            $data_ktg10['ktg_oct'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "10", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['oct_ktg'] = date('d', strtotime($data_ktg10['ktg_oct'][0]['tgl_upload']));
+        }
+        $data_ktg11 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "11", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg11)) {
+            $data['nov_ktg'] = "0";
+        } 
+        else {
+            $data_ktg11['ktg_nov'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "11", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['nov_ktg'] = date('d', strtotime($data_ktg11['ktg_nov'][0]['tgl_upload']));
+        }
+        $data_ktg12 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg12)) {
+            $data['des_ktg'] = "0";
+        } 
+        else {
+            $data_ktg12['ktg_des'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['des_ktg'] = date('d', strtotime($data_ktg12['ktg_des'][0]['tgl_upload']));
+        }
+
+
         $this->load->view('admin/header', $data);
         $this->load->view('admin/view_rekaplaper', $data);
         $this->load->view('admin/footer', $data);
@@ -181,6 +280,105 @@ class Adminlaper extends CI_Controller
         $data['js'] = '';
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
+
+        //data chart laporan perkara PA Kotamobagu
+        $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg1)) {
+            $data['jan_ktg'] = "0";
+        } 
+        else {
+            $data_ktg1['ktg_jan'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => $year])->result_array();
+            $data['jan_ktg'] = date('d', strtotime($data_ktg1['ktg_jan'][0]['tgl_upload']));
+        }
+        $data_ktg2 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "2", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg2)) {
+            $data['feb_ktg'] = "0";
+        } 
+        else {
+            $data_ktg2['ktg_feb'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "2", 'Year(tgl_upload)' => $year])->result_array();
+            $data['feb_ktg'] = date('d', strtotime($data_ktg2['ktg_feb'][0]['tgl_upload']));
+        }
+        $data_ktg3 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg3)) {
+            $data['mar_ktg'] = "0";
+        } 
+        else {
+            $data_ktg3['ktg_mar'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();
+            $data['mar_ktg'] = date('d', strtotime($data_tdo3['ktg_mar'][0]['tgl_upload']));
+        }
+        $data_ktg4 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "4", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg4)) {
+            $data['apr_ktg'] = "0";
+        } 
+        else {
+            $data_ktg4['ktg_apr'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "4", 'Year(tgl_upload)' => $year])->result_array();
+            $data['apr_ktg'] = date('d', strtotime($data_ktg4['ktg_apr'][0]['tgl_upload']));
+        }
+        $data_ktg5 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "5", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg5)) {
+            $data['mei_ktg'] = "0";
+        } 
+        else {
+            $data_ktg5['ktg_mei'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "5", 'Year(tgl_upload)' => $year])->result_array();
+            $data['mei_ktg'] = date('d', strtotime($data_ktg5['ktg_mei'][0]['tgl_upload']));
+        }
+        $data_ktg6 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg6)) {
+            $data['jun_ktg'] = "0";
+        } 
+        else {
+            $data_ktg6['ktg_jun'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => $year])->result_array();
+            $data['jun_ktg'] = date('d', strtotime($data_ktg6['ktg_jun'][0]['tgl_upload']));
+        }
+        $data_ktg7 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "7", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg7)) {
+            $data['jul_ktg'] = "0";
+        } 
+        else {
+            $data_ktg7['ktg_jul'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "7", 'Year(tgl_upload)' => $year])->result_array();
+            $data['jul_ktg'] = date('d', strtotime($data_ktg7['ktg_jul'][0]['tgl_upload']));
+        }
+        $data_ktg8 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "8", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg8)) {
+            $data['aug_ktg'] = "0";
+        } 
+        else {
+            $data_ktg8['ktg_aug'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "8", 'Year(tgl_upload)' => $year])->result_array();
+            $data['aug_ktg'] = date('d', strtotime($data_ktg8['ktg_aug'][0]['tgl_upload']));
+        }
+        $data_ktg9 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg9)) {
+            $data['sep_ktg'] = "0";
+        } 
+        else {
+            $data_ktg9['ktg_sep'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => $year])->result_array();
+            $data['sep_ktg'] = date('d', strtotime($data_ktg9['ktg_sep'][0]['tgl_upload']));
+        }
+        $data_ktg10 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "10", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg10)) {
+            $data['oct_ktg'] = "0";
+        } 
+        else {
+            $data_ktg10['ktg_oct'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "10", 'Year(tgl_upload)' => $year])->result_array();
+            $data['oct_ktg'] = date('d', strtotime($data_ktg10['ktg_oct'][0]['tgl_upload']));
+        }
+        $data_ktg11 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "11", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg11)) {
+            $data['nov_ktg'] = "0";
+        } 
+        else {
+            $data_ktg11['ktg_nov'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "11", 'Year(tgl_upload)' => $year])->result_array();
+            $data['nov_ktg'] = date('d', strtotime($data_ktg11['ktg_nov'][0]['tgl_upload']));
+        }
+        $data_ktg12 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg12)) {
+            $data['des_ktg'] = "0";
+        } 
+        else {
+            $data_ktg12['ktg_des'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => $year])->result_array();
+            $data['des_ktg'] = date('d', strtotime($data_ktg12['ktg_des'][0]['tgl_upload']));
+        }
+
 
         $this->load->view('admin/header', $data);
         $this->load->view('admin/view_rekaplaper', $data);
@@ -483,6 +681,41 @@ class Adminlaper extends CI_Controller
         $data['all'] = $this->m_laper->get_rekap_triwulan();
         $data['years'] = $this->m_laper->years_rekap_triwulan();
 
+        //data chart laporan perkara PA Kotamobagu
+        $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg3)) {
+            $data['mar_ktg'] = "0";
+        } 
+        else {
+            $data_ktg3['ktg_mar'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['mar_ktg'] = date('d', strtotime($data_tdo3['ktg_mar'][0]['tgl_upload']));
+        }
+        $data_ktg6 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg6)) {
+            $data['jun_ktg'] = "0";
+        } 
+        else {
+            $data_ktg6['ktg_jun'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['jun_ktg'] = date('d', strtotime($data_ktg6['ktg_jun'][0]['tgl_upload']));
+        }
+        $data_ktg9 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg9)) {
+            $data['sep_ktg'] = "0";
+        } 
+        else {
+            $data_ktg9['ktg_sep'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['sep_ktg'] = date('d', strtotime($data_ktg9['ktg_sep'][0]['tgl_upload']));
+        }
+        $data_ktg12 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => date('Y')])->result_array();
+        if (empty ($data_ktg12)) {
+            $data['des_ktg'] = "0";
+        } 
+        else {
+            $data_ktg12['ktg_des'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => date('Y')])->result_array();
+            $data['des_ktg'] = date('d', strtotime($data_ktg12['ktg_des'][0]['tgl_upload']));
+        }
+
+
         $this->load->view('admin/header', $data);
         $this->load->view('admin/rekaptriwulan', $data);
         $this->load->view('admin/footer', $data);
@@ -496,6 +729,41 @@ class Adminlaper extends CI_Controller
         $data['js'] = 'status.js';
         $data['all'] = $this->m_laper->year_rekap_triwulan($year);
         $data['years'] = $this->m_laper->years_rekap_triwulan();
+
+        //data chart laporan perkara PA Kotamobagu
+        $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg3)) {
+            $data['mar_ktg'] = "0";
+        } 
+        else {
+            $data_ktg3['ktg_mar'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();
+            $data['mar_ktg'] = date('d', strtotime($data_tdo3['ktg_mar'][0]['tgl_upload']));
+        }
+        $data_ktg6 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg6)) {
+            $data['jun_ktg'] = "0";
+        } 
+        else {
+            $data_ktg6['ktg_jun'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "6", 'Year(tgl_upload)' => $year])->result_array();
+            $data['jun_ktg'] = date('d', strtotime($data_ktg6['ktg_jun'][0]['tgl_upload']));
+        }
+        $data_ktg9 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg9)) {
+            $data['sep_ktg'] = "0";
+        } 
+        else {
+            $data_ktg9['ktg_sep'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "9", 'Year(tgl_upload)' => $year])->result_array();
+            $data['sep_ktg'] = date('d', strtotime($data_ktg9['ktg_sep'][0]['tgl_upload']));
+        }
+        $data_ktg12 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => $year])->result_array();
+        if (empty ($data_ktg12)) {
+            $data['des_ktg'] = "0";
+        } 
+        else {
+            $data_ktg12['ktg_des'] = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "12", 'Year(tgl_upload)' => $year])->result_array();
+            $data['des_ktg'] = date('d', strtotime($data_ktg12['ktg_des'][0]['tgl_upload']));
+        }
+
 
         $this->load->view('admin/header', $data);
         $this->load->view('admin/rekaptriwulan', $data);
