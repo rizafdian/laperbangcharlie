@@ -31,10 +31,10 @@
     <title><?= $judul ?></title>
 </head>
 
-<body class="sb-nav-fixed">
+<body>
 
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-satu">
+        <!-- <div class="container"> -->
         <a class="navbar-brand ps-3" href="<?= base_url() ?>">
             <img class="img-fluid" width="80" src="<?= base_url('assets/img/logoapp.png') ?>" alt="">
         </a>
@@ -66,5 +66,5 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        <!-- </div> -->
     </nav>
