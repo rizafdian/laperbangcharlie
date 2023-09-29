@@ -449,9 +449,9 @@ class Hakim_laper extends CI_Controller
         $data['laporan'] = $this->db->get_where('v_detail_triwulan', ['id' => $id])->result_array();
         $data['catatan'] = $this->db->get('catatan_laporan')->result_array();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/triwulan_view', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/triwulan_view', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function add_catatan_triwulan()
