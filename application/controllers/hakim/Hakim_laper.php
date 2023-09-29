@@ -544,9 +544,9 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_rekap_triwulan();
         $data['years'] = $this->m_laper->years_rekap_triwulan();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/rekaptriwulan', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/rekaptriwulan', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function rekap_triwulan_year($year)
@@ -558,9 +558,9 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->year_rekap_triwulan($year);
         $data['years'] = $this->m_laper->years_rekap_triwulan();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/rekaptriwulan', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/rekaptriwulan', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function view_rekap_tri($id)
@@ -572,9 +572,9 @@ class Hakim_laper extends CI_Controller
         $data['triwulan'] = $this->db->get_where('rekap_triwulan', ['id' => $id])->result_array();
         $data['laporan'] = $this->db->get_where('v_rekap_triwulan', ['id' => $id])->result_array();
 
-        $this->load->view('panitera_pengganti/header', $data);
-        $this->load->view('panitera_pengganti/view_rekaptriwulan', $data);
-        $this->load->view('panitera_pengganti/footer', $data);
+        $this->load->view('hakim/sidebar', $data);
+        $this->load->view('hakim/view_rekaptriwulan', $data);
+        $this->load->view('hakim/footer', $data);
     }
 
     public function zip_rekap_triwulan($id)
@@ -598,9 +598,9 @@ class Hakim_laper extends CI_Controller
             $this->session->set_flashdata('msg', 'Tidak ada File'); //kop pesannya
             $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "ZIP" karena Tidak Laporan. !'); //isi pesannya.
 
-            $this->load->view('panitera_pengganti/header', $data);
+            $this->load->view('hakim/sidebar', $data);
             $this->load->view('errors/view_message');
-            $this->load->view('panitera_pengganti/footer', $data);
+            $this->load->view('hakim/footer', $data);
         }
     }
 
@@ -611,7 +611,7 @@ class Hakim_laper extends CI_Controller
         $this->session->set_flashdata('msg', 'Tidak ada File'); //kop pesannya
         $this->session->set_flashdata('properties', 'Anda tidak bisa mendowload file "PDF/XLS" karena Tidak ada filenya. !'); //isi pesannya.
 
-        $this->load->view('hakim/header', $data);
+        $this->load->view('hakim/sidebar', $data);
         $this->load->view('errors/view_message');
         $this->load->view('hakim/footer', $data);
     }
