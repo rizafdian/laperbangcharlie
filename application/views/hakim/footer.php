@@ -139,11 +139,11 @@
             pointHoverBackgroundColor: "#be9a21",
             pointHitRadius: 50,
             pointBorderWidth: 2,
-            data: ["<?php echo $jan_ktg ?>","<?php echo $feb_ktg ?>","<?php echo $mar_ktg ?>","<?php echo $apr_ktg ?>","<?php echo $mei_ktg ?>","<?php echo $jun_ktg ?>","<?php echo $jul_ktg ?>","<?php echo $aug_ktg ?>","<?php echo $sep_ktg ?>","<?php echo $oct_ktg ?>","<?php echo $nov_ktg ?>","<?php echo $des_ktg ?>"]
+            data: ["<?php echo $mar_ktg ?>", "<?php echo $jun_ktg ?>", "<?php echo $sep_ktg ?>", "<?php echo $des_ktg ?>"]
         };
 
         let tampungData = {
-            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Okt", "Nov", "Des"],
+            labels: ["Triwulan I (Mar)", "Triwulan II (Jun)", "Triwulan III (Sept)", "Triwulan IV (Des)"],
             datasets: [rekap_triwulan]
         };
 
