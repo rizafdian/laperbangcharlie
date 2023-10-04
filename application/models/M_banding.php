@@ -150,6 +150,11 @@ class M_banding extends CI_model
                                FROM laporan_perkara
                                WHERE YEAR(`tgl_upload`) = $periode_tahun"
         );
+        if ($query->num_rows() > 0) {
+            return $query->row()->laporan_perkara;
+        } else {
+            return 0;
+        }
     }
     public function count_laper_triwulan()
     {
@@ -159,6 +164,11 @@ class M_banding extends CI_model
                                FROM laporan_triwulan
                                WHERE periode_tahun = $periode_tahun"
         );
+        if ($query->num_rows() > 0) {
+            return $query->row()->laporan_triwulan;
+        } else {
+            return 0;
+        }
     }
 
     // public function count_laper_validasi()
