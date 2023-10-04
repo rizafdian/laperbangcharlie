@@ -416,6 +416,32 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                Putusan Banding
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- isi di disini bundel A -->
+                                <table class="table">
+                                    <tbody>
+
+                                        <tr>
+                                            <td>Putusan Banding</td>
+                                            <td>
+                                                <a href="#!" data-bs-toggle="modal" data-bs-target="#modalPdfAdmin" data-id="putusan/<?= $db->putusan_banding; ?>" class="text-decoration-none text-reset">
+                                                    <?= $db->putusan_banding; ?>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
     <?php endforeach; ?>
