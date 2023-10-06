@@ -24,9 +24,10 @@
 
     <div class="row">
         <div class="col text-center">
-            <h6 class="d-block">Laporan Perkara <br> Tahun <script>
-                    document.write(new Date().getFullYear())
-                </script>
+            <h6 class="d-block">Laporan Perkara <br> Tahun <?= $current_year; ?>
+            <!-- <script>
+                document.write(new Date().getFullYear())
+            </script> -->
             </h6>
             <!-- dropdown start -->
             <div class="d-flex justify-content-center">

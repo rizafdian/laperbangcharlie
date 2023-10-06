@@ -1,8 +1,9 @@
 <div class="row mt-5">
     <div class="col text-center">
-        <h6 class="d-block">Laporan Triwulan Tahun <script>
+        <h6 class="d-block">Laporan Triwulan Tahun <?= $current_year; ?>
+        <!-- <script>
         document.write(new Date().getFullYear())
-        </script>
+        </script> -->
         </h6>
         <!-- dropdown start -->
         <div>

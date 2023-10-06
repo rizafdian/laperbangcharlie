@@ -26,6 +26,7 @@ class Hakim_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_all_data();
         $data['years'] = $this->m_laper->get_years_laper();
+        $data['current_year'] = date('Y');
 
         // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
@@ -42,6 +43,7 @@ class Hakim_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_year_laper($year);
         $data['years'] = $this->m_laper->get_years_laper();
+        $data['current_year'] = $year;
 
         // $this->load->view('hakim/header', $data);
         $this->load->view('hakim/sidebar', $data);
@@ -155,6 +157,7 @@ class Hakim_laper extends CI_Controller
         // $data['laporan'] = $this->db->get_where('v_rekap_laporan')->result_array();
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
+        $data['current_year'] = date('Y');
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
@@ -281,6 +284,7 @@ class Hakim_laper extends CI_Controller
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
         $data['nama_user'] = $this->m_laper->get_nama_user();
+        $data['current_year'] = $year;
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => $year])->result_array();
@@ -419,6 +423,7 @@ class Hakim_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_triwulan_admin();
         $data['years'] = $this->m_laper->get_years_triwulan();
+        $data['current_year'] = date('Y');
 
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/triwulan', $data);
@@ -433,6 +438,7 @@ class Hakim_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_year_triwulan($year);
         $data['years'] = $this->m_laper->get_years_triwulan();
+        $data['current_year'] = $year;
 
         $this->load->view('hakim/sidebar', $data);
         $this->load->view('hakim/triwulan', $data);
@@ -454,33 +460,33 @@ class Hakim_laper extends CI_Controller
         $this->load->view('hakim/footer', $data);
     }
 
-    public function add_catatan_triwulan()
-    {
-        $id_triwulan = $this->input->post('id_triwulan');
+    // public function add_catatan_triwulan()
+    // {
+    //     $id_triwulan = $this->input->post('id_triwulan');
 
-        $data = [
-            'id' => '',
-            'id_triwulan' => $id_triwulan,
-            'tgl_catatan' => date('Y-m-d H:i:s'),
-            'catatan' => $this->input->post('catatan')
-        ];
+    //     $data = [
+    //         'id' => '',
+    //         'id_triwulan' => $id_triwulan,
+    //         'tgl_catatan' => date('Y-m-d H:i:s'),
+    //         'catatan' => $this->input->post('catatan')
+    //     ];
 
-        $this->db->insert('catatan_laporan', $data);
+    //     $this->db->insert('catatan_laporan', $data);
 
-        $pengedit = $this->session->userdata('nama');
+    //     $pengedit = $this->session->userdata('nama');
 
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan catatan pada id laporan triwulan <b>" . $id_triwulan . "</b>",
-            'nama_log' => $pengedit
-        );
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
+    //     $audittrail = array(
+    //         'log_id' => '',
+    //         'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan catatan pada id laporan triwulan <b>" . $id_triwulan . "</b>",
+    //         'nama_log' => $pengedit
+    //     );
+    //     $this->db->set('rekam_log', 'NOW()', FALSE);
+    //     $this->db->insert('log_audittrail', $audittrail);
 
-        $this->session->set_flashdata('msg', 'Berhasil memberikan catatan');
+    //     $this->session->set_flashdata('msg', 'Berhasil memberikan catatan');
 
-        redirect('pp/Pp_laper/triwulan');
-    }
+    //     redirect('pp/Pp_laper/triwulan');
+    // }
 
     public function zip_file_triwulan($id)
     {
@@ -543,6 +549,7 @@ class Hakim_laper extends CI_Controller
         $data['js'] = '';
         $data['all'] = $this->m_laper->get_rekap_triwulan();
         $data['years'] = $this->m_laper->years_rekap_triwulan();
+        $data['current_year'] = date('Y');
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
@@ -591,6 +598,7 @@ class Hakim_laper extends CI_Controller
         $data['js'] = 'status.js';
         $data['all'] = $this->m_laper->year_rekap_triwulan($year);
         $data['years'] = $this->m_laper->years_rekap_triwulan();
+        $data['current_year'] = $year;
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();

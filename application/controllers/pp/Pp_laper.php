@@ -26,6 +26,7 @@ class Pp_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_all_data();
         $data['years'] = $this->m_laper->get_years_laper();
+        $data['current_year'] = date('Y');
 
         $this->load->view('panitera_pengganti/header', $data);
         $this->load->view('panitera_pengganti/lapbulan', $data);
@@ -41,6 +42,7 @@ class Pp_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_year_laper($year);
         $data['years'] = $this->m_laper->get_years_laper();
+        $data['current_year'] = $year;
 
         $this->load->view('panitera_pengganti/header', $data);
         $this->load->view('panitera_pengganti/lapbulan', $data);
@@ -153,6 +155,7 @@ class Pp_laper extends CI_Controller
         // $data['laporan'] = $this->db->get_where('v_rekap_laporan')->result_array();
         $data['all'] = $this->m_laper->get_all_rekap();
         $data['years'] = $this->m_laper->get_years_rekap();
+        $data['current_year'] = date('Y');
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => date('Y')])->result_array();
@@ -264,6 +267,7 @@ class Pp_laper extends CI_Controller
         $data['js'] = '';
         $data['all'] = $this->m_laper->get_year_rekap($year);
         $data['years'] = $this->m_laper->get_years_rekap();
+        $data['current_year'] = $year;
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg1 = $this->db->get_where('rekap_laporan_perkara', ['id_user' => "1", 'Month(tgl_upload)' => "1", 'Year(tgl_upload)' => $year])->result_array();
@@ -402,6 +406,7 @@ class Pp_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_triwulan_admin();
         $data['years'] = $this->m_laper->get_years_triwulan();
+        $data['current_year'] = date('Y');
 
         $this->load->view('panitera_pengganti/header', $data);
         $this->load->view('panitera_pengganti/triwulan', $data);
@@ -416,6 +421,7 @@ class Pp_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['all'] = $this->m_laper->get_year_triwulan($year);
         $data['years'] = $this->m_laper->get_years_triwulan();
+        $data['current_year'] = $year;
 
         $this->load->view('panitera_pengganti/header', $data);
         $this->load->view('panitera_pengganti/triwulan', $data);
@@ -526,6 +532,7 @@ class Pp_laper extends CI_Controller
         $data['js'] = '';
         $data['all'] = $this->m_laper->get_rekap_triwulan();
         $data['years'] = $this->m_laper->years_rekap_triwulan();
+        $data['current_year'] = date('Y');
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => date('Y')])->result_array();
@@ -574,6 +581,7 @@ class Pp_laper extends CI_Controller
         $data['js'] = 'status.js';
         $data['all'] = $this->m_laper->year_rekap_triwulan($year);
         $data['years'] = $this->m_laper->years_rekap_triwulan();
+        $data['current_year'] = $year;
 
         //data chart laporan perkara PA Kotamobagu
         $data_ktg3 = $this->db->get_where('rekap_triwulan', ['id_user' => "1",'Month(tgl_upload)' => "3", 'Year(tgl_upload)' => $year])->result_array();

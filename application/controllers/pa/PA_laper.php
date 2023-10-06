@@ -27,6 +27,7 @@ class PA_laper extends CI_Controller
         $data['laporan'] = $this->m_laper->get_data();
         $data['years'] = $this->m_laper->get_years();
         $data['current_year'] = date('Y');
+        
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
         $this->load->view('pa/pa_topbar', $data);
@@ -262,7 +263,7 @@ class PA_laper extends CI_Controller
         $data['judul'] = "Laporan Triwulan";
         $data['laporan'] = $this->m_laper->get_data_triwulan();
         $data['years'] = $this->m_laper->get_years_triwulan();
-
+        $data['current_year'] = date('Y');
 
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
@@ -339,6 +340,7 @@ class PA_laper extends CI_Controller
         $data['nama_user'] = $this->m_laper->get_nama_user();
         $data['laporan'] = $this->m_laper->year_data_triwulan($year);
         $data['years'] = $this->m_laper->get_years_triwulan();
+        $data['current_year'] = $year;
 
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');

@@ -23,9 +23,10 @@
 
     <div class="row mt-3">
         <div class="col text-center">
-            <h6 class="d-block">Rekap Laporan Triwulan <br> Tahun <script>
+            <h6 class="d-block">Rekap Laporan Triwulan <br> Tahun <?= $current_year; ?>
+                <!-- <script>
                     document.write(new Date().getFullYear())
-                </script>
+                </script> -->
             </h6>
             <!-- dropdown start -->
             <div class="d-flex justify-content-center">
