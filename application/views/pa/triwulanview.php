@@ -224,10 +224,16 @@ endforeach;
                         <div class="input-group input-group-static my-3">
                             <label for="upload-pdf">Upload file PDF</label>
                             <input id="upload-pdf" type="file" name="file1" class="form-control" accept=".pdf" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                            </small>
                         </div>
                         <div class="input-group input-group-static my-3">
                             <label for="upload-zip">Upload file XLS</label>
                             <input id="upload-zip" type="file" name="file2" class="form-control" accept=".xls, .xlsx" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                            </small>
                         </div>
 
                 </div>

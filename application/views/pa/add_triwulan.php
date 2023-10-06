@@ -106,6 +106,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -114,6 +117,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file2" class="form-control form-control-sm" accept=".xls,.xlsx" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
 
@@ -150,6 +156,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -158,6 +167,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
 
@@ -195,6 +207,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file1" class="form-control form-control-sm" accept=".pdf" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
                         <div class="input-group input-group-sm input-group-outline my-3">
@@ -203,6 +218,9 @@
                             </div>
                             <div class="col">
                                 <input type="file" name="file2" class="form-control form-control-sm" accept=".xls, .xlsx" required>
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                                </small>
                             </div>
                         </div>
 

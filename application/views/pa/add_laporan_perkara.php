@@ -4,7 +4,7 @@
 
         <h6 class="mt-3">Tambah Laporan Perkara Bulanan</h6>
         <div class="row mt-3">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <form method="POST" action="<?php echo base_url('pa/PA_laper/add_laporan_perkara'); ?>" enctype="multipart/form-data">
 
                     <!-- form start -->
@@ -20,6 +20,9 @@
                         <label for="upload_pdf" class="col-sm-2 col-form-label">Upload File PDF</label>
                         <div class="col-sm-10">
                             <input type="file" name="file1" class="form-control" id="upload_pdf" accept=".pdf" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                            </small>
                             <div class="form-text text-danger"><?= form_error('file1') ?></div>
                         </div>
                     </div>
@@ -28,6 +31,9 @@
                         <label for="upload_zip" class="col-sm-2 col-form-label">Upload File Excel</label>
                         <div class="col-sm-10">
                             <input type="file" name="file2" class="form-control" id="upload_zip" accept=".xls,.xlsx" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Ukurang maksimal file 25 mb.
+                            </small>
                             <div class="form-text text-danger"><?= form_error('file2') ?></div>
                         </div>
                     </div>
