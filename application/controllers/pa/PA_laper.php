@@ -26,6 +26,7 @@ class PA_laper extends CI_Controller
         $data['judul'] = 'Laporan Perkara Bulanan';
         $data['laporan'] = $this->m_laper->get_data();
         $data['years'] = $this->m_laper->get_years();
+        $data['current_year'] = date('Y');
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
         $this->load->view('pa/pa_topbar', $data);
@@ -39,6 +40,7 @@ class PA_laper extends CI_Controller
         $data['js'] = 'status.js';
         $data['laporan'] = $this->m_laper->get_year($year);
         $data['years'] = $this->m_laper->get_years();
+        $data['current_year'] = $year;
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
         $this->load->view('pa/pa_topbar', $data);

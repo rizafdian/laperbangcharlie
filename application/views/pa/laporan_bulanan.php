@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col text-center">
-    <h6>Laporan Perkara Tahun <script>
+    <h6>Laporan Perkara Tahun <?= $current_year; ?>
+      <!-- <script>
         document.write(new Date().getFullYear())
-      </script>
+      </script> -->
     </h6>
     <!-- dropdown start -->
     <div>
