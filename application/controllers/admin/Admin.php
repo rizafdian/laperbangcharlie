@@ -389,7 +389,7 @@ Berikut informasi perkara banding nomor:
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
-SIPEKA PTA Manado";
+*SIPEKA PTA Manado*";
         }else {
            
 $token = "sAZJpFT7ntDM4+!gJ+h-";
@@ -403,7 +403,7 @@ Berikut informasi perkara banding nomor:
 Ini adalah sistem pemberitahuan otomatis perkara banding anda.
 ____________________________________    
 Ketik informasi untuk mengetahui perintah lainnya. 
-SIPEKA PTA Manado";
+*SIPEKA PTA Manado*";
         }
 
         $curl = curl_init();

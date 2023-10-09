@@ -102,10 +102,10 @@ Berikut informasi catatan laporan perkara periode " . $periode . "
 2. Dengan status saat ini: " . $status . "
 
 Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan Tinggi Agama Manado.
-Sistem Informasi Layanan Perkara Banding (LAPERBANG)
+*Sistem Informasi Layanan Perkara Banding (LAPERBANG)*
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
-SIPEKA PTA Manado";
+*SIPEKA PTA Manado*";
         
         $curl = curl_init();
 
@@ -665,7 +665,7 @@ SIPEKA PTA Manado";
         //API Notifikasi WA  
 $token = "sAZJpFT7ntDM4+!gJ+h-";
 $message = "Assamualaikum Wr Wb. 
-Berikut informasi catatan laporan perkara periode triwulan " . $periode_triwulan . " tahun " . $periode_tahun . " 
+Berikut informasi catatan laporan perkara periode " . $periode_triwulan . " tahun " . $periode_tahun . " 
 
 1. " . $catatan . "
 2. Dengan status saat ini: " . $status . "
@@ -674,7 +674,7 @@ Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan T
 *Sistem Informasi Layanan Perkara Banding (LAPERBANG)*
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
-SIPEKA PTA Manado";
+*SIPEKA PTA Manado*";
         
         $curl = curl_init();
 
