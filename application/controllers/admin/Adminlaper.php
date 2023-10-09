@@ -71,7 +71,7 @@ class Adminlaper extends CI_Controller
         $id_laper = $this->input->post('id_laper');
         $pengedit = $this->session->userdata('nama');
         $periode = $this->input->post('periode');
-        // $catatan = $this->input->post('catatan');
+        $catatan = $this->input->post('catatan');
         $status = $this->input->post('status');
         $target = $this->input->post('operator');
         $tanggal_catatan = date('d-m-Y H:i:s');
@@ -80,7 +80,7 @@ class Adminlaper extends CI_Controller
             'id' => '',
             'laper_id' => $id_laper,
             'tgl_catatan' => date('Y-m-d H:i:s'),
-            'catatan' =>$this->input->post('catatan')
+            'catatan' => $catatan
         ];
 
         $this->db->insert('catatan_laporan', $data);
@@ -95,42 +95,42 @@ class Adminlaper extends CI_Controller
         $this->db->insert('log_audittrail', $audittrail);
 
         //API Notifikasi WA  
-// $token = "sAZJpFT7ntDM4+!gJ+h-";
-// $message = "Assamualaikum Wr Wb. 
-// Berikut informasi catatan laporan perkara periode " . $periode . "
+$token = "sAZJpFT7ntDM4+!gJ+h-";
+$message = "Assamualaikum Wr Wb. 
+Berikut informasi catatan laporan perkara periode " . $periode . "
 
-// 1. " . $catatan . "
-// 2. Dengan status saat ini: " . $status . "
+1. " . $catatan . "
+2. Dengan status saat ini: " . $status . "
 
-// Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan Tinggi Agama Manado.
-// ___________________________________
-// Ketik informasi untuk mengetahui perintah lainnya. 
-// SIPEKA PTA Manado";
+Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan Tinggi Agama Manado.
+___________________________________
+Ketik informasi untuk mengetahui perintah lainnya. 
+SIPEKA PTA Manado";
         
-//         $curl = curl_init();
+        $curl = curl_init();
 
-//         curl_setopt_array($curl, array(
-//         CURLOPT_URL => 'https://api.fonnte.com/send',
-//         CURLOPT_RETURNTRANSFER => true,
-//         CURLOPT_ENCODING => '',
-//         CURLOPT_MAXREDIRS => 10,
-//         CURLOPT_TIMEOUT => 0,
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.fonnte.com/send',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
 
-//         CURLOPT_FOLLOWLOCATION => true,
-//         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//         CURLOPT_CUSTOMREQUEST => 'POST',
-//         CURLOPT_POSTFIELDS => array(
-//         'target' => $target,
-//         'message' => $message,
-//         ),
-//         CURLOPT_HTTPHEADER => array(
-//             "Authorization: $token"
-//         ),
-//         ));
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array(
+        'target' => $target,
+        'message' => $message,
+        ),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: $token"
+        ),
+        ));
 
-//         $response = curl_exec($curl);
+        $response = curl_exec($curl);
 
-//         curl_close($curl);
+        curl_close($curl);
 
         $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
 
