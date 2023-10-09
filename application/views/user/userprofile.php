@@ -38,9 +38,8 @@ $numb_explode = explode('62', $numb);
                                         <label for="profile-numb" class="form-label">Nomor Whatsapp Operator</label>
                                     </small>
                                     <div class="input-group">
-                                        <span class="input-group-text">62
+                                        <span id="numb-62" class="input-group-text">62</span>
                                         <input type="text" class="form-control" id="profile-numb" value="<?= $numb_explode[0] ?>" placeholder="example : 82135467834">
-                                        </span>
                                     </div>
                                 </div>
                                 <div class=" mb-1">
