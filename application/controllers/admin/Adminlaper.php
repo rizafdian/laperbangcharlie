@@ -94,8 +94,6 @@ class Adminlaper extends CI_Controller
         $this->db->set('rekam_log', 'NOW()', FALSE);
         $this->db->insert('log_audittrail', $audittrail);
 
-        $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
-
         //API Notifikasi WA  
 $token = "sAZJpFT7ntDM4+!gJ+h-";
 $message = "Assamualaikum Wr Wb. 
@@ -134,6 +132,8 @@ Ketik informasi untuk mengetahui perintah lainnya.
         $response = curl_exec($curl);
 
         curl_close($curl);
+
+        $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
 
         redirect('Admin/adminlaper');
     }
