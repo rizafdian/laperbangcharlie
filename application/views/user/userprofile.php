@@ -132,7 +132,7 @@ $numb_explode = explode('62', $numb);
                         $('#profile-id').val(value.id)
                         $('#profile-name').val(value.nama)
                         $('#profile-email').val(value.email)
-                        // $('#profile-numb').val(value.operator)
+                        $('#profile-numb').val(value.operator)
                         $('#profile-username').val(value.username)
                         $('#profile-since').val(value.data_created)
 
