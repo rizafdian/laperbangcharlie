@@ -1,4 +1,4 @@
-<div class="container-fluid py-4 mx-4">
+<div class="container-fluid py-4">
 
     <div class="row">
         <div class="col">
