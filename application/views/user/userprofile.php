@@ -1,8 +1,6 @@
 <?php
 
 $user = $userprofile[0];
-$numb = $userprofile[0]['operator'];
-$numb_explode = explode('62', $numb);
 
 ?>
 
@@ -38,8 +36,7 @@ $numb_explode = explode('62', $numb);
                                         <label for="profile-numb" class="form-label">Nomor Whatsapp Operator</label>
                                     </small>
                                     <div class="input-group">
-                                        <span id="numb-62" class="input-group-text">62</span>
-                                        <input type="text" class="form-control" id="profile-numb" value="<?= $numb_explode[0] ?>" placeholder="example : 82135467834">
+                                        <input type="text" class="form-control" id="profile-numb" value="<?= $profile['operator'] ?>" placeholder="example : 6282135467834">
                                     </div>
                                 </div>
                                 <div class=" mb-1">
