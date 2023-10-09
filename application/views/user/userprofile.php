@@ -39,7 +39,7 @@ $numb_explode = explode('62', $numb);
                                     </small>
                                     <div class="input-group">
                                         <span class="input-group-text">62</span>
-                                        <input type="numb" class="form-control" id="profile-numb" value="<?= $numb_explode[1] ?>" placeholder="example : 82135467834">
+                                        <input type="text" class="form-control" id="profile-numb" value="<?= $numb_explode[1] ?>" placeholder="example : 82135467834">
                                     </div>
                                 </div>
                                 <div class=" mb-1">
