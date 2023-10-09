@@ -71,7 +71,7 @@ class Adminlaper extends CI_Controller
         $id_laper = $this->input->post('id_laper');
         $pengedit = $this->session->userdata('nama');
         $periode = $this->input->post('periode');
-        $catatan = $this->input->post('catatan');
+        // $catatan = $this->input->post('catatan');
         $status = $this->input->post('status');
         $target = $this->input->post('operator');
         $tanggal_catatan = date('d-m-Y H:i:s');
@@ -80,7 +80,7 @@ class Adminlaper extends CI_Controller
             'id' => '',
             'laper_id' => $id_laper,
             'tgl_catatan' => date('Y-m-d H:i:s'),
-            'catatan' => $catatan
+            'catatan' =>$this->input->post('catatan')
         ];
 
         $this->db->insert('catatan_laporan', $data);
