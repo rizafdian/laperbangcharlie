@@ -86,7 +86,6 @@
 
             <!-- first loop -->
             <?php $i = 1; ?>
-            <?php $month = date('M Y'); ?>
             <?php foreach ($laporan as $lhs) : ?>
               <tr>
                 <td>
@@ -104,27 +103,23 @@
                   <span class="text-secondary text-xs font-weight-normal"><?php echo $lhs['tgl_upload']; ?></span>
                 </td>
                 <td class="align-middle text-center">
-                  <span class="text-secondary text-xs font-weight-normal"><?php echo $month; ?></span>
+                  <span class="text-secondary text-xs font-weight-normal"><?php echo $lhs['tgl_terakhir_rev']; ?></span>
                 </td>
                 <td class="align-middle text-center">
-                  <?php if ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
+                  <?php if ($lhs['tanggal'] <= '5' and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-success text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <!-- <?php elseif ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
+                  <?php elseif ($lhs['tanggal'] > '5' and $lhs['tanggal'] <= '10' and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-warning text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
+                  <?php elseif ($lhs['tanggal'] > '10' and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-danger text-xs font-weight-normal">
-                      <i class="fas fa-check-circle"></i>
-                    </span> -->
-                  <?php elseif ($lhs['periode'] = $month and $lhs['status'] = 'Revisi') : ?>
-                    <span class="text-dark text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['periode'] != $month and $lhs['status'] != 'Revisi') : ?>
-                    <span class="text-danger text-xs font-weight-normal">
+                  <?php elseif ($lhs['tanggal'] >= '1' and $lhs['status'] = 'Revisi') : ?>
+                    <span class="text-dark text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
                   <?php endif; ?>
