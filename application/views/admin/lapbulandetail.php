@@ -154,7 +154,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="<?php echo base_url('Admin/adminlaper/add_catatan'); ?>">
+                    <form method="POST" action="<?php echo base_url('admin/adminlaper/add_catatan'); ?>">
                         <div class="container">
                             <?php foreach ($catatan as $ct) : ?>
                                 <div class="card card-frame mb-2">
