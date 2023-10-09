@@ -28,8 +28,7 @@ class PA_laper extends CI_Controller
         $data['years'] = $this->m_laper->get_years();
         $data['current_year'] = date('Y');
         $data1['current_month'] = date('M Y');
-        var_dump($data1);
-        die;
+       
         $this->load->view('pa/pa_header');
         $this->load->view('pa/pa_sidebar');
         $this->load->view('pa/pa_topbar', $data);
