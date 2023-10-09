@@ -134,7 +134,7 @@ class Adminlaper extends CI_Controller
 
         $this->session->set_flashdata('message', 'Anda Berhasil memberikan catatan');
 
-        redirect('Admin/adminlaper');
+        redirect('admin/adminlaper');
     }
 
     public function add_validasi()
