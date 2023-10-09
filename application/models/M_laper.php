@@ -53,6 +53,7 @@ class M_laper extends CI_model
         $id = $this->session->userdata('id');
         $this->db->select('*');
         $this->db->select('day(`tgl_upload`) as tanggal');
+        $this->db->select('month(`tgl_upload`) as bulan');
         $this->db->from('laporan_perkara');
         // $multiple = array('id_user' => $id, 'periode_tahun' => $periode_tahun);
         $this->db->where('id_user', $id);
