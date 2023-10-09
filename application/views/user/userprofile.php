@@ -36,7 +36,7 @@ $user = $userprofile[0];
                                         <label for="profile-numb" class="form-label">Nomor Whatsapp Operator</label>
                                     </small>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="profile-numb" value="<?= $profile['operator'] ?>" placeholder="example : 6282135467834">
+                                        <input type="number" maxlength="13" class="form-control" id="profile-numb" value="<?= $profile['operator'] ?>" placeholder="example : 0821234567">
                                     </div>
                                 </div>
                                 <div class=" mb-1">

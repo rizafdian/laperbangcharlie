@@ -52,7 +52,7 @@
                         <div class="row mb-3">
                             <label for="namaPihak" class="col-sm-2 col-form-label">No. Whatsapp Pihak Penggugat</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="namaPihak" name="no_hp_penggugat" required>
+                                <input type="number" maxlength="13" class="form-control" id="namaPihak" name="no_hp_penggugat" required placeholder="example : 0821234567">
                             </div>
 
                         </div>
@@ -65,7 +65,7 @@
                         <div class="row mb-3">
                             <label for="namaPihak" class="col-sm-2 col-form-label">No. Whatsapp Pihak Tergugat</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="namaPihak" name="no_hp_tergugat">
+                                <input type="number" maxlength="13" class="form-control" id="namaPihak" name="no_hp_tergugat" required placeholder="example : 0821234567">
                             </div>
                         </div>
 
