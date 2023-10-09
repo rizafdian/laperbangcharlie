@@ -111,14 +111,14 @@
                     <span class="text-success text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
+                  <!-- <?php elseif ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-warning text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
                   <?php elseif ($lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-danger text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
-                    </span>
+                    </span> -->
                   <?php elseif ($lhs['periode'] = $month and $lhs['status'] = 'Revisi') : ?>
                     <span class="text-dark text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
