@@ -105,7 +105,7 @@ Berikut informasi catatan laporan perkara periode " . $periode . "
 Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan Tinggi Agama Manado.
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
-*SIPEKA PTA Manado*";
+SIPEKA PTA Manado";
         
         $curl = curl_init();
 
@@ -122,7 +122,6 @@ Ketik informasi untuk mengetahui perintah lainnya.
         CURLOPT_POSTFIELDS => array(
         'target' => $target,
         'message' => $message,
-        'delay' => '2'
         ),
         CURLOPT_HTTPHEADER => array(
             "Authorization: $token"

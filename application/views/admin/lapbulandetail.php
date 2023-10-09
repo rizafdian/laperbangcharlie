@@ -169,9 +169,9 @@
                         <div class="container">
                             <div class="form-floating">
                                 <?php foreach ($laporan as $lhs) : ?>
-                                    <input type="text" id="id_laper" name="id_laper" value="<?php echo $lhs['id'] ?>" >
-                                    <input type="text" id="periode" name="periode" value="<?php echo $lhs['periode'] ?>" >
-                                    <input type="text" id="operator" name="operator" value="<?php echo $lhs['operator'] ?>" >
+                                    <input type="text" id="id_laper" name="id_laper" value="<?php echo $lhs['id'] ?>" hidden>
+                                    <input type="text" id="periode" name="periode" value="<?php echo $lhs['periode'] ?>" hidden>
+                                    <input type="text" id="operator" name="operator" value="<?php echo $lhs['operator'] ?>" hidden>
                                 <?php endforeach; ?>
                                 <textarea class="form-control" name="catatan" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                                 <label for="floatingTextarea">Klik untuk membuat catatan</label>
