@@ -39,7 +39,7 @@ $numb_explode = explode('62', $numb);
                                     </small>
                                     <div class="input-group">
                                         <span class="input-group-text">62</span>
-                                        <input type="numb" max="16" class="form-control" id="profile-numb" value="<?= $numb_explode[1] ?>" placeholder="example : 82135467834">
+                                        <input type="numb" class="form-control" id="profile-numb" value="<?= $numb_explode[1] ?>" placeholder="example : 82135467834">
                                     </div>
                                 </div>
                                 <div class=" mb-1">
@@ -132,7 +132,7 @@ $numb_explode = explode('62', $numb);
                         $('#profile-id').val(value.id)
                         $('#profile-name').val(value.nama)
                         $('#profile-email').val(value.email)
-                        $('#profile-numb').val(value.operator)
+                        // $('#profile-numb').val(value.operator)
                         $('#profile-username').val(value.username)
                         $('#profile-since').val(value.data_created)
 
