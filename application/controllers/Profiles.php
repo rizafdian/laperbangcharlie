@@ -28,6 +28,7 @@ class Profiles extends CI_Controller
         $data = [
             'nama' => $this->input->post('nama'),
             'email' => $this->input->post('email'),
+            'operator' => $this->input->post('operator'),
         ];
 
         $this->db->where('id', $id);
