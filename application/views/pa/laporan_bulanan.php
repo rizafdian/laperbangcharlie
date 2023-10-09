@@ -107,20 +107,24 @@
                   <span class="text-secondary text-xs font-weight-normal"><?php echo $month; ?></span>
                 </td>
                 <td class="align-middle text-center">
-                  <?php if ($lhs['tanggal'] <= '5' and $lhs['status'] != 'Revisi') : ?>
+                  <?php if ($lhs['tanggal'] <= '5' and $lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-success text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['tanggal'] > '5' and $lhs['tanggal'] <= '10' and $lhs['status'] != 'Revisi') : ?>
+                  <?php elseif ($lhs['tanggal'] > '5' and $lhs['tanggal'] <= '10' and $lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-warning text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['tanggal'] > '10' and $lhs['bulan'] = date('m') and $lhs['status'] != 'Revisi') : ?>
+                  <?php elseif ($lhs['tanggal'] > '10' and $lhs['periode'] = $month and $lhs['status'] != 'Revisi') : ?>
                     <span class="text-danger text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
-                  <?php elseif ($lhs['tanggal'] >= '1' and $lhs['bulan'] = date('m') and $lhs['status'] = 'Revisi') : ?>
+                  <?php elseif ($lhs['tanggal'] >= '1' and $lhs['periode'] = $month and $lhs['status'] = 'Revisi') : ?>
                     <span class="text-dark text-xs font-weight-normal">
+                      <i class="fas fa-check-circle"></i>
+                    </span>
+                  <?php elseif ($lhs['tanggal'] >= '1' and $lhs['periode'] != $month and $lhs['status'] != 'Revisi') : ?>
+                    <span class="text-danger text-xs font-weight-normal">
                       <i class="fas fa-check-circle"></i>
                     </span>
                   <?php endif; ?>
