@@ -31,6 +31,13 @@ $user = $userprofile[0];
                                     </small>
                                     <input type="email" class="form-control" id="profile-email" value="<?= $profile['email'] ?>">
                                 </div>
+                                <div class="mb-1">
+                                    <small class="text-success">
+                                        <label for="profile-numb" class="form-label">Nomor Whatsapp Operator</label>
+                                    </small>
+                                    <span class="input-group-text">62</span>
+                                    <input type="numb" max="16" class="form-control" id="profile-numb" value="<?= $profile['operator'] ?>" placeholder="example : 82135467834">
+                                </div>
                                 <div class=" mb-1">
                                     <small class="text-success">
                                         <label for="profile-username" class="form-label">Username</label>
@@ -121,6 +128,7 @@ $user = $userprofile[0];
                         $('#profile-id').val(value.id)
                         $('#profile-name').val(value.nama)
                         $('#profile-email').val(value.email)
+                        $('#profile-numb').val(value.operator)
                         $('#profile-username').val(value.username)
                         $('#profile-since').val(value.data_created)
 
@@ -139,6 +147,7 @@ $user = $userprofile[0];
             let id = $('#profile-id').val()
             let nama = $('#profile-name').val()
             let email = $('#profile-email').val()
+            let operator = $('#profile-numb').val()
             //kirim data via ajax
             $.ajax({
                 type: "POST",
@@ -147,6 +156,7 @@ $user = $userprofile[0];
                     id: id,
                     nama: nama,
                     email: email,
+                    operator: operator,
                 },
                 dataType: "json",
                 success: function(response) {

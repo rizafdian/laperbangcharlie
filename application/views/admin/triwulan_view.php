@@ -230,6 +230,10 @@
                         <form method="POST" action="<?php echo base_url('admin/adminlaper/add_validasi_triwulan'); ?>" enctype="multipart/form-data">
 
                             <input type="text" id="id_laper" name="id_triwulan" value="<?php echo $lhs['id_triwulan'] ?>" hidden>
+                            <input type="text" id="periode_triwulan" name="periode_triwulan" value="<?php echo $lhs['periode_triwulan'] ?>" hidden>
+                            <input type="text" id="periode_tahun" name="periode_tahun" value="<?php echo $lhs['periode_tahun'] ?>" hidden>
+                            <input type="text" id="status_laporan" name="status_laporan" value="<?php echo $lhs['status_laporan'] ?>" hidden>
+                            <input type="text" id="operator" name="operator" value="<?php echo $lhs['operator'] ?>" hidden>
 
                             <div class="row align-items-center">
                                 <div class="col text-end">
