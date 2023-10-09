@@ -103,7 +103,7 @@
                   <span class="text-secondary text-xs font-weight-normal"><?php echo $lhs['tgl_upload']; ?></span>
                 </td>
                 <td class="align-middle text-center">
-                  <span class="text-secondary text-xs font-weight-normal"><?php echo $lhs['tgl_terakhir_rev']; ?></span>
+                  <span class="text-secondary text-xs font-weight-normal"><?php echo $lhs['bulan']; ?></span>
                 </td>
                 <td class="align-middle text-center">
                   <?php if ($lhs['tanggal'] <= '5'and $lhs['bulan'] = '10' and $lhs['status'] != 'Revisi') : ?>
