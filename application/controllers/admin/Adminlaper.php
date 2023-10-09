@@ -671,7 +671,7 @@ Berikut informasi catatan laporan perkara periode triwulan " . $periode_triwulan
 2. Dengan status saat ini: " . $status . "
 
 Ini adalah sistem pemberitahuan otomatis Laporan Perkara di wilayah Pengadilan Tinggi Agama Manado.
-Sistem Informasi Layanan Perkara Banding (LAPERBANG)
+*Sistem Informasi Layanan Perkara Banding (LAPERBANG)*
 ___________________________________
 Ketik informasi untuk mengetahui perintah lainnya. 
 SIPEKA PTA Manado";
