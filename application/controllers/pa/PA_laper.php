@@ -110,7 +110,7 @@ class PA_laper extends CI_Controller
     {
         $data['judul'] = 'Laporan Perkara';
         $data['laporan'] = $this->m_laper->get_data();
-        $cek_periode = $data['laporan']['periode'];
+        $cek_periode = isset($data['laporan']['periode']) ? $data['laporan']['periode'] : null;
 
         //form validation rules
         $this->form_validation->set_rules('periode', 'Periode', 'required');
