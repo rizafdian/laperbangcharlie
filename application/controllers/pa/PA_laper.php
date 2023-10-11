@@ -368,7 +368,6 @@ class PA_laper extends CI_Controller
 
 
         //mengecek data ada atau kosong
-        // if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) { //jika data kosong
         if (empty $data['laporan'][0]['id']) { //jika data kosong
             //buat Flash  message
             $this->session->set_flashdata('msg', 'File Kosong');
