@@ -109,7 +109,7 @@ class PA_laper extends CI_Controller
     public function add_laporan_perkara()
     {
         $data['judul'] = 'Laporan Perkara';
-        $data['laporan'] = $this->m_laper->get_data();
+        $data1['laporan'] = $this->m_laper->get_data();
         $cek_periode = isset($data['laporan']['periode']) ? $data['laporan']['periode'] : null;
 
         //form validation rules
@@ -119,7 +119,7 @@ class PA_laper extends CI_Controller
 
             $periode = $this->input->post('periode', true);
             $periode_tgl = date('M Y', strtotime($periode));
-            var_dump($cek_periode, $periode_tgl);
+            var_dump($cek_periode, $periode_tgl, $data1);
             die;
             $current_month = date('M Y');
             $next_month = date('M Y', strtotime('+1 month',strtotime($periode_tgl))) ;
