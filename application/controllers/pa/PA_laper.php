@@ -115,6 +115,13 @@ class PA_laper extends CI_Controller
         // $this->form_validation->set_rules('file1', 'File PDF', 'required');
         // $this->form_validation->set_rules('file2', 'File ZIP', 'required');
 
+            $periode = $this->input->post('periode', true);
+            $periode_tgl = date('M Y', strtotime($periode));
+            $current_month = date('M Y');
+            $tanggal = date('Y-m-d');
+            $berkas = "Lap Per $periode_tgl";
+            $satker = $this->session->userdata('kode_pa');
+
         //form validation
         if ($this->form_validation->run() === FALSE) {
             # code...
@@ -124,13 +131,14 @@ class PA_laper extends CI_Controller
             $this->load->view('pa/pa_topbar', $data);
             $this->load->view('pa/add_laporan_perkara', $data);
             $this->load->view('pa/pa_footer');
+
+        } else if ($periode_tgl != $current_month) {
+            
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena periode yang dipilih tidak sesuai dengan bulan saat ini');
+            redirect('pa/PA_laper/');
+
         } else {
 
-            $periode = $this->input->post('periode', true);
-            $periode_tgl = date('M Y', strtotime($periode));
-            $tanggal = date('Y-m-d');
-            $berkas = "Lap Per $periode_tgl";
-            $satker = $this->session->userdata('kode_pa');
             $folder = "$satker $periode_tgl";
             $status = "Belum Validasi";
             $path = "./files/laporan_perkara/$folder";
@@ -190,7 +198,7 @@ class PA_laper extends CI_Controller
             $this->db->set('rekam_log', 'NOW()', FALSE);
             $this->db->insert('log_audittrail', $audittrail);
 
-            $this->session->set_flashdata('message', 'Tambah Laporan dan Upload File berhasil');
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara dan Upload File berhasil');
             redirect('pa/PA_laper/');
         }
     }
@@ -360,7 +368,8 @@ class PA_laper extends CI_Controller
 
 
         //mengecek data ada atau kosong
-        if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) { //jika data kosong
+        // if ($this->session->userdata('id') != $data['laporan'][0]['id_user']) { //jika data kosong
+        if (empty $data['laporan'][0]['id']) { //jika data kosong
             //buat Flash  message
             $this->session->set_flashdata('msg', 'File Kosong');
             $this->session->set_flashdata('properties', 'Anda tidak bisa Melihat File, karena belum mengupload File Laporan Triwulan, Silahkan Upload Laporan Triwulan!');

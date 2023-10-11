@@ -21,7 +21,7 @@
                         <div class="col-sm-10">
                             <input type="file" name="file1" class="form-control" id="upload_pdf" accept=".pdf" required>
                             <small id="passwordHelpBlock" class="form-text text-muted">
-                                Ukurang maksimal file 25 mb.
+                                Ukuran maksimal file 25 mb.
                             </small>
                             <div class="form-text text-danger"><?= form_error('file1') ?></div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="col-sm-10">
                             <input type="file" name="file2" class="form-control" id="upload_zip" accept=".xls,.xlsx" required>
                             <small id="passwordHelpBlock" class="form-text text-muted">
-                                Ukurang maksimal file 25 mb.
+                                Ukuran maksimal file 25 mb.
                             </small>
                             <div class="form-text text-danger"><?= form_error('file2') ?></div>
                         </div>
