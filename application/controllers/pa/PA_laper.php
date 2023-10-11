@@ -133,13 +133,8 @@ class PA_laper extends CI_Controller
             $this->load->view('pa/add_laporan_perkara', $data);
             $this->load->view('pa/pa_footer');
 
-        } else if ($current_month != $next_month) {
+        } else if ($current_month == $next_month) {
             
-            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara');
-            redirect('pa/PA_laper/');
-
-        } else {
-
             $folder = "$satker $periode_tgl";
             $status = "Belum Validasi";
             $path = "./files/laporan_perkara/$folder";
@@ -201,6 +196,12 @@ class PA_laper extends CI_Controller
 
             $this->session->set_flashdata('message', 'Tambah Laporan Perkara dan Upload File berhasil');
             redirect('pa/PA_laper/');
+            
+        } else {
+
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara');
+            redirect('pa/PA_laper/');
+
         }
     }
 
