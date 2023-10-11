@@ -118,6 +118,9 @@ class PA_laper extends CI_Controller
             $periode = $this->input->post('periode', true);
             $periode_tgl = date('M Y', strtotime($periode));
             $current_month = date('M Y');
+            $next_month = date('M Y', strtotime('+1',strtotime($current_month))) ;
+            var_dump($periode_tgl, $current_month, $next_month);
+            die;
             $tanggal = date('Y-m-d');
             $berkas = "Lap Per $periode_tgl";
             $satker = $this->session->userdata('kode_pa');
