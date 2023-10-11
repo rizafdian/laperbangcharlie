@@ -109,8 +109,8 @@ class PA_laper extends CI_Controller
     public function add_laporan_perkara()
     {
         $data['judul'] = 'Laporan Perkara';
-        $data['laporan'] = $this->m_laper->get_data();
-        $cek_periode = $data['laporan']['periode'];
+        $get_periode = $this->db->select('periode')->get('laporan_perkara');
+        $$cek_periode['periodes'] = $query->result();
 
         //form validation rules
         $this->form_validation->set_rules('periode', 'Periode', 'required');
