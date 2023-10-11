@@ -119,8 +119,6 @@ class PA_laper extends CI_Controller
             $periode_tgl = date('M Y', strtotime($periode));
             $current_month = date('M Y');
             $next_month = date('M Y', strtotime('+1 month',strtotime($periode_tgl))) ;
-            var_dump($periode_tgl, $current_month, $next_month);
-            die;
             $tanggal = date('Y-m-d');
             $berkas = "Lap Per $periode_tgl";
             $satker = $this->session->userdata('kode_pa');
@@ -135,9 +133,9 @@ class PA_laper extends CI_Controller
             $this->load->view('pa/add_laporan_perkara', $data);
             $this->load->view('pa/pa_footer');
 
-        } else if ($periode_tgl != $current_month) {
+        } else if ($current_month != $next_month) {
             
-            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena periode yang dipilih tidak sesuai dengan bulan saat ini');
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara');
             redirect('pa/PA_laper/');
 
         } else {
