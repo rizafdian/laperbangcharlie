@@ -119,6 +119,8 @@ class PA_laper extends CI_Controller
 
             $periode = $this->input->post('periode', true);
             $periode_tgl = date('M Y', strtotime($periode));
+            var_dump($cek_periode, $periode_tgl);
+            die;
             $current_month = date('M Y');
             $next_month = date('M Y', strtotime('+1 month',strtotime($periode_tgl))) ;
             $tanggal = date('Y-m-d');
