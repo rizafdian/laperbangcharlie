@@ -123,6 +123,7 @@ class PA_laper extends CI_Controller
             $tanggal = date('Y-m-d');
             $berkas = "Lap Per $periode_tgl";
             $satker = $this->session->userdata('kode_pa');
+            $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id_user, 'periode' => $periode_tgl])->result_array();
 
         //form validation
         if ($this->form_validation->run() === FALSE) {
@@ -134,11 +135,8 @@ class PA_laper extends CI_Controller
             $this->load->view('pa/add_laporan_perkara', $data);
             $this->load->view('pa/pa_footer');
 
-        } else if ($current_month == $next_month) {
+        } else if ($current_month == $next_month and empty($data['laporan'][0]['periode'])) {
             
-            $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id_user, 'periode' => $periode_tgl])->result_array();
-            var_dump($data);
-            die;
             $folder = "$satker $periode_tgl";
             $status = "Belum Validasi";
             $path = "./files/laporan_perkara/$folder";
@@ -201,12 +199,9 @@ class PA_laper extends CI_Controller
             $this->session->set_flashdata('message', 'Tambah Laporan Perkara dan Upload File berhasil');
             redirect('pa/PA_laper/');
             
-        } elseif ($periode_tgl == $cek_periode) {
-            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah ada Laporan Perkara pada periode tersebut');
-            redirect('pa/PA_laper/');
         } else {
 
-            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara');
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara/Data laporan perkara sudah ada');
             redirect('pa/PA_laper/');
 
         }
