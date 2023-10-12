@@ -201,7 +201,7 @@ class PA_laper extends CI_Controller
             
         } else {
 
-            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara/Data laporan perkara sudah ada');
+            $this->session->set_flashdata('message', 'Tambah Laporan Perkara tidak berhasil karena sudah melewati batas waktu Penguploadan Laporan Perkara/Data Laporan Perkara sudah ada');
             redirect('pa/PA_laper/');
 
         }
@@ -291,9 +291,9 @@ class PA_laper extends CI_Controller
         // $year = '%Y';
         // $tahun = mdate($year);
         //karna fungsi mdate tidak dikenali maka diganti dengan fungsi date(Y) biasa
+        $id_user = $this->session->userdata('id');
         $tahun = date('Y');
         $periode_triwulan = $this->input->post('lap_triwulan');
-
 
         if ($periode_triwulan == "03") {
             $berkas_laporan = "Triwulan I";
@@ -305,30 +305,38 @@ class PA_laper extends CI_Controller
             $berkas_laporan = "Triwulan IV";
         }
 
-        $data = [
-            'id' => '',
-            'id_user' => $this->session->userdata('id'),
-            'periode_triwulan' => $periode_triwulan,
-            'periode_tahun' => $tahun,
-            'tgl_upload' => date('Y-m-d'),
-            'berkas_laporan' => $berkas_laporan,
-            'status_laporan' => "Belum Validasi"
-        ];
+        $data['laporan'] = $this->db->get_where('laporan_triwulan', ['id_user' => $id_user, 'berkas_laporan' => $berkas_laporan, 'periode_tahun' => $tahun])->result_array();
 
-        $this->db->insert('laporan_triwulan', $data);
-
-        $pengedit = $this->session->userdata('nama');
-
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan laporan triwulan <b>" . $berkas_laporan . "</b> <b>" . $tahun . "</b>",
-            'nama_log' => $pengedit
-        );
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
-
-        $this->session->set_flashdata('message', 'Data Laporan Triwulan Berhasil Ditambahkan !');
-        redirect('pa/PA_laper/triwulan');
+        if (empty($data['laporan'][0]['id'])) {
+            $data = [
+                'id' => '',
+                'id_user' => $this->session->userdata('id'),
+                'periode_triwulan' => $periode_triwulan,
+                'periode_tahun' => $tahun,
+                'tgl_upload' => date('Y-m-d'),
+                'berkas_laporan' => $berkas_laporan,
+                'status_laporan' => "Belum Validasi"
+            ];
+    
+            $this->db->insert('laporan_triwulan', $data);
+    
+            $pengedit = $this->session->userdata('nama');
+    
+            $audittrail = array(
+                'log_id' => '',
+                'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan laporan triwulan <b>" . $berkas_laporan . "</b> <b>" . $tahun . "</b>",
+                'nama_log' => $pengedit
+            );
+            $this->db->set('rekam_log', 'NOW()', FALSE);
+            $this->db->insert('log_audittrail', $audittrail);
+    
+            $this->session->set_flashdata('message', 'Data Laporan Triwulan Berhasil Ditambahkan !');
+            redirect('pa/PA_laper/triwulan');
+        } else {
+            $this->session->set_flashdata('message', 'Data Laporan Triwulan Sudah Ditambahkan !');
+            redirect('pa/PA_laper/triwulan');
+        }
+        
     }
 
 
