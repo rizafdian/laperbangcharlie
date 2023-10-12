@@ -430,64 +430,72 @@ Ketik informasi untuk mengetahui perintah lainnya.
 
     public function add_rekap_laporan()
     {
+        $id_user = $this->session->userdata('id');
         $periode = $this->input->post('periode', true);
         $periode_convert = date('M Y', strtotime($periode));
         $tanggal = date('Y-m-d');
         $satker = $this->session->userdata('kode_pa');
         $folder = "$satker $periode_convert";
         $path = "./files/rekap_laporan_perkara/$folder";
+        $data['laporan'] = $this->db->get_where('rekap_laporan_perkara', ['id_user' => $id_user, 'periode' => $periode_convert])->result_array();
 
-        if (!file_exists($path)) {
-            mkdir($path);
-        }
-        $config['upload_path']          = $path;
-        $config['allowed_types']        = 'pdf|xls|xlsx';
-        $config['max_size']             = 5024;
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);
-
-        if (($_FILES['file1']['name'])) {
-            if ($this->upload->do_upload('file1')) {
-                $rekap_pdf = $this->upload->data("file_name");
-            } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('admin/adminlaper/rekap_laporan/');
+        if (empty($data['laporan'][0]['periode'])) {
+            if (!file_exists($path)) {
+                mkdir($path);
             }
-        }
-
-        if (($_FILES['file2']['name'])) {
-            if ($this->upload->do_upload('file2')) {
-                $rekap_xls = $this->upload->data("file_name");
-            } else {
-                $this->session->set_flashdata('msg', 'Upload file gagal');
-                redirect('admin/adminlaper/rekap_laporan/');
+            $config['upload_path']          = $path;
+            $config['allowed_types']        = 'pdf|xls|xlsx';
+            $config['max_size']             = 5024;
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+    
+            if (($_FILES['file1']['name'])) {
+                if ($this->upload->do_upload('file1')) {
+                    $rekap_pdf = $this->upload->data("file_name");
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload file gagal');
+                    redirect('admin/adminlaper/rekap_laporan/');
+                }
             }
+    
+            if (($_FILES['file2']['name'])) {
+                if ($this->upload->do_upload('file2')) {
+                    $rekap_xls = $this->upload->data("file_name");
+                } else {
+                    $this->session->set_flashdata('msg', 'Upload file gagal');
+                    redirect('admin/adminlaper/rekap_laporan/');
+                }
+            }
+    
+            $data = [
+                'id' => '',
+                'id_user' => $this->session->userdata('id'),
+                'tgl_upload' => $tanggal,
+                'periode' => $periode_convert,
+                'rekap_pdf' => $rekap_pdf,
+                'rekap_xls' => $rekap_xls
+            ];
+    
+            $this->db->insert('rekap_laporan_perkara', $data);
+    
+            $pengedit = $this->session->userdata('nama');
+    
+            $audittrail = array(
+                'log_id' => '',
+                'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan rekap laporan perkara untuk periode <b>" . $periode_convert . "</b>",
+                'nama_log' => $pengedit
+            );
+            $this->db->set('rekam_log', 'NOW()', FALSE);
+            $this->db->insert('log_audittrail', $audittrail);
+    
+            $this->session->set_flashdata('msg', 'Upload file berhasil');
+    
+            redirect('admin/adminlaper/rekap_laporan/');
+        } else {
+            $this->session->set_flashdata('msg', 'Rekap laporan perkara periode ini sudah ditambahkan');
+    
+            redirect('admin/adminlaper/rekap_laporan/');
         }
-
-        $data = [
-            'id' => '',
-            'id_user' => $this->session->userdata('id'),
-            'tgl_upload' => $tanggal,
-            'periode' => $periode_convert,
-            'rekap_pdf' => $rekap_pdf,
-            'rekap_xls' => $rekap_xls
-        ];
-
-        $this->db->insert('rekap_laporan_perkara', $data);
-
-        $pengedit = $this->session->userdata('nama');
-
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan rekap laporan perkara untuk periode <b>" . $periode_convert . "</b>",
-            'nama_log' => $pengedit
-        );
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
-
-        $this->session->set_flashdata('msg', 'Upload file berhasil');
-
-        redirect('admin/adminlaper/rekap_laporan/');
     }
 
     public function edit_rekap_laporan()
@@ -868,6 +876,7 @@ Ketik informasi untuk mengetahui perintah lainnya.
 
     public function add_rekap_triwulan()
     {
+        $id_user = $this->session->userdata('id');
         $year = '%Y';
         $tahun = mdate($year);
         $periode_triwulan = $this->input->post('lap_triwulan');
@@ -882,60 +891,69 @@ Ketik informasi untuk mengetahui perintah lainnya.
             $berkas_laporan = "Triwulan IV";
         }
 
-        $data = [
-            'id' => '',
-            'id_user' => $this->session->userdata('id'),
-            'periode_triwulan' => $periode_triwulan,
-            'periode_tahun' => $tahun,
-            'tgl_upload' => date('Y-m-d'),
-            'berkas_laporan' => $berkas_laporan
-        ];
+        $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id_user, 'berkas_laporan' => $berkas_laporan, 'periode_tahun' => $tahun])->result_array();
 
-        $this->db->insert('rekap_triwulan', $data);
+        if (empty($data['laporan'][0]['id'])) {
+            $data = [
+                'id' => '',
+                'id_user' => $this->session->userdata('id'),
+                'periode_triwulan' => $periode_triwulan,
+                'periode_tahun' => $tahun,
+                'tgl_upload' => date('Y-m-d'),
+                'berkas_laporan' => $berkas_laporan
+            ];
+    
+            $this->db->insert('rekap_triwulan', $data);
+    
+            $last_id = $this->db->insert_id();
+            
+    
+            $keuangan = [
+                'id' => '',
+                'id_rekap_tri' => $last_id,
+                'nm_laporan' => 'Keuangan',
+            ];
+            $this->db->insert('rekap_tri_detail', $keuangan);
+    
+            $meja_informasi = [
+                'id' => '',
+                'id_rekap_tri' => $last_id,
+                'nm_laporan' => 'Meja Informasi',
+            ];
+            $this->db->insert('rekap_tri_detail', $meja_informasi);
+    
+            $pengaduan = [
+                'id' => '',
+                'id_rekap_tri' => $last_id,
+                'nm_laporan' => 'Pengaduan',
+            ];
+            $this->db->insert('rekap_tri_detail', $pengaduan);
+    
+            $penilaian_banding = [
+                'id' => '',
+                'id_rekap_tri' => $last_id,
+                'nm_laporan' => 'Penilaian Banding',
+            ];
+            $this->db->insert('rekap_tri_detail', $penilaian_banding);
+    
+            $pengedit = $this->session->userdata('nama');
+    
+            $audittrail = array(
+                'log_id' => '',
+                'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan rekap laporan triwulan untuk periode <b>" . $periode_triwulan . "</b>",
+                'nama_log' => $pengedit
+            );
+            $this->db->set('rekam_log', 'NOW()', FALSE);
+            $this->db->insert('log_audittrail', $audittrail);
+    
+            $this->session->set_flashdata('msg', 'Triwulan berhasil ditambahkan');
+            redirect('admin/adminlaper/rekap_triwulan/');
+        } else {
+            $this->session->set_flashdata('msg', 'Rekap laporan triwulan periode tersebut sudah ditambahkan');
+            redirect('admin/adminlaper/rekap_triwulan/');
+        }
 
-        $last_id = $this->db->insert_id();
         
-
-        $keuangan = [
-            'id' => '',
-            'id_rekap_tri' => $last_id,
-            'nm_laporan' => 'Keuangan',
-        ];
-        $this->db->insert('rekap_tri_detail', $keuangan);
-
-        $meja_informasi = [
-            'id' => '',
-            'id_rekap_tri' => $last_id,
-            'nm_laporan' => 'Meja Informasi',
-        ];
-        $this->db->insert('rekap_tri_detail', $meja_informasi);
-
-        $pengaduan = [
-            'id' => '',
-            'id_rekap_tri' => $last_id,
-            'nm_laporan' => 'Pengaduan',
-        ];
-        $this->db->insert('rekap_tri_detail', $pengaduan);
-
-        $penilaian_banding = [
-            'id' => '',
-            'id_rekap_tri' => $last_id,
-            'nm_laporan' => 'Penilaian Banding',
-        ];
-        $this->db->insert('rekap_tri_detail', $penilaian_banding);
-
-        $pengedit = $this->session->userdata('nama');
-
-        $audittrail = array(
-            'log_id' => '',
-            'isi_log' => "User <b>" . $pengedit . "</b> telah menambahkan rekap laporan triwulan untuk periode <b>" . $periode_triwulan . "</b>",
-            'nama_log' => $pengedit
-        );
-        $this->db->set('rekam_log', 'NOW()', FALSE);
-        $this->db->insert('log_audittrail', $audittrail);
-
-        $this->session->set_flashdata('msg', 'Triwulan berhasil ditambahkan');
-        redirect('admin/adminlaper/rekap_triwulan/');
     }
 
     public function view_rekap_tri($id)
