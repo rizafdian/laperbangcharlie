@@ -110,8 +110,6 @@ class PA_laper extends CI_Controller
     {
         $id_user = $this->session->userdata('id');
         $data['judul'] = 'Laporan Perkara';
-        $query = $this->db->select('periode')->get('laporan_perkara');
-        $cek_periode = $query->result();
 
         //form validation rules
         $this->form_validation->set_rules('periode', 'Periode', 'required');
@@ -138,7 +136,8 @@ class PA_laper extends CI_Controller
 
         } else if ($current_month == $next_month and $periode_tgl != $cek_periode) {
             
-            var_dump($cek_periode, $periode_tgl, $id_user);
+            $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id, 'periode' => $periode_tgl])->result_array();
+            var_dump($data);
             die;
             $folder = "$satker $periode_tgl";
             $status = "Belum Validasi";
