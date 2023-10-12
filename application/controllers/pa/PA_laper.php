@@ -136,7 +136,7 @@ class PA_laper extends CI_Controller
 
         } else if ($current_month == $next_month) {
             
-            $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id, 'periode' => $periode_tgl])->result_array();
+            $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id_user, 'periode' => $periode_tgl])->result_array();
             var_dump($data);
             die;
             $folder = "$satker $periode_tgl";
