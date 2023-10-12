@@ -134,7 +134,7 @@ class PA_laper extends CI_Controller
             $this->load->view('pa/add_laporan_perkara', $data);
             $this->load->view('pa/pa_footer');
 
-        } else if ($current_month == $next_month and $periode_tgl != $cek_periode) {
+        } else if ($current_month == $next_month) {
             
             $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id, 'periode' => $periode_tgl])->result_array();
             var_dump($data);
