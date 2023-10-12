@@ -110,7 +110,7 @@ class PA_laper extends CI_Controller
     {
         $id_user = $this->session->userdata('id');
         $data['judul'] = 'Laporan Perkara';
-        $query = $this->db->select('periode')->get_where('laporan_perkara', ['id' => $id_user])->result_array();
+        $query = $this->db->select('periode')->get_where('laporan_perkara', ['id' => $id_user])->result();
         // $cek_periode['periodes'] = $query->result();
 
         //form validation rules
