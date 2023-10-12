@@ -891,7 +891,7 @@ Ketik informasi untuk mengetahui perintah lainnya.
             $berkas_laporan = "Triwulan IV";
         }
 
-        $data['laporan'] = $this->db->get_where('laporan_perkara', ['id_user' => $id_user, 'berkas_laporan' => $berkas_laporan, 'periode_tahun' => $tahun])->result_array();
+        $data['laporan'] = $this->db->get_where('rekap_triwulan', ['id_user' => $id_user, 'berkas_laporan' => $berkas_laporan, 'periode_tahun' => $tahun])->result_array();
 
         if (empty($data['laporan'][0]['id'])) {
             $data = [
