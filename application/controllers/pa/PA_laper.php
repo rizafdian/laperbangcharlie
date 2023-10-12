@@ -110,8 +110,8 @@ class PA_laper extends CI_Controller
     {
         $id_user = $this->session->userdata('id');
         $data['judul'] = 'Laporan Perkara';
-        $query = $this->db->select('periode')->get_where('laporan_perkara', ['id' => $id_user])->result();
-        // $cek_periode['periodes'] = $query->result();
+        $query = $this->db->select('periode')->get_where('laporan_perkara', ['id' => $id_user]);
+        $cek_periode['periodes'] = $query->result();
 
         //form validation rules
         $this->form_validation->set_rules('periode', 'Periode', 'required');
@@ -120,7 +120,7 @@ class PA_laper extends CI_Controller
 
             $periode = $this->input->post('periode', true);
             $periode_tgl = date('M Y', strtotime($periode));
-            var_dump($query, $periode_tgl, $id_user);
+            var_dump($cek_periode, $periode_tgl, $id_user);
             die;
             $current_month = date('M Y');
             $next_month = date('M Y', strtotime('+1 month',strtotime($periode_tgl))) ;
