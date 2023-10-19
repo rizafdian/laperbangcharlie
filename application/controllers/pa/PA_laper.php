@@ -317,6 +317,7 @@ class PA_laper extends CI_Controller
                 'berkas_laporan' => $berkas_laporan,
                 'status_laporan' => "Belum Validasi"
             ];
+            
     
             $this->db->insert('laporan_triwulan', $data);
     
