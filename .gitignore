@@ -37,12 +37,12 @@ zoutside/
 application/config/config.php
 application/config/database.php
 /.htaccess
-/files/bundle_a/*
-/files/bundle_b/*
+# /files/bundle_a/*
+# /files/bundle_b/*
 /files/files_laporan/*
-/files/qrcodeimg/*
-/files/SuratPengantar/*
-# /files/laporan_triwulan/
+# /files/qrcodeimg/*
+# /files/SuratPengantar/*
+/files/laporan_triwulan/
 
 ##/files/bundle_a
 ##/files/bundle_b
