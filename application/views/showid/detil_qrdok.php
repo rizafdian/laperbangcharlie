@@ -26,7 +26,7 @@
       <div class="col">
         <h3 class="name_title">Deskripsi Dokumen</h3>
         <span>
-          <img width="80px" src="<?php echo base_url('qrcodeimg/qr_' . $dok_id . '.png') ?>">
+          <img width="80px" src="<?php echo base_url('files/qrcodeimg/qr_' . $dok_id . '.png') ?>">
         </span>
         <p>Ini adalah detil dokumen dari pengajuan perkara banding yang benar diterbikan oleh aplikasi LAPERBANG Pengadilan Tinggi Agama Manado.</p>
         <hr>
