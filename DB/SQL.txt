@@ -1,0 +1,139 @@
+// catatan laporan
+
+CREATE TABLE catatan_laporan (
+   id int NOT NULL AUTO_INCREMENT,
+   laper_id int,
+   id_triwulan int,
+   tgl_catatan datetime,
+   catatan text,
+   PRIMARY KEY(id),
+   FOREIGN KEY(laper_id) REFERENCES laporan_perkara(id),
+   FOREIGN KEY(id_triwulan) REFERENCES lap_tri_detail(id)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//laporan perkara
+CREATE TABLE laporan_perkara (
+	id int NOT NULL AUTO_INCREMENT,
+    id_user int,
+    periode varchar(20),
+    berkas_laporan varchar(100),
+    laper_pdf varchar(100),
+    laper_xls varchar(100),
+    tgl_upload date,
+    tgl_terakhir_rev date,
+    status varchar(250),
+    
+    PRIMARY KEY(id),
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//laporan triwulan
+CREATE TABLE laporan_triwulan (
+	id int NOT NULL AUTO_INCREMENT,
+    id_user int,
+    berkas_laporan varchar(50),
+    periode_triwulan varchar(20),
+    periode_tahun varchar(20),
+    tgl_upload date,
+    tgl_terakhir_revisi date,
+    status_laporan varchar(30),
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_user) REFERENCES users(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//laporan triwulan detail
+CREATE TABLE lap_tri_detail (
+	id int NOT NULL AUTO_INCREMENT,
+    id_lap_tri int,
+    nm_laporan varchar(25),
+    tgl_kirim date,
+    lap_pdf varchar(100),
+    lap_xls varchar(100),
+    rev_pdf varchar(100),
+    rev_xls varchar(100),
+    tgl_revisi date,
+    status_validasi varchar(25),
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_lap_tri) REFERENCES laporan_triwulan(id)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//rekap laporan perkara
+CREATE TABLE rekap_laporan_perkara (
+	id int NOT NULL AUTO_INCREMENT,
+    id_user int,
+    periode varchar(20),
+    rekap_pdf varchar(100),
+    rekap_xls varchar(100),
+    tgl_upload date,
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_user) REFERENCES users(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//rekap triwulan
+CREATE TABLE rekap_triwulan (
+	id int NOT NULL AUTO_INCREMENT,
+    id_user int,
+    berkas_laporan varchar(50),
+    periode_triwulan varchar(20),
+    periode_tahun varchar(20),
+    tgl_upload date,
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_user) REFERENCES users(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//rekap triwulan detail
+CREATE TABLE rekap_tri_detail(
+	id int NOT NULL AUTO_INCREMENT,
+    id_rekap_tri int,
+    nm_laporan varchar(25),
+    tgl_kirim date,
+    lap_pdf varchar(100),
+    lap_xls varchar(100),
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_rekap_tri) REFERENCES rekap_triwulan(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//revisi laporan
+CREATE TABLE revisi_laporan (
+	id int NOT NULL AUTO_INCREMENT,
+    laper_id int,
+    rev_pdf varchar(250),
+    rev_xls varchar(250),
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(laper_id) REFERENCES laporan_perkara(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+//v_user_laporan
+CREATE VIEW v_user_laporan AS
+SELECT laporan_perkara.*, users.id as user_id, users.nama, users.kode_pa, users.operator from laporan_perkara JOIN users on laporan_perkara.id_user = users.id
+
+//v triwulan laporan
+CREATE VIEW v_triwulan_laporan AS
+SELECT laporan_triwulan.*, users.nama, users.kode_pa, users.operator from laporan_triwulan JOIN users on laporan_triwulan.id_user = users.id
+
+//v detail triwulan
+CREATE VIEW v_detail_triwulan AS
+SELECT laporan_triwulan.*, lap_tri_detail.id
+AS id_triwulan, lap_tri_detail.nm_laporan, lap_tri_detail.tgl_kirim, lap_tri_detail.lap_pdf, lap_tri_detail.lap_xls, lap_tri_detail.rev_pdf, lap_tri_detail.rev_xls, lap_tri_detail.tgl_revisi, lap_tri_detail.status_validasi, users.nama, users.kode_pa, users.operator FROM laporan_triwulan JOIN lap_tri_detail ON lap_tri_detail.id_lap_tri = laporan_triwulan.id JOIN users ON users.id = laporan_triwulan.id_user
+
+//v rekap laporan perkara
+CREATE VIEW v_rekap_laporan AS
+SELECT rekap_laporan_perkara.*, users.nama, users.kode_pa from rekap_laporan_perkara JOIN users ON rekap_laporan_perkara.id_user = users.id
+
+//v rekap triwulan
+CREATE VIEW v_rekap_triwulan AS
+SELECT rekap_triwulan.*, rekap_tri_detail.id as id_triwulan, rekap_tri_detail.nm_laporan, rekap_tri_detail.tgl_kirim, rekap_tri_detail.lap_pdf, rekap_tri_detail.lap_xls, users.kode_pa, users.nama FROM rekap_triwulan JOIN rekap_tri_detail on rekap_tri_detail.id_rekap_tri = rekap_triwulan.id JOIN users ON users.id = rekap_triwulan.id_user
+
+//v header perkara
+CREATE VIEW v_header_perkara AS
+SELECT penunjukan_pp.id_user_pp, users.nama, list_perkara.id_perkara, list_perkara.no_perkara_banding, list_perkara.nm_pihak_penggugat, list_perkara.no_hp_penggugat, list_perkara.nm_pihak_tergugat, list_perkara.no_hp_tergugat, pmh.majelis_hakim FROM penunjukan_pp JOIN list_perkara on penunjukan_pp.id_perkara = list_perkara.id_perkara JOIN users ON penunjukan_pp.id_user_pp = users.id JOIN pmh ON penunjukan_pp.id_perkara = pmh.id_perkara
